@@ -1,5 +1,5 @@
 /**
  * Vite configuration.
  */
-declare const _default: any;
+declare const _default: import('vite').UserConfig;
 export default _default;

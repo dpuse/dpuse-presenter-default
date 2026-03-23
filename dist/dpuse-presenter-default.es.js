@@ -1,500 +1,4 @@
-//#region node_modules/@datapos/datapos-shared/dist/datapos-shared.es.js
-var e;
-/* @__NO_SIDE_EFFECTS__ */
-function t(t) {
-	return {
-		lang: t?.lang ?? e?.lang,
-		message: t?.message,
-		abortEarly: t?.abortEarly ?? e?.abortEarly,
-		abortPipeEarly: t?.abortPipeEarly ?? e?.abortPipeEarly
-	};
-}
-var n;
-/* @__NO_SIDE_EFFECTS__ */
-function r(e) {
-	return n?.get(e);
-}
-var i;
-/* @__NO_SIDE_EFFECTS__ */
-function a(e) {
-	return i?.get(e);
-}
-var o;
-/* @__NO_SIDE_EFFECTS__ */
-function s(e, t) {
-	return o?.get(e)?.get(t);
-}
-/* @__NO_SIDE_EFFECTS__ */
-function c(e) {
-	let t = typeof e;
-	return t === "string" ? `"${e}"` : t === "number" || t === "bigint" || t === "boolean" ? `${e}` : t === "object" || t === "function" ? (e && Object.getPrototypeOf(e)?.constructor?.name) ?? "null" : t;
-}
-function l(e, t, n, i, o) {
-	let l = o && "input" in o ? o.input : n.value, u = o?.expected ?? e.expects ?? null, d = o?.received ?? /* @__PURE__ */ c(l), f = {
-		kind: e.kind,
-		type: e.type,
-		input: l,
-		expected: u,
-		received: d,
-		message: `Invalid ${t}: ${u ? `Expected ${u} but r` : "R"}eceived ${d}`,
-		requirement: e.requirement,
-		path: o?.path,
-		issues: o?.issues,
-		lang: i.lang,
-		abortEarly: i.abortEarly,
-		abortPipeEarly: i.abortPipeEarly
-	}, p = e.kind === "schema", m = o?.message ?? e.message ?? /* @__PURE__ */ s(e.reference, f.lang) ?? (p ? /* @__PURE__ */ a(f.lang) : null) ?? i.message ?? /* @__PURE__ */ r(f.lang);
-	m !== void 0 && (f.message = typeof m == "function" ? m(f) : m), p && (n.typed = !1), n.issues ? n.issues.push(f) : n.issues = [f];
-}
-/* @__NO_SIDE_EFFECTS__ */
-function u(e) {
-	return {
-		version: 1,
-		vendor: "valibot",
-		validate(n) {
-			return e["~run"]({ value: n }, /* @__PURE__ */ t());
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function d(e, t) {
-	return Object.hasOwn(e, t) && t !== "__proto__" && t !== "prototype" && t !== "constructor";
-}
-/* @__NO_SIDE_EFFECTS__ */
-function f(e, t) {
-	let n = [...new Set(e)];
-	return n.length > 1 ? `(${n.join(` ${t} `)})` : n[0] ?? "never";
-}
-/* @__NO_SIDE_EFFECTS__ */
-function p(e, t, n) {
-	return typeof e.fallback == "function" ? e.fallback(t, n) : e.fallback;
-}
-/* @__NO_SIDE_EFFECTS__ */
-function m(e, t, n) {
-	return typeof e.default == "function" ? e.default(t, n) : e.default;
-}
-/* @__NO_SIDE_EFFECTS__ */
-function h(e, t) {
-	return {
-		kind: "schema",
-		type: "array",
-		reference: h,
-		expects: "Array",
-		async: !1,
-		item: e,
-		message: t,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			let n = e.value;
-			if (Array.isArray(n)) {
-				e.typed = !0, e.value = [];
-				for (let r = 0; r < n.length; r++) {
-					let i = n[r], a = this.item["~run"]({ value: i }, t);
-					if (a.issues) {
-						let o = {
-							type: "array",
-							origin: "value",
-							input: n,
-							key: r,
-							value: i
-						};
-						for (let t of a.issues) t.path ? t.path.unshift(o) : t.path = [o], e.issues?.push(t);
-						if (e.issues ||= a.issues, t.abortEarly) {
-							e.typed = !1;
-							break;
-						}
-					}
-					a.typed || (e.typed = !1), e.value.push(a.value);
-				}
-			} else l(this, "type", e, t);
-			return e;
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function g(e) {
-	return {
-		kind: "schema",
-		type: "boolean",
-		reference: g,
-		expects: "boolean",
-		async: !1,
-		message: e,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			return typeof e.value == "boolean" ? e.typed = !0 : l(this, "type", e, t), e;
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _(e, t) {
-	return {
-		kind: "schema",
-		type: "literal",
-		reference: _,
-		expects: /* @__PURE__ */ c(e),
-		async: !1,
-		literal: e,
-		message: t,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			return e.value === this.literal ? e.typed = !0 : l(this, "type", e, t), e;
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function v(e, t) {
-	return {
-		kind: "schema",
-		type: "nullable",
-		reference: v,
-		expects: `(${e.expects} | null)`,
-		async: !1,
-		wrapped: e,
-		default: t,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			return e.value === null && (this.default !== void 0 && (e.value = /* @__PURE__ */ m(this, e, t)), e.value === null) ? (e.typed = !0, e) : this.wrapped["~run"](e, t);
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function y(e) {
-	return {
-		kind: "schema",
-		type: "number",
-		reference: y,
-		expects: "number",
-		async: !1,
-		message: e,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			return typeof e.value == "number" && !isNaN(e.value) ? e.typed = !0 : l(this, "type", e, t), e;
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function b(e, t) {
-	return {
-		kind: "schema",
-		type: "object",
-		reference: b,
-		expects: "Object",
-		async: !1,
-		entries: e,
-		message: t,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			let n = e.value;
-			if (n && typeof n == "object") {
-				e.typed = !0, e.value = {};
-				for (let r in this.entries) {
-					let i = this.entries[r];
-					if (r in n || (i.type === "exact_optional" || i.type === "optional" || i.type === "nullish") && i.default !== void 0) {
-						let a = r in n ? n[r] : /* @__PURE__ */ m(i), o = i["~run"]({ value: a }, t);
-						if (o.issues) {
-							let i = {
-								type: "object",
-								origin: "value",
-								input: n,
-								key: r,
-								value: a
-							};
-							for (let t of o.issues) t.path ? t.path.unshift(i) : t.path = [i], e.issues?.push(t);
-							if (e.issues ||= o.issues, t.abortEarly) {
-								e.typed = !1;
-								break;
-							}
-						}
-						o.typed || (e.typed = !1), e.value[r] = o.value;
-					} else if (i.fallback !== void 0) e.value[r] = /* @__PURE__ */ p(i);
-					else if (i.type !== "exact_optional" && i.type !== "optional" && i.type !== "nullish" && (l(this, "key", e, t, {
-						input: void 0,
-						expected: `"${r}"`,
-						path: [{
-							type: "object",
-							origin: "key",
-							input: n,
-							key: r,
-							value: n[r]
-						}]
-					}), t.abortEarly)) break;
-				}
-			} else l(this, "type", e, t);
-			return e;
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function x(e, t) {
-	return {
-		kind: "schema",
-		type: "optional",
-		reference: x,
-		expects: `(${e.expects} | undefined)`,
-		async: !1,
-		wrapped: e,
-		default: t,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			return e.value === void 0 && (this.default !== void 0 && (e.value = /* @__PURE__ */ m(this, e, t)), e.value === void 0) ? (e.typed = !0, e) : this.wrapped["~run"](e, t);
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function S(e, t, n) {
-	return {
-		kind: "schema",
-		type: "record",
-		reference: S,
-		expects: "Object",
-		async: !1,
-		key: e,
-		value: t,
-		message: n,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			let n = e.value;
-			if (n && typeof n == "object") {
-				e.typed = !0, e.value = {};
-				for (let r in n) if (/* @__PURE__ */ d(n, r)) {
-					let i = n[r], a = this.key["~run"]({ value: r }, t);
-					if (a.issues) {
-						let o = {
-							type: "object",
-							origin: "key",
-							input: n,
-							key: r,
-							value: i
-						};
-						for (let t of a.issues) t.path = [o], e.issues?.push(t);
-						if (e.issues ||= a.issues, t.abortEarly) {
-							e.typed = !1;
-							break;
-						}
-					}
-					let o = this.value["~run"]({ value: i }, t);
-					if (o.issues) {
-						let a = {
-							type: "object",
-							origin: "value",
-							input: n,
-							key: r,
-							value: i
-						};
-						for (let t of o.issues) t.path ? t.path.unshift(a) : t.path = [a], e.issues?.push(t);
-						if (e.issues ||= o.issues, t.abortEarly) {
-							e.typed = !1;
-							break;
-						}
-					}
-					(!a.typed || !o.typed) && (e.typed = !1), a.typed && (e.value[a.value] = o.value);
-				}
-			} else l(this, "type", e, t);
-			return e;
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function C(e) {
-	return {
-		kind: "schema",
-		type: "string",
-		reference: C,
-		expects: "string",
-		async: !1,
-		message: e,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			return typeof e.value == "string" ? e.typed = !0 : l(this, "type", e, t), e;
-		}
-	};
-}
-/* @__NO_SIDE_EFFECTS__ */
-function w(e) {
-	let t;
-	if (e) for (let n of e) t ? t.push(...n.issues) : t = n.issues;
-	return t;
-}
-/* @__NO_SIDE_EFFECTS__ */
-function T(e, t) {
-	return {
-		kind: "schema",
-		type: "union",
-		reference: T,
-		expects: /* @__PURE__ */ f(e.map((e) => e.expects), "|"),
-		async: !1,
-		options: e,
-		message: t,
-		get "~standard"() {
-			return /* @__PURE__ */ u(this);
-		},
-		"~run"(e, t) {
-			let n, r, i;
-			for (let a of this.options) {
-				let o = a["~run"]({ value: e.value }, t);
-				if (o.typed) if (o.issues) r ? r.push(o) : r = [o];
-				else {
-					n = o;
-					break;
-				}
-				else i ? i.push(o) : i = [o];
-			}
-			if (n) return n;
-			if (r) {
-				if (r.length === 1) return r[0];
-				l(this, "type", e, t, { issues: /* @__PURE__ */ w(r) }), e.typed = !0;
-			} else {
-				if (i?.length === 1) return i[0];
-				l(this, "type", e, t, { issues: /* @__PURE__ */ w(i) });
-			}
-			return e;
-		}
-	};
-}
-var E = (e) => /* @__PURE__ */ T(e.map((e) => /* @__PURE__ */ _(e))), D = /* @__PURE__ */ b({
-	"en-au": /* @__PURE__ */ x(/* @__PURE__ */ C()),
-	"en-gb": /* @__PURE__ */ x(/* @__PURE__ */ C()),
-	"en-us": /* @__PURE__ */ x(/* @__PURE__ */ C()),
-	"es-es": /* @__PURE__ */ x(/* @__PURE__ */ C())
-}), O = E([
-	"amber",
-	"green",
-	"red",
-	"other"
-]), k = E([
-	"alpha",
-	"beta",
-	"generalAvailability",
-	"notApplicable",
-	"preAlpha",
-	"proposed",
-	"releaseCandidate",
-	"unavailable",
-	"underReview"
-]);
-E([
-	"app",
-	"connector",
-	"connectorConnection",
-	"context",
-	"contextModelGroup",
-	"contextModel",
-	"contextModelDimensionGroup",
-	"contextModelDimension",
-	"contextModelDimensionHierarchy",
-	"contextModelEntityGroup",
-	"contextModelEntity",
-	"contextModelEntityDataItem",
-	"contextModelEntityEvent",
-	"contextModelEntityPrimaryMeasure",
-	"contextModelSecondaryMeasureGroup",
-	"contextModelSecondaryMeasure",
-	"dataView",
-	"dimension",
-	"engine",
-	"eventQuery",
-	"presenter",
-	"presenterPresentation",
-	"tool"
-]), E([
-	"app",
-	"engine",
-	"connector",
-	"context",
-	"presenter",
-	"tool"
-]);
-var A = {
-	id: /* @__PURE__ */ C(),
-	label: D,
-	description: D,
-	firstCreatedAt: /* @__PURE__ */ x(/* @__PURE__ */ y()),
-	icon: /* @__PURE__ */ v(/* @__PURE__ */ C()),
-	iconDark: /* @__PURE__ */ v(/* @__PURE__ */ C()),
-	lastUpdatedAt: /* @__PURE__ */ v(/* @__PURE__ */ y()),
-	status: /* @__PURE__ */ v(/* @__PURE__ */ b({
-		id: /* @__PURE__ */ C(),
-		color: O,
-		label: /* @__PURE__ */ C()
-	})),
-	statusId: k
-};
-({ ...A });
-var j = {
-	...A,
-	version: /* @__PURE__ */ C()
-}, M = (e) => {
-	let t = Object.entries(e).filter((e) => typeof e[1] == "string");
-	return new Map(t);
-};
-M({ "en-gb": "alpha" }), M({ "en-gb": "beta" }), M({ "en-gb": "" }), M({ "en-gb": "not-applicable" }), M({ "en-gb": "pre-alpha" }), M({ "en-gb": "proposed" }), M({ "en-gb": "release-candidate" }), M({ "en-gb": "unavailable" }), M({ "en-gb": "under-review" }), E([
-	"apiKey",
-	"disabled",
-	"oAuth2",
-	"none"
-]), E([
-	"application",
-	"curatedDataset",
-	"database",
-	"fileStore"
-]), E([
-	"abortOperation",
-	"authenticateConnection",
-	"createObject",
-	"describeConnection",
-	"dropObject",
-	"findObject",
-	"getReadableStream",
-	"getRecord",
-	"listNodes",
-	"previewObject",
-	"removeRecords",
-	"retrieveChunks",
-	"retrieveRecords",
-	"upsertRecords"
-]), E([
-	"bidirectional",
-	"destination",
-	"source",
-	"unknown"
-]), { ...j };
-var N = (e) => {
-	let t = Object.entries(e).filter((e) => typeof e[1] == "string");
-	return new Map(t);
-};
-N({ "en-gb": "Application" }), N({ "en-gb": "Curated Dataset" }), N({ "en-gb": "Database" }), N({ "en-gb": "File Store" }), E(["list"]), { ...A }, { ...j }, E([
-	"list",
-	"render",
-	"setColorMode"
-]), { ...j };
-function P() {
-	return { render: F };
-}
-function F(e, t) {
-	console.log(1111, e), console.log(2222, t), console.log(3333, t.childNodes), console.log(4444, t.children);
-}
-var I = (e) => new Map(Object.entries(e));
-I({ "en-gb": "Delimited Text" }), I({ "en-gb": "Entity/Event" }), I({ "en-gb": "JSON Array" }), I({ "en-gb": "SPSS" }), I({ "en-gb": "XLS" }), I({ "en-gb": "XLSX" }), I({ "en-gb": "XML" }), I({ "en-gb": "Newline" }), I({ "en-gb": "Carriage Return" }), I({ "en-gb": "Carriage Return/Newline" }), I({ "en-gb": "Colon" }), I({ "en-gb": "Comma" }), I({ "en-gb": "Exclamation Mark" }), I({ "en-gb": "Record Separator" }), I({ "en-gb": "Semicolon" }), I({ "en-gb": "Space" }), I({ "en-gb": "Tab" }), I({ "en-gb": "Underscore" }), I({ "en-gb": "Unit Separator" }), I({ "en-gb": "Vertical Bar" });
-var L = {
+var e = {
 	id: "dpuse-presenter-default",
 	label: { "en-gb": "Default Presenter" },
 	description: { "en-gb": "..." },
@@ -574,9 +78,9 @@ var L = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1007",
+	version: "0.1.1010",
 	usageId: "unknown"
-}, R = {
+}, t = {
 	"hr/wrkFor/averageHeadcount": {
 		id: "hrWrkForAverageHeadcount",
 		label: { "en-gb": "Average Headcount" },
@@ -632,7 +136,7 @@ var L = {
 		content: "Human Resources - Workforce\n\n## Movements - Table (Values & Sparklines)\n\n...\n\n## Movements - Bar Chart\n\n...\n\n## Movements - Stream Chart\n\n...\n\n## Internal Movements\n\n...\n\n## Movements - Waterfall Chart\n\n...\n\n## Net Movements\n\n...\n\n## Other\n\n...\n\n![](./movementDiagram.png)\n\n[PeopleFluent](https://www.peoplefluent.com/blog/insights/8-data-visualizations-with-peoplefluent-performance-compensation-succession/)\n"
 	},
 	"hr/wrkFor/physicalHeadcount": /* @__PURE__ */ JSON.parse("{\"id\":\"hrWrkForPhysicalHeadcount\",\"label\":{\"en-gb\":\"Physical Headcount\"},\"description\":{\"en-gb\":\"This is a description...\"},\"order\":1,\"statusId\":\"alpha\",\"typeId\":\"presenterPresentation\",\"content\":\"Measures the number of people employed by one or more organizations at specific points in time. These points in time are defined in terms of reporting periods, such as weeks, months, quarters, or years. The most frequently used points are period opening, starting, ending, and closing.\\n\\nPhysical headcount measures the actual number of people being counted at a fixed point in time. Please see ... and ... for measures that report headcount capacity across time. There are two versions ... opening / closing and starting / ending ...\\n\\n## Opening/Closing Headcount\\n\\nQuantifies the variation in physical headcount between the opening and closing of specific reporting periods.\\n\\n```json datapos-visual\\n{\\\"content\\\":{\\\"title\\\":{\\\"text\\\":\\\"Opening/Closing Headcount\\\"},\\\"data\\\":{\\\"label\\\":{\\\"text\\\":\\\"Headcount\\\"},\\\"dimension\\\":{\\\"label\\\":{\\\"text\\\":\\\"Months\\\"},\\\"values\\\":[{\\\"label\\\":{\\\"text\\\":\\\"Jan\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Feb\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Mar\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Apr\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"May\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Jun\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Jul\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Aug\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Sep\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Oct\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Nov\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Dec\\\"}}]},\\\"measures\\\":[{\\\"id\\\":\\\"openingHeadcount\\\",\\\"name\\\":\\\"Opening\\\"},{\\\"id\\\":\\\"closingHeadcount\\\",\\\"name\\\":\\\"Closing\\\"}]}},\\\"views\\\":[{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"areaLine\\\"},{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"areaSpline\\\"},{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"bar\\\"},{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"column\\\"},{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"line\\\",\\\"default\\\":true},{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"spline\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"areaLine\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"areaRange\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"areaSpline\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"column\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"columnRange\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"line\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"spline\\\"},{\\\"categoryId\\\":\\\"rangeChart\\\",\\\"typeId\\\":\\\"areaLine\\\"},{\\\"categoryId\\\":\\\"rangeChart\\\",\\\"typeId\\\":\\\"areaSpline\\\"},{\\\"categoryId\\\":\\\"rangeChart\\\",\\\"typeId\\\":\\\"bar\\\"},{\\\"categoryId\\\":\\\"rangeChart\\\",\\\"typeId\\\":\\\"column\\\"},{\\\"categoryId\\\":\\\"valueTable\\\"}]}\\n```\\n\\nDescribe opening/closing headcounts...\\n\\n## Starting/Ending Headcount\\n\\nQuantifies the variation in physical headcount between the starting and ending of specific reporting periods.\\n\\n```json datapos-visual\\n{\\\"content\\\":{\\\"title\\\":{\\\"text\\\":\\\"Starting/Ending Headcount\\\"},\\\"data\\\":{\\\"label\\\":{\\\"text\\\":\\\"Headcount\\\"},\\\"dimension\\\":{\\\"label\\\":{\\\"text\\\":\\\"Months\\\"},\\\"values\\\":[{\\\"label\\\":{\\\"text\\\":\\\"Jan\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Feb\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Mar\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Apr\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"May\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Jun\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Jul\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Aug\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Sep\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Oct\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Nov\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Dec\\\"}}]},\\\"measures\\\":[{\\\"id\\\":\\\"startingHeadcount\\\",\\\"name\\\":\\\"Starting\\\"},{\\\"id\\\":\\\"endingHeadcount\\\",\\\"name\\\":\\\"Ending\\\"}]}},\\\"views\\\":[{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"column\\\"},{\\\"categoryId\\\":\\\"cartesianChart\\\",\\\"typeId\\\":\\\"line\\\",\\\"default\\\":true},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"column\\\"},{\\\"categoryId\\\":\\\"polarChart\\\",\\\"typeId\\\":\\\"line\\\"},{\\\"categoryId\\\":\\\"rangeChart\\\",\\\"typeId\\\":\\\"areaLine\\\"},{\\\"categoryId\\\":\\\"rangeChart\\\",\\\"typeId\\\":\\\"column\\\"},{\\\"categoryId\\\":\\\"valueTable\\\"}]}\\n```\\n\\nDescribe starting ending headcounts...\\n\\n## Headcount Range Comparisons\\n\\n...\\n\\n```json datapos-visual\\n{\\\"content\\\":{\\\"title\\\":{\\\"text\\\":\\\"Monthly Headcount Flow & Boundaries\\\"},\\\"data\\\":{\\\"label\\\":{\\\"text\\\":\\\"Headcount\\\"},\\\"dimension\\\":{\\\"label\\\":{\\\"text\\\":\\\"Months\\\"},\\\"values\\\":[{\\\"label\\\":{\\\"text\\\":\\\"Jan\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Feb\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Mar\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Apr\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"May\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Jun\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Jul\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Aug\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Sep\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Oct\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Nov\\\"}},{\\\"label\\\":{\\\"text\\\":\\\"Dec\\\"}}]},\\\"measures\\\":[{\\\"id\\\":\\\"openingHeadcount\\\",\\\"name\\\":\\\"Opening\\\"},{\\\"id\\\":\\\"closingHeadcount\\\",\\\"name\\\":\\\"Closing\\\"},{\\\"id\\\":\\\"startingHeadcount\\\",\\\"name\\\":\\\"Starting\\\"},{\\\"id\\\":\\\"endingHeadcount\\\",\\\"name\\\":\\\"Ending\\\"}]}},\\\"views\\\":[{\\\"categoryId\\\":\\\"periodFlowBoundariesChart\\\"}]}\\n```\\n\\nDescribe opening/closing starting/ending comparison...\\n\\n```json datapos-highcharts\\n{\\\"chart\\\":{\\\"type\\\":\\\"waterfall\\\"},\\\"title\\\":{\\\"text\\\":\\\"Period Flow & Boundary Chart\\\"},\\\"tooltip\\\":{\\\"shared\\\":true},\\\"xAxis\\\":{\\\"categories\\\":[\\\"B/F\\\",\\\"Jan\\\",\\\"Feb\\\",\\\"Mar\\\",\\\"Apr\\\",\\\"May\\\",\\\"Jun\\\",\\\"Jul\\\",\\\"Aug\\\",\\\"Sep\\\",\\\"Oct\\\",\\\"Nov\\\",\\\"Dec\\\",\\\"C/F\\\"]},\\\"yAxis\\\":{},\\\"plotOptions\\\":{\\\"columnrange\\\":{\\\"grouping\\\":false},\\\"series\\\":{\\\"enableMouseTracking\\\":false},\\\"waterfall\\\":{\\\"borderRadius\\\":0}},\\\"series\\\":[{\\\"name\\\":\\\"Boundary\\\",\\\"zIndex\\\":1,\\\"borderColor\\\":\\\"#a1a1aa\\\",\\\"type\\\":\\\"columnrange\\\",\\\"color\\\":\\\"#dcfce7\\\",\\\"data\\\":[null,[16,44],[36,64],null,{\\\"low\\\":56,\\\"high\\\":84,\\\"color\\\":\\\"#ffedd5\\\"},{\\\"low\\\":36,\\\"high\\\":64,\\\"color\\\":\\\"#ffedd5\\\"}],\\\"showInLegend\\\":false},{\\\"name\\\":\\\"Increasing\\\",\\\"type\\\":\\\"columnrange\\\",\\\"color\\\":\\\"#86efac\\\",\\\"showInLegend\\\":true,\\\"data\\\":[],\\\"enableMouseTracking\\\":false},{\\\"name\\\":\\\"Decreasing\\\",\\\"zIndex\\\":2,\\\"borderColor\\\":\\\"#d4d4d8\\\",\\\"upColor\\\":\\\"#86efac\\\",\\\"color\\\":\\\"#fed7aa\\\",\\\"data\\\":[{\\\"y\\\":20,\\\"color\\\":\\\"#e4e4e7\\\"},20,20,{\\\"y\\\":20},-20,-20,0,0,0,0,0,0,0,{\\\"isSum\\\":true,\\\"color\\\":\\\"#e4e4e7\\\"}]},{\\\"name\\\":\\\"Border\\\",\\\"zIndex\\\":2,\\\"borderColor\\\":\\\"#d4d4d8\\\",\\\"type\\\":\\\"columnrange\\\",\\\"color\\\":\\\"transparent\\\",\\\"data\\\":[[0,20],[16,44],[36,64],[60,80],[56,84],[36,64],null,null,null,null,null,null,null,[0,40]],\\\"showInLegend\\\":false}]}\\n```\\n\\n```json datapos-highcharts\\n{\\\"colors\\\":[\\\"rgba(124, 181, 236, 0.3)\\\",\\\"rgba(144, 237, 125, 0.3)\\\"],\\\"chart\\\":{\\\"type\\\":\\\"waterfall\\\"},\\\"title\\\":{\\\"text\\\":\\\"Highcharts stacked waterfall (overlap)\\\"},\\\"tooltip\\\":{\\\"shared\\\":true},\\\"xAxis\\\":{\\\"categories\\\":[\\\"0\\\",\\\"1\\\",\\\"2\\\",\\\"1. Intermediate Sum\\\",\\\"4\\\",\\\"2. Intermediate Sum\\\",\\\"6\\\",\\\"Sum\\\"]},\\\"yAxis\\\":{\\\"tickInterval\\\":10},\\\"plotOptions\\\":{\\\"series\\\":{\\\"stacking\\\":\\\"overlap\\\",\\\"lineWidth\\\":1}},\\\"series\\\":[{\\\"zIndex\\\":1,\\\"upColor\\\":{\\\"pattern\\\":{\\\"color\\\":\\\"#15af15\\\",\\\"width\\\":20,\\\"height\\\":20,\\\"opacity\\\":0.6,\\\"path\\\":{\\\"d\\\":\\\"M 0 20 L 20 0 M -2 2 L 2 -2 M 18 22 L 22 18\\\",\\\"strokeWidth\\\":4}}},\\\"color\\\":{\\\"pattern\\\":{\\\"color\\\":\\\"#0088ff\\\",\\\"width\\\":20,\\\"height\\\":20,\\\"opacity\\\":0.6,\\\"path\\\":{\\\"d\\\":\\\"M 0 20 L 20 0 M -2 2 L 2 -2 M 18 22 L 22 18\\\",\\\"strokeWidth\\\":4}}},\\\"data\\\":[20,-10,40,{\\\"isIntermediateSum\\\":true,\\\"color\\\":{\\\"pattern\\\":{\\\"color\\\":\\\"#0A500A\\\",\\\"width\\\":20,\\\"height\\\":20,\\\"opacity\\\":0.6,\\\"path\\\":{\\\"d\\\":\\\"M 0 20 L 20 0 M -2 2 L 2 -2 M 18 22 L 22 18\\\",\\\"strokeWidth\\\":4}}}},-10,{\\\"isIntermediateSum\\\":true,\\\"color\\\":{\\\"pattern\\\":{\\\"color\\\":\\\"#003E74\\\",\\\"width\\\":20,\\\"height\\\":20,\\\"opacity\\\":0.6,\\\"path\\\":{\\\"d\\\":\\\"M 0 20 L 20 0 M -2 2 L 2 -2 M 18 22 L 22 18\\\",\\\"strokeWidth\\\":4}}}},-20,{\\\"isSum\\\":true,\\\"color\\\":{\\\"pattern\\\":{\\\"color\\\":\\\"#0A500A\\\",\\\"width\\\":20,\\\"height\\\":20,\\\"opacity\\\":0.6,\\\"path\\\":{\\\"d\\\":\\\"M 0 20 L 20 0 M -2 2 L 2 -2 M 18 22 L 22 18\\\",\\\"strokeWidth\\\":4}}}}]},{\\\"zIndex\\\":0,\\\"upColor\\\":\\\"rgba(21, 175, 21, 0.3)\\\",\\\"color\\\":\\\"rgba(0, 136, 255, 0.3)\\\",\\\"data\\\":[20,40,-10,{\\\"isIntermediateSum\\\":true,\\\"color\\\":\\\"rgba(10, 80, 10, 0.3)\\\"},30,{\\\"isIntermediateSum\\\":true,\\\"color\\\":\\\"rgba(10, 80, 10, 0.3)\\\"},-20,{\\\"isSum\\\":true,\\\"color\\\":\\\"rgba(10, 80, 10, 0.3)\\\"}]}]}\\n```\\n\\n## Explanatory Notes\\n\\n! [](./hc.svg)\\n\\nChanges in headcount during a period obviously imply that people are joining and leaving the workforce.\\n\\nWe can visualise the headcount ranges for each period, and the progression from one period to the next, using a floating column chart.\\n\\nGreen columns represent a net increase in headcount for a period. Orange columns represent a net decrease in headcount. The wider light green/orange columns show opening/closing ranges while the narrower dark green/orange columns show starting/ending ranges.\\n\\nThe bottom of each green column represents the opening or starting headcount for a period of increase. The top the ending or closing headcount. The top of each orange column represents the opening or starting headcount for a period of decline. The bottom the ending or closing headcount.\\n\\nThe problem with this charts is that to provides no understanding of the volume of hires and terminations within each period.\\n\\nThese measures quantify the number of people (physical/actual) available for work at a specific point in time. A good example is Ending Headcount – the number of people employed/contracted at the end of a given period.\\n\\nWhereas it is possible to calculate headcount for any period, practical options include hours, days, months, quarters and years.\\n\\nExperience shows that we use two sets of point in time headcount measures:\\n\\nOpen/Closing headcounts and,\\nStarting/Ending headcounts.\\nOpening Headcount quantifies the number of people brought forward from the previous period. Closing Headcount quantifies the number of people carried forward into the next period.\\n\\nStarting Headcount quantifies the number of people available for work from the start of a period. This measure includes people who were available for work from the beginning of a period but were not brought forward from the previous period (i.e. joined the workforce in the respective period). Ending Headcount represents the number of people available for work until the end of a period. This measure includes people who worked until the end of the period but were not carried forward into the next period (i.e. left the workforce in the respective period).\\n\\nAn accountant may think in terms of brought/carry forward counts (i.e. reconciling headcounts from one period to the next). A manager may think in terms of start/end counts (i.e. the number of people available for work).\\n\\nThe following simple line chart presents the monthly point in time headcounts for a given year. It is useful for displaying one maybe two measures but becomes confusing if we show more. You can click on the legend items to show/hide individual measures.\\n\\nThe challenge with this chart is that whereas we can quickly determine the change in individual measures across time, it is difficult to understand the relationships between them.\\n\\n---\\n\\nThis chart displays 'point in time' headcounts by month for a given calendar year using a line chart from the Chart.js library.\\n\\nIt includes all four 'point in time' measures (Opening Headcount, Starting Headcount, Ending Headcount and Closing Headcount). Initially, only Ending Headcount is visible. You can click the legend items to toggle the visibility of individual measures.\\n\\nIt excels at visualising a single headcount measure over time. It can also be used to compare multiple headcounts but quickly becomes confusing if three or more are visible at once.\\n\\nA non-zero baseline is preferred in this case to emphasise the change in headcount values over time.\\n\\nArea, bar and radar versions are also possible.\\n\\n---\\n\\nThe actual (physical) number of people in the workforce at a specific point in time. Values are calculated in terms of reporting periods (days, shifts, rotations, pay periods, weeks, fortnights, 4 week durations, months, quarters, years...). Opening/closing values represent the headcount as a period opens (bring forward) and closes (carry forward). Starting/ending values represent the headcount at the point the period starts and ends.\\n\\n```javascript\\nconst items = [];\\nlet count = 0;\\nfor (const item of items) {\\n    count++;\\n}\\nconsole.log('A very long line of text that will test how the code block wraps on narrow screens, hope this works.');\\nconsole.log(count);\\n```\\n\\n```json datapos-formula\\n{\\\"expression\\\":\\\"Termination Rate=Average Headcount/Terminations*100'\\\"}\\n```\\n\\n> A blockquote...\\n\\n- Unordered list 1\\n- Unordered list 2\\n- Unordered list 3\\n- Unordered list 4\\n- Unordered list 5\\n\\n1. Ordered list 1\\n1. Unordered list 2\\n1. Unordered list 3\\n1. Unordered list 4\\n1. Unordered list 5\\n\\n| Col 1       | Col 2       |\\n| ----------- | ----------- |\\n| Row 1 Val 1 | Row 1 Val 2 |\\n| Row 2 Val 1 | Row 2 Val 2 |\\n| Row 3 Val 1 | Row 3 Val 2 |\\n| Row 4 Val 1 | Row 4 Val 2 |\\n| Row 5 Val 1 | Row 5 Val 2 |\\n\"}")
-}, z = {
+}, n = {
 	year: 2023,
 	months: [
 		{
@@ -867,13 +371,13 @@ var L = {
 };
 //#endregion
 //#region src/composers/useSampleData.ts
-function B() {
-	return { getMeasureValues: V };
+function r() {
+	return { getMeasureValues: i };
 }
-function V(e) {
-	return z.months.map((t) => e.map((e) => H(e, t)));
+function i(e) {
+	return n.months.map((t) => e.map((e) => a(e, t)));
 }
-function H(e, t) {
+function a(e, t) {
 	switch (e) {
 		case "startingHeadcount": return t.openingHeadcount + t.startingHires;
 		case "endingHeadcount": return t.closingHeadcount + t.endingTerminations;
@@ -882,88 +386,78 @@ function H(e, t) {
 }
 //#endregion
 //#region src/index.ts
-var U = class {
+var o = class {
 	config;
 	colorModeId;
-	valueTable;
 	sampleData;
 	toolConfigs;
 	highchartsTool;
 	micromarkTool;
-	constructor(e, t) {
-		this.config = L, this.toolConfigs = e, this.colorModeId = t, this.valueTable = P(), this.sampleData = B();
+	constructor(t, n) {
+		this.config = e, this.toolConfigs = t, this.colorModeId = n, this.sampleData = r();
 	}
 	list() {
 		return this.config.presentations;
 	}
-	async render(e, t, n) {
-		let r = R[e], i = r.content;
-		i = i.replace(/\{\{label\}\}/g, r.label?.["en-gb"] ?? "{{label}}").replace(/\{\{description\}\}/g, r.description?.["en-gb"] ?? "{{description}}"), this.micromarkTool = await this.loadMicromarkTool(), t.innerHTML = await this.micromarkTool.render(i, { tables: !0 }), this.micromarkTool.highlight(t, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool();
-		for (let e of t.querySelectorAll(".datapos-highcharts")) {
+	async render(e, n, r) {
+		let i = t[e], a = i.content;
+		a = a.replace(/\{\{label\}\}/g, i.label?.["en-gb"] ?? "{{label}}").replace(/\{\{description\}\}/g, i.description?.["en-gb"] ?? "{{description}}"), this.micromarkTool = await this.loadMicromarkTool(), n.innerHTML = await this.micromarkTool.render(a, { tables: !0 }), this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool();
+		for (let e of n.querySelectorAll(".dpuse-highcharts")) {
 			let t = decodeURIComponent(e.dataset.options), n = JSON.parse(t), r = document.createElement("div");
 			e.appendChild(r), this.highchartsTool.render(n, r);
 		}
-		for (let e of t.querySelectorAll(".datapos-visual")) {
+		for (let e of n.querySelectorAll(".dpuse-visual")) {
 			let t = decodeURIComponent(e.dataset.options);
 			try {
-				let r = JSON.parse(t);
-				if (!n) for (let e of r.content.data.measures) e.values = this.sampleData.getMeasureValues([e.id]);
+				let n = JSON.parse(t);
+				if (!r) for (let e of n.content.data.measures) e.values = this.sampleData.getMeasureValues([e.id]);
 				let i = document.createElement("div");
 				i.className = "dp-tab-bar";
 				let a = document.createElement("div"), o, s;
-				for (let e of r.views) {
+				for (let e of n.views) {
 					let t = e.categoryId;
 					switch (t) {
 						case "cartesianChart": {
-							let n = e;
-							(!s || n.default) && (o = t, s = n.typeId);
+							let r = e;
+							(!s || r.default) && (o = t, s = r.typeId);
 							let c = document.createElement("div");
-							c.textContent = n.typeId, c.addEventListener("click", () => this.highchartsTool.renderCartesianChart(n.typeId, r.content, a)), i.appendChild(c);
+							c.textContent = r.typeId, c.addEventListener("click", () => this.highchartsTool.renderCartesianChart(r.typeId, n.content, a)), i.appendChild(c);
 							break;
 						}
 						case "periodFlowBoundariesChart": {
 							(!s || e.default) && (o = t, s = void 0);
-							let n = document.createElement("div");
-							n.textContent = t, n.addEventListener("click", () => this.highchartsTool.renderPeriodFlowBoundaries(r.content, a)), i.appendChild(n);
+							let r = document.createElement("div");
+							r.textContent = t, r.addEventListener("click", () => this.highchartsTool.renderPeriodFlowBoundaries(n.content, a)), i.appendChild(r);
 							break;
 						}
 						case "polarChart": {
-							let n = e;
-							(!s || n.default) && (o = t, s = n.typeId);
+							let r = e;
+							(!s || r.default) && (o = t, s = r.typeId);
 							let c = document.createElement("div");
-							c.textContent = n.typeId, c.addEventListener("click", () => this.highchartsTool.renderPolarChart(n.typeId, r.content, a)), i.appendChild(c);
+							c.textContent = r.typeId, c.addEventListener("click", () => this.highchartsTool.renderPolarChart(r.typeId, n.content, a)), i.appendChild(c);
 							break;
 						}
 						case "rangeChart": {
-							let n = e;
-							(!s || n.default) && (o = t, s = n.typeId);
+							let r = e;
+							(!s || r.default) && (o = t, s = r.typeId);
 							let c = document.createElement("div");
-							c.textContent = n.typeId, c.addEventListener("click", () => this.highchartsTool.renderRangeChart(n.typeId, r.content, a)), i.appendChild(c);
-							break;
-						}
-						case "valueTable": {
-							(!s || e.default) && (o = t, s = void 0);
-							let n = document.createElement("div");
-							n.textContent = t, n.addEventListener("click", () => this.valueTable.render(r.content, a)), i.appendChild(n);
+							c.textContent = r.typeId, c.addEventListener("click", () => this.highchartsTool.renderRangeChart(r.typeId, n.content, a)), i.appendChild(c);
 							break;
 						}
 					}
 				}
 				switch (e.appendChild(i), e.appendChild(a), o) {
 					case "cartesianChart":
-						this.highchartsTool.renderCartesianChart(s, r.content, a);
+						this.highchartsTool.renderCartesianChart(s, n.content, a);
 						break;
 					case "periodFlowBoundariesChart":
-						this.highchartsTool.renderPeriodFlowBoundaries(r.content, a);
+						this.highchartsTool.renderPeriodFlowBoundaries(n.content, a);
 						break;
 					case "polarChart":
-						this.highchartsTool.renderPolarChart(s, r.content, a);
+						this.highchartsTool.renderPolarChart(s, n.content, a);
 						break;
 					case "rangeChart":
-						this.highchartsTool.renderRangeChart(s, r.content, a);
-						break;
-					case "valueTable":
-						this.valueTable.render(r.content, a);
+						this.highchartsTool.renderRangeChart(s, n.content, a);
 						break;
 				}
 			} catch (t) {
@@ -977,17 +471,17 @@ var U = class {
 	async loadHighchartsTool() {
 		if (this.highchartsTool) return this.highchartsTool;
 		let e = this.toolConfigs.find((e) => e.id === "datapos-tool-highcharts");
-		if (!e) return;
+		if (!e) throw Error("No Highcharts tool module configuration.");
 		let t = (await import(`https://engine-eu.datapos.app/tools/highcharts_v${e.version}/datapos-tool-highcharts.es.js`)).HighchartsTool;
 		return new t();
 	}
 	async loadMicromarkTool() {
 		if (this.micromarkTool) return this.micromarkTool;
 		let e = this.toolConfigs.find((e) => e.id === "datapos-tool-micromark");
-		if (!e) return;
+		if (!e) throw Error("No Micromark tool module configuration.");
 		let t = (await import(`https://engine-eu.datapos.app/tools/micromark_v${e.version}/datapos-tool-micromark.es.js`)).MicromarkTool;
 		return new t();
 	}
 };
 //#endregion
-export { U as default };
+export { o as default };
