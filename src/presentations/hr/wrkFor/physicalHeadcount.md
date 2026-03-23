@@ -14,7 +14,7 @@ Physical headcount measures the actual number of people being counted at a fixed
 
 Quantifies the variation in physical headcount between the opening and closing of specific reporting periods.
 
-```json datapos-visual
+```json dpuse-visual
 {
     "content": {
         "title": { "text": "Opening/Closing Headcount" },
@@ -72,7 +72,7 @@ Describe opening/closing headcounts...
 
 Quantifies the variation in physical headcount between the starting and ending of specific reporting periods.
 
-```json datapos-visual
+```json dpuse-visual
 {
     "content": {
         "title": { "text": "Starting/Ending Headcount" },
@@ -119,7 +119,7 @@ Describe starting ending headcounts...
 
 ...
 
-```json datapos-visual
+```json dpuse-visual
 {
     "content": {
         "title": { "text": "Monthly Headcount Flow & Boundaries" },
@@ -156,7 +156,7 @@ Describe starting ending headcounts...
 
 Describe opening/closing starting/ending comparison...
 
-```json datapos-highcharts
+```json dpuse-highcharts
 {
     "chart": { "type": "waterfall" },
     "title": { "text": "Period Flow & Boundary Chart" },
@@ -209,7 +209,7 @@ Describe opening/closing starting/ending comparison...
 }
 ```
 
-```json datapos-highcharts
+```json dpuse-highcharts
 {
     "colors": ["rgba(124, 181, 236, 0.3)", "rgba(144, 237, 125, 0.3)"],
     "chart": { "type": "waterfall" },
@@ -348,7 +348,7 @@ console.log('A very long line of text that will test how the code block wraps on
 console.log(count);
 ```
 
-```json datapos-formula
+```json dpuse-formula
 {
     "expression": "Termination Rate=Average Headcount/Terminations*100'"
 }

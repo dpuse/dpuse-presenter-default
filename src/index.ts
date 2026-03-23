@@ -3,7 +3,9 @@
  */
 
 // Dependencies - Framework.
-import { useDataTable } from '@datapos/datapos-shared';
+// import { useDataTable } from '@dpuse/dpuse-shared';
+import type { ComponentReference } from '@dpuse/dpuse-shared/component';
+import type { ToolConfig } from '@dpuse/dpuse-shared/component/tool';
 import type {
     ComponentRef,
     PresentationCartesianTypeId,
@@ -12,10 +14,10 @@ import type {
     PresentationVisualPeriodFlowBoundariesChartViewConfig,
     PresentationVisualValueTableViewConfig,
     ToolConfig
-} from '@datapos/datapos-shared';
-import type { PresentationConfig, PresentationVisualConfig } from '@datapos/datapos-shared';
-import type { PresentationVisualCartesianChartViewConfig, PresentationVisualPolarChartViewConfig, PresentationVisualRangeChartViewConfig } from '@datapos/datapos-shared';
-import type { Presenter, PresenterConfig, PresenterLocalisedConfig } from '@datapos/datapos-shared';
+} from '@dpuse/dpuse-shared';
+import type { PresentationConfig, PresentationVisualConfig } from '@dpuse/dpuse-shared';
+import type { PresentationVisualCartesianChartViewConfig, PresentationVisualPolarChartViewConfig, PresentationVisualRangeChartViewConfig } from '@dpuse/dpuse-shared';
+import type { Presenter, PresenterConfig, PresenterLocalisedConfig } from '@dpuse/dpuse-shared';
 
 // Dependencies - Tools.
 import type { MicromarkTool } from '@datapos/datapos-tool-micromark';
@@ -71,7 +73,7 @@ export default class DefaultPresenter implements Presenter {
         // ????
         this.highchartsTool = await this.loadHighchartsTool();
 
-        for (const visualElements of renderTo.querySelectorAll('.datapos-highcharts')) {
+        for (const visualElements of renderTo.querySelectorAll('.dpuse-highcharts')) {
             const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset.options);
             const options = JSON.parse(datasetOptions);
             const viewContainerElement = document.createElement('div');
@@ -79,7 +81,7 @@ export default class DefaultPresenter implements Presenter {
             this.highchartsTool.render(options, viewContainerElement);
         }
 
-        for (const visualElements of renderTo.querySelectorAll('.datapos-visual')) {
+        for (const visualElements of renderTo.querySelectorAll('.dpuse-visual')) {
             const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset.options);
             try {
                 const visualConfig = JSON.parse(datasetOptions) as PresentationVisualConfig;

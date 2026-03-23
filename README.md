@@ -34,7 +34,7 @@ The following list details the repository management commands implementation by 
 
 ## Bundle Analysis
 
-View the [bundle report](https://data-positioning.github.io/datapos-presenter-default/stats/index.html) to analyze the bundle composition and module sizes (generated with rollup-plugin-visualizer).
+View the [bundle report](https://data-positioning.github.io/dpuse-presenter-default/stats/index.html) to analyze the bundle composition and module sizes (generated with rollup-plugin-visualizer).
 
 ## Compliance
 
@@ -43,8 +43,8 @@ The following badge reflects FOSSA's assessment of this repository's open-source
 <!-- DEPENDENCY_LICENSES_START -->
 |Name|Type|Installed|Latest|Latest Released|Deps|Document|
 |:-|:-|:-:|:-:|:-|-:|:-|
-|@datapos/datapos-tool-highcharts|MIT|0.0.48|0.0.48|3 months ago: 2025-11-27|2|[LICENSE](https://raw.githubusercontent.com/data-positioning/datapos-tool-highcharts/main/LICENSE)|
-|@datapos/datapos-tool-micromark|MIT|0.1.992|0.1.992|3 months ago: 2025-12-01|3|[LICENSE](https://raw.githubusercontent.com/data-positioning/datapos-tool-micromark/main/LICENSE)|
+|@dpuse/dpuse-tool-highcharts|MIT|0.0.48|0.0.48|3 months ago: 2025-11-27|2|[LICENSE](https://raw.githubusercontent.com/data-positioning/dpuse-tool-highcharts/main/LICENSE)|
+|@dpuse/dpuse-tool-micromark|MIT|0.1.992|0.1.992|3 months ago: 2025-12-01|3|[LICENSE](https://raw.githubusercontent.com/data-positioning/dpuse-tool-micromark/main/LICENSE)|
 |@dpuse/dpuse-shared|MIT|0.3.594|0.3.594|this month: 2026-03-22|0|[LICENSE](https://raw.githubusercontent.com/dpuse/dpuse-shared/main/LICENSE)|
 
 <!-- DEPENDENCY_LICENSES_END -->

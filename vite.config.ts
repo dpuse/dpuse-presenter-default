@@ -11,16 +11,16 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 // Exposures - Configuration.
 export default defineConfig({
-    base: 'https://engine-eu.datapos.app/presenters/',
+    base: 'https://engine-eu.dpuse.app/presenters/',
     build: {
         lib: {
             entry: resolve('src/index.ts'),
-            name: 'DataPosDefaultPresenter',
+            name: 'DPUseDefaultPresenter',
             formats: ['es'],
             fileName: (format) => `${config.id}.${format}.js`
         },
         rollupOptions: {
-            external: [/^https:\/\/engine-eu\.datapos\.app\//],
+            external: [/^https:\/\/engine-eu\.dpuse\.app\//],
             plugins: [
                 visualizer({
                     filename: 'stats/index.html', // HTML report.

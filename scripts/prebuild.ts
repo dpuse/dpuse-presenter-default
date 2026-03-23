@@ -4,7 +4,7 @@ import frontMatter from 'front-matter';
 import path from 'node:path';
 
 // Dependencies - Framework.
-import type { ComponentRef, PresentationConfig } from '@datapos/datapos-shared';
+import type { ComponentRef, PresentationConfig } from '@dpuse/dpuse-shared';
 
 // Types
 type FrontMatter = { label: Record<string, string>; description: Record<string, string>; order: number };
