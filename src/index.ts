@@ -7,13 +7,11 @@
 import type { ComponentReference } from '@dpuse/dpuse-shared/component';
 import type { ToolConfig } from '@dpuse/dpuse-shared/component/tool';
 import type {
-    ComponentRef,
     PresentationCartesianTypeId,
     PresentationPolarTypeId,
     PresentationRangeTypeId,
     PresentationVisualPeriodFlowBoundariesChartViewConfig,
-    PresentationVisualValueTableViewConfig,
-    ToolConfig
+    PresentationVisualValueTableViewConfig
 } from '@dpuse/dpuse-shared';
 import type { PresentationConfig, PresentationVisualConfig } from '@dpuse/dpuse-shared';
 import type { PresentationVisualCartesianChartViewConfig, PresentationVisualPolarChartViewConfig, PresentationVisualRangeChartViewConfig } from '@dpuse/dpuse-shared';
@@ -32,7 +30,7 @@ import { useSampleData } from '@/composers/useSampleData';
 export default class DefaultPresenter implements Presenter {
     readonly config: PresenterConfig; // TODO: If we remove list method, then config is not needed. Would make presenter slightly smaller.
     colorModeId: string;
-    readonly valueTable;
+    // readonly valueTable;
     readonly sampleData;
     readonly toolConfigs;
 
@@ -44,12 +42,12 @@ export default class DefaultPresenter implements Presenter {
         this.toolConfigs = toolConfigs;
         this.colorModeId = colorModeId;
 
-        this.valueTable = useDataTable(); // TODO?
+        // this.valueTable = useDataTable(); // TODO?
         this.sampleData = useSampleData(); // TODO?
     }
 
     // Operations - List. TODO: Is this needed? Is 'configPresentations.json' needed????
-    list(): ComponentRef[] {
+    list(): ComponentReference[] {
         return this.config.presentations;
     }
 
@@ -150,18 +148,18 @@ export default class DefaultPresenter implements Presenter {
                             tabBarElement.appendChild(element);
                             break;
                         }
-                        case 'valueTable': {
-                            const valueTableViewConfig = viewConfig as PresentationVisualValueTableViewConfig;
-                            if (!defaultTypeId || valueTableViewConfig.default) {
-                                defaultCategoryId = viewCategoryId;
-                                defaultTypeId = undefined;
-                            }
-                            const element = document.createElement('div');
-                            element.textContent = viewCategoryId;
-                            element.addEventListener('click', () => this.valueTable.render(visualConfig.content, viewContainerElement));
-                            tabBarElement.appendChild(element);
-                            break;
-                        }
+                        // case 'valueTable': {
+                        //     const valueTableViewConfig = viewConfig as PresentationVisualValueTableViewConfig;
+                        //     if (!defaultTypeId || valueTableViewConfig.default) {
+                        //         defaultCategoryId = viewCategoryId;
+                        //         defaultTypeId = undefined;
+                        //     }
+                        //     const element = document.createElement('div');
+                        //     element.textContent = viewCategoryId;
+                        //     element.addEventListener('click', () => this.valueTable.render(visualConfig.content, viewContainerElement));
+                        //     tabBarElement.appendChild(element);
+                        //     break;
+                        // }
                     }
                 }
                 visualElements.appendChild(tabBarElement);
@@ -179,9 +177,9 @@ export default class DefaultPresenter implements Presenter {
                     case 'rangeChart':
                         this.highchartsTool.renderRangeChart(defaultTypeId as PresentationRangeTypeId, visualConfig.content, viewContainerElement);
                         break;
-                    case 'valueTable':
-                        this.valueTable.render(visualConfig.content, viewContainerElement);
-                        break;
+                    // case 'valueTable':
+                    //     this.valueTable.render(visualConfig.content, viewContainerElement);
+                    //     break;
                 }
             } catch (error) {
                 console.error(error);
@@ -201,7 +199,7 @@ export default class DefaultPresenter implements Presenter {
         if (this.highchartsTool) return this.highchartsTool;
 
         const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'datapos-tool-highcharts');
-        if (!toolModuleConfig) return;
+        if (!toolModuleConfig) throw new Error('No Highcharts tool module configuration.');
 
         const url = `https://engine-eu.datapos.app/tools/highcharts_v${toolModuleConfig.version}/datapos-tool-highcharts.es.js`;
         const HighchartsTool = (await import(/* @vite-ignore */ url)).HighchartsTool as new () => HighchartsTool;
@@ -213,7 +211,7 @@ export default class DefaultPresenter implements Presenter {
         if (this.micromarkTool) return this.micromarkTool;
 
         const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'datapos-tool-micromark');
-        if (!toolModuleConfig) return;
+        if (!toolModuleConfig) throw new Error('No Micromark tool module configuration.');
 
         const url = `https://engine-eu.datapos.app/tools/micromark_v${toolModuleConfig.version}/datapos-tool-micromark.es.js`;
         const MicromarkToolConstructor = (await import(/* @vite-ignore */ url)).MicromarkTool as new () => MicromarkTool;
