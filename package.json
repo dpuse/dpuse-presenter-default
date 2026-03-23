@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-presenter-default",
-    "version": "0.1.1012",
+    "version": "0.1.1013",
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
     "private": false,
@@ -32,7 +32,7 @@
     },
     "devDependencies": {
         "@dpuse/dpuse-development": "^0.3.478",
-        "@dpuse/eslint-config-dpuse": "^1.0.51",
+        "@dpuse/eslint-config-dpuse": "^1.0.55",
         "@types/node": "^25.5.0",
         "@typescript-eslint/eslint-plugin": "^8.57.1",
         "@typescript-eslint/parser": "^8.57.1",
