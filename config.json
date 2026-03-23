@@ -1,14 +1,19 @@
 {
-    "id": "datapos-presenter-default",
+    "id": "dpuse-presenter-default",
     "label": {
         "en-gb": "Default Presenter"
     },
     "description": {
         "en-gb": "..."
     },
-    "statusId": "alpha",
-    "typeId": "presenter",
-    "version": "0.1.1004",
+    "icon": null,
+    "iconDark": null,
+    "lastUpdatedAt": null,
+    "operations": [
+        "list",
+        "render",
+        "setColorMode"
+    ],
     "presentations": [
         {
             "id": "hrWrkForAverageHeadcount",
@@ -18,6 +23,8 @@
             "description": {
                 "en-gb": "This is a description..."
             },
+            "icon": null,
+            "iconDark": null,
             "order": 2,
             "path": "hr/wrkFor/averageHeadcount"
         },
@@ -29,6 +36,8 @@
             "description": {
                 "en-gb": "This is a description..."
             },
+            "icon": null,
+            "iconDark": null,
             "order": 4,
             "path": "hr/wrkFor/ftes"
         },
@@ -40,6 +49,8 @@
             "description": {
                 "en-gb": "This is a description..."
             },
+            "icon": null,
+            "iconDark": null,
             "order": 7,
             "path": "hr/wrkFor/headcountSummary"
         },
@@ -51,6 +62,8 @@
             "description": {
                 "en-gb": "This is a description..."
             },
+            "icon": null,
+            "iconDark": null,
             "order": 3,
             "path": "hr/wrkFor/hiresTerminations"
         },
@@ -62,6 +75,8 @@
             "description": {
                 "en-gb": "This is a description..."
             },
+            "icon": null,
+            "iconDark": null,
             "order": 6,
             "path": "hr/wrkFor/movementFlows"
         },
@@ -73,6 +88,8 @@
             "description": {
                 "en-gb": "This is a description..."
             },
+            "icon": null,
+            "iconDark": null,
             "order": 5,
             "path": "hr/wrkFor/movements"
         },
@@ -84,8 +101,15 @@
             "description": {
                 "en-gb": "This is a description..."
             },
+            "icon": null,
+            "iconDark": null,
             "order": 1,
             "path": "hr/wrkFor/physicalHeadcount"
         }
-    ]
+    ],
+    "status": null,
+    "statusId": "alpha",
+    "typeId": "presenter",
+    "version": "0.1.1007",
+    "usageId": "unknown"
 }

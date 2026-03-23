@@ -1,82 +1,72 @@
 {
-    "name": "@datapos/datapos-presenter-default",
-    "version": "0.1.1004",
+    "name": "@dpuse/dpuse-presenter-default",
+    "version": "0.1.1007",
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
     "private": false,
     "type": "module",
-    "homepage": "https://www.datapos.app",
+    "homepage": "https://www.dpuse.app",
     "repository": {
         "type": "git",
-        "url": "https://github.com/data-positioning/datapos-presenter-default.git"
+        "url": "https://github.com/dpuse/dpuse-presenter-default.git"
     },
     "bugs": {
-        "url": "https://github.com/data-positioning/datapos-presenter-default/issues"
+        "url": "https://github.com/dpuse/dpuse-presenter-default/issues"
     },
-    "module": "./dist/datapos-presenter-default.es.js",
+    "module": "./dist/dpuse-presenter-default.es.js",
     "types": "./dist/types/src/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/datapos-presenter-default.es.js",
+            "import": "./dist/dpuse-presenter-default.es.js",
             "types": "./dist/types/src/index.d.ts"
         }
     },
     "files": [
         "dist"
     ],
+    "prettier": "@dpuse/dpuse-development/prettierrc",
     "dependencies": {
-        "@datapos/datapos-shared": "^0.3.252",
-        "@datapos/datapos-tool-highcharts": "^0.0.47",
-        "@datapos/datapos-tool-micromark": "^0.1.983"
+        "@datapos/datapos-tool-highcharts": "^0.0.48",
+        "@datapos/datapos-tool-micromark": "^0.1.992",
+        "@dpuse/dpuse-shared": "^0.3.594"
     },
     "devDependencies": {
-        "@datapos/datapos-development": "^0.3.131",
-        "@types/node": "^24.10.1",
-        "@typescript-eslint/eslint-plugin": "^8.48.0",
-        "@typescript-eslint/parser": "^8.48.0",
-        "eslint": "^9.39.1",
+        "@dpuse/dpuse-development": "^0.3.478",
+        "@dpuse/eslint-config-dpuse": "^1.0.51",
+        "@types/node": "^25.5.0",
+        "@typescript-eslint/eslint-plugin": "^8.57.1",
+        "@typescript-eslint/parser": "^8.57.1",
+        "eslint": "^9.39.4",
+        "eslint-import-resolver-typescript": "^4.4.4",
         "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-security": "^4.0.0",
+        "eslint-plugin-sonarjs": "^4.0.2",
+        "eslint-plugin-unicorn": "^63.0.0",
         "front-matter": "^4.0.2",
         "jiti": "^2.6.1",
-        "license-report": "^6.8.1",
+        "license-downloader": "^1.3.3",
+        "license-report": "^6.8.2",
         "license-report-check": "^0.1.2",
-        "nanoid": "^5.1.6",
-        "npm-check-updates": "^19.1.2",
-        "owasp-dependency-check": "^1.0.0",
-        "prettier": "^3.6.2",
-        "retire": "^5.3.0",
-        "rollup-plugin-visualizer": "^6.0.5",
+        "license-report-recursive": "^6.8.3",
+        "npm-check-updates": "^19.6.5",
+        "owasp-dependency-check": "^1.0.1",
+        "prettier": "^3.8.1",
+        "rollup-plugin-visualizer": "^7.0.1",
+        "sonda": "^0.11.1",
         "typescript": "^5.9.3",
-        "vite": "^7.2.4",
+        "vite": "^8.0.1",
         "vite-plugin-dts": "^4.5.4"
     },
     "scripts": {
-        "audit": "npm run _audit:vulnerabilities && npm audit",
-        "prebuild": "tsc -p tsconfig.scripts.json && node dist-scripts/prebuild.js",
-        "build": "vite build",
-        "bump:version": "node -e \"import('@datapos/datapos-development').then(m => m.bumpVersion())\"",
-        "check": "npm outdated; npm-check-updates -i && retire",
-        "document": "npm run _document:licenceReport && npm run _document:licenceCheck",
-        "format": "prettier --write src/",
-        "lint": "eslint .",
-        "publish:toNPM": "npm publish --access public",
-        "release": "npm run bump:version && npm run _build:config && npm run build && npm run _sync:withGitHub && npm run _upload && npm run publish:toNPM",
-        "sync": "npm run bump:version && npm run _build:config && node -e \"import('@datapos/datapos-development').then(m => m.syncWithGitHub())\"",
-        "test": "node -e \"import('@datapos/datapos-development').then(m => m.echoScriptNotImplemented('Test'))\"",
-        "update:dataPosDeps": "npm run _update:developDep && npm run _update:sharedDep && npm run _update:toolHighchartsDep && npm run _update:toolMicromarkDep",
-        "_audit:vulnerabilities": "npm run _audit:owaspDependencyCheck && npm run _audit:owaspBageInsertiions",
-        "_audit:owaspDependencyCheck": "set -a && source .env && set +a && owasp-dependency-check --project \"@datapos/datapos-presenter-default\" --nvdApiKey \"$NVD_API_KEY\" --nodePackageSkipDevDependencies",
-        "_audit:owaspBageInsertiions": "node -e \"import('@datapos/datapos-development').then(m => m.insertOWASPDependencyCheckBadgeIntoReadme())\"",
-        "_build:config": "node -e \"import('@datapos/datapos-development').then(m => m.buildConfig())\"",
-        "_document:licenceReport": "license-report --only=prod,peer > LICENSES.json",
-        "_document:licenceCheck": "license-report-check --source ./LICENSES.json --allowed 'MIT' --output=table",
-        "_sync:withGitHub": "node -e \"import('@datapos/datapos-development').then(m => m.syncWithGitHub())\"",
-        "_update:developDep": "npm install --save-dev @datapos/datapos-development@latest",
-        "_update:sharedDep": "npm install @datapos/datapos-shared@latest",
-        "_update:toolHighchartsDep": "npm install  @datapos/datapos-tool-highcharts@latest",
-        "_update:toolMicromarkDep": "npm install @datapos/datapos-tool-micromark@latest",
-        "_upload": "npm run _upload:moduleToR2 && npm run _upload:moduleConfigToDO",
-        "_upload:moduleConfigToDO": "node -e \"import('@datapos/datapos-development').then(m => m.uploadModuleConfigToDO())\"",
-        "_upload:moduleToR2": "node -e \"import('@datapos/datapos-development').then(m => m.uploadModuleToR2('datapos-engine-eu/presenters/default'))\""
+        "audit": "op run --env-file=.env -- node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
+        "build": "node -e \"import('@dpuse/dpuse-development').then(m => m.buildProject())\"",
+        "check": "node -e \"import('@dpuse/dpuse-development').then(m => m.checkDependencies())\"",
+        "document": "op run --env-file=.env -- node -e \"import('@dpuse/dpuse-development').then(m => m.documentDependencies(['CC0-1.0','MIT']))\"",
+        "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
+        "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
+        "release": "op run --env-file=.env -- node -e \"import('@dpuse/dpuse-development').then(m => m.releaseProject())\"",
+        "sync": "node -e \"import('@dpuse/dpuse-development').then(m => m.syncProjectWithGitHub())\"",
+        "test": "node -e \"import('@dpuse/dpuse-development').then(m => m.testProject())\"",
+        "update": "node -e \"import('@dpuse/dpuse-development').then(m => m.updateDPUseDependencies(['development']))\""
     }
 }

@@ -1,9 +1,12 @@
 # Data Positioning Default Presenter
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=data-positioning_datapos-presenter-default&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=data-positioning_datapos-presenter-default)
-<span><!-- OWASP_BADGE_START -->[![OWASP](https://img.shields.io/badge/OWASP-passed-4CAF50)](https://data-positioning.github.io/datapos-presenter-default/dependency-check-reports/dependency-check-report.html)<!-- OWASP_BADGE_END --></span>
-[![npm version](https://img.shields.io/npm/v/@datapos/datapos-presenter-default)](https://www.npmjs.com/package/@datapos/datapos-presenter-default)
+[![npm version](https://img.shields.io/npm/v/@dpuse/dpuse-presenter-default)](https://www.npmjs.com/package/@dpuse/dpuse-presenter-default)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dpuse_dpuse_dpuse-presenter-default&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=data-positioning_dpuse-presenter-default)
+<span><!-- OWASP_BADGES_START -->
+[![OWASP](https://img.shields.io/badge/OWASP-passed-4CAF50)](https://dpuse.github.io/dpuse-presenter-default/dependency-check-reports/dependency-check-report.html)
+
+<!-- OWASP_BADGES_END --></span>
 
 A library that implements the default presenter in accordance with the Data Positioning presenter interface.
 
@@ -36,6 +39,15 @@ View the [bundle report](https://data-positioning.github.io/datapos-presenter-de
 ## Compliance
 
 The following badge reflects FOSSA's assessment of this repository's open-source license compliance.
+
+<!-- DEPENDENCY_LICENSES_START -->
+|Name|Type|Installed|Latest|Latest Released|Deps|Document|
+|:-|:-|:-:|:-:|:-|-:|:-|
+|@datapos/datapos-tool-highcharts|MIT|0.0.48|0.0.48|3 months ago: 2025-11-27|2|[LICENSE](https://raw.githubusercontent.com/data-positioning/datapos-tool-highcharts/main/LICENSE)|
+|@datapos/datapos-tool-micromark|MIT|0.1.992|0.1.992|3 months ago: 2025-12-01|3|[LICENSE](https://raw.githubusercontent.com/data-positioning/datapos-tool-micromark/main/LICENSE)|
+|@dpuse/dpuse-shared|MIT|0.3.594|0.3.594|this month: 2026-03-22|0|[LICENSE](https://raw.githubusercontent.com/dpuse/dpuse-shared/main/LICENSE)|
+
+<!-- DEPENDENCY_LICENSES_END -->
 
 ## License
 
