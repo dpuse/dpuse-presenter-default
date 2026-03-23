@@ -78,7 +78,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1010",
+	version: "0.1.1011",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkFor/averageHeadcount": {
@@ -303,7 +303,7 @@ var e = {
 			inPeriodHeadcount: 0,
 			distinctPeriodHeadcount: 0,
 			terminations: 31,
-			averageHeadcount: 1189.5999999999997,
+			averageHeadcount: 1189.5999999999995,
 			fte: 1170.280466666666,
 			endingFTE: 0,
 			endingTerminations: 6,
@@ -360,7 +360,7 @@ var e = {
 			inPeriodHeadcount: 0,
 			distinctPeriodHeadcount: 0,
 			terminations: 15,
-			averageHeadcount: 1216.0645161290315,
+			averageHeadcount: 1216.0645161290317,
 			fte: 1196.9270225806447,
 			endingFTE: 0,
 			endingTerminations: 6,
