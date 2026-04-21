@@ -5,17 +5,21 @@
 // Dependencies - Framework.
 // import { useDataTable } from '@dpuse/dpuse-shared';
 import type { ComponentReference } from '@dpuse/dpuse-shared/component';
-import type { ToolConfig } from '@dpuse/dpuse-shared/component/tool';
+import type { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import type {
     PresentationCartesianTypeId,
     PresentationPolarTypeId,
     PresentationRangeTypeId,
     PresentationVisualPeriodFlowBoundariesChartViewConfig,
     PresentationVisualValueTableViewConfig
-} from '@dpuse/dpuse-shared';
-import type { PresentationConfig, PresentationVisualConfig } from '@dpuse/dpuse-shared';
-import type { PresentationVisualCartesianChartViewConfig, PresentationVisualPolarChartViewConfig, PresentationVisualRangeChartViewConfig } from '@dpuse/dpuse-shared';
-import type { Presenter, PresenterConfig, PresenterLocalisedConfig } from '@dpuse/dpuse-shared';
+} from '@dpuse/dpuse-shared/component/module/presenter/presentation';
+import type { PresentationConfig, PresentationVisualConfig } from '@dpuse/dpuse-shared/component/module/presenter/presentation';
+import type {
+    PresentationVisualCartesianChartViewConfig,
+    PresentationVisualPolarChartViewConfig,
+    PresentationVisualRangeChartViewConfig
+} from '@dpuse/dpuse-shared/component/module/presenter/presentation';
+import type { PresenterConfig, PresenterInterface, PresenterLocalisedConfig } from '@dpuse/dpuse-shared/component/module/presenter';
 
 // Dependencies - Tools.
 import type { MicromarkTool } from '@datapos/datapos-tool-micromark';
@@ -27,7 +31,7 @@ import configPresentations from '~/configPresentations.json';
 import { useSampleData } from '@/composers/useSampleData';
 
 // Classes - Default presenter.
-export default class DefaultPresenter implements Presenter {
+export default class DefaultPresenter implements PresenterInterface {
     readonly config: PresenterConfig; // TODO: If we remove list method, then config is not needed. Would make presenter slightly smaller.
     colorModeId: string;
     // readonly valueTable;
@@ -59,8 +63,8 @@ export default class DefaultPresenter implements Presenter {
         // Substitute values for label and description placeholders in content.
         let processedMarkdown = presentation.content;
         processedMarkdown = processedMarkdown
-            .replace(/\{\{label\}\}/g, presentation.label?.['en-gb'] ?? `{{label}}`)
-            .replace(/\{\{description\}\}/g, presentation.description?.['en-gb'] ?? `{{description}}`);
+            .replace(/\{\{label\}\}/g, presentation.label?.['en'] ?? `{{label}}`)
+            .replace(/\{\{description\}\}/g, presentation.description?.['en'] ?? `{{description}}`);
 
         // Render markdown to HTML
         this.micromarkTool = await this.loadMicromarkTool();
