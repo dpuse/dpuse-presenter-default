@@ -20,9 +20,9 @@ function getMeasureValues(ids: string[]): number[][] {
 function getMeasureValue(id: string, month: MonthData): number {
     switch (id) {
         case 'startingHeadcount':
-            return month.openingHeadcount + month.startingHires;
+            return (month['openingHeadcount'] || 0) + (month['startingHires'] || 0);
         case 'endingHeadcount':
-            return month.closingHeadcount + month.endingTerminations;
+            return (month['closingHeadcount'] || 0) + (month['endingTerminations'] || 0);
         default:
             return month[id] ?? 0;
     }

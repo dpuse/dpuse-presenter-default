@@ -1,10 +1,10 @@
 import { ComponentReference } from '@dpuse/dpuse-shared/component';
-import { ToolConfig } from '@dpuse/dpuse-shared/component/tool';
-import { Presenter, PresenterConfig } from '@dpuse/dpuse-shared';
+import { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
+import { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
 import { MicromarkTool } from '@datapos/datapos-tool-micromark';
 import { HighchartsTool } from '@datapos/datapos-tool-highcharts';
 import { default as configPresentations } from '../configPresentations.json';
-export default class DefaultPresenter implements Presenter {
+export default class DefaultPresenter implements PresenterInterface {
     readonly config: PresenterConfig;
     colorModeId: string;
     readonly sampleData: {

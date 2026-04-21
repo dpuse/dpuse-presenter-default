@@ -19,105 +19,91 @@
         {
             "id": "hrWrkForAverageHeadcount",
             "label": {
-                "en": "Average Headcount"
+                "en-gb": "Average Headcount"
             },
             "description": {
-                "en": "This is a description..."
+                "en-gb": "This is a description..."
             },
-            "firstCreatedAt": null,
             "icon": null,
             "iconDark": null,
-            "lastUpdatedAt": null,
             "order": 2,
             "path": "hr/wrkFor/averageHeadcount"
         },
         {
             "id": "hrWrkForFtes",
             "label": {
-                "en": "Full-Time Equivalents"
+                "en-gb": "Full-Time Equivalents"
             },
             "description": {
-                "en": "This is a description..."
+                "en-gb": "This is a description..."
             },
-            "firstCreatedAt": null,
             "icon": null,
             "iconDark": null,
-            "lastUpdatedAt": null,
             "order": 4,
             "path": "hr/wrkFor/ftes"
         },
         {
             "id": "hrWrkForHeadcountSummary",
             "label": {
-                "en": "Headcount Summary"
+                "en-gb": "Headcount Summary"
             },
             "description": {
-                "en": "This is a description..."
+                "en-gb": "This is a description..."
             },
-            "firstCreatedAt": null,
             "icon": null,
             "iconDark": null,
-            "lastUpdatedAt": null,
             "order": 7,
             "path": "hr/wrkFor/headcountSummary"
         },
         {
             "id": "hrWrkForHiresTerminations",
             "label": {
-                "en": "Hires & Terminations"
+                "en-gb": "Hires & Terminations"
             },
             "description": {
-                "en": "This is a description..."
+                "en-gb": "This is a description..."
             },
-            "firstCreatedAt": null,
             "icon": null,
             "iconDark": null,
-            "lastUpdatedAt": null,
             "order": 3,
             "path": "hr/wrkFor/hiresTerminations"
         },
         {
             "id": "hrWrkForMovementFlows",
             "label": {
-                "en": "Movement Flows"
+                "en-gb": "Movement Flows"
             },
             "description": {
-                "en": "This is a description..."
+                "en-gb": "This is a description..."
             },
-            "firstCreatedAt": null,
             "icon": null,
             "iconDark": null,
-            "lastUpdatedAt": null,
             "order": 6,
             "path": "hr/wrkFor/movementFlows"
         },
         {
             "id": "hrWrkForMovements",
             "label": {
-                "en": "Movements (Entry, Internal & Exit)"
+                "en-gb": "Movements (Entry, Internal & Exit)"
             },
             "description": {
-                "en": "This is a description..."
+                "en-gb": "This is a description..."
             },
-            "firstCreatedAt": null,
             "icon": null,
             "iconDark": null,
-            "lastUpdatedAt": null,
             "order": 5,
             "path": "hr/wrkFor/movements"
         },
         {
             "id": "hrWrkForPhysicalHeadcount",
             "label": {
-                "en": "Physical Headcount"
+                "en-gb": "Physical Headcount"
             },
             "description": {
-                "en": "This is a description..."
+                "en-gb": "This is a description..."
             },
-            "firstCreatedAt": null,
             "icon": null,
             "iconDark": null,
-            "lastUpdatedAt": null,
             "order": 1,
             "path": "hr/wrkFor/physicalHeadcount"
         }
@@ -125,6 +111,6 @@
     "status": null,
     "statusId": "alpha",
     "typeId": "presenter",
-    "version": "0.1.1017",
+    "version": "0.1.1018",
     "usageId": "unknown"
 }

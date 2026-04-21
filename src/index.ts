@@ -76,7 +76,7 @@ export default class DefaultPresenter implements PresenterInterface {
         this.highchartsTool = await this.loadHighchartsTool();
 
         for (const visualElements of renderTo.querySelectorAll('.dpuse-highcharts')) {
-            const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset.options);
+            const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset['options'] ?? '');
             const options = JSON.parse(datasetOptions);
             const viewContainerElement = document.createElement('div');
             visualElements.appendChild(viewContainerElement);
@@ -84,7 +84,7 @@ export default class DefaultPresenter implements PresenterInterface {
         }
 
         for (const visualElements of renderTo.querySelectorAll('.dpuse-visual')) {
-            const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset.options);
+            const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset['options'] ?? '');
             try {
                 const visualConfig = JSON.parse(datasetOptions) as PresentationVisualConfig;
 
@@ -111,7 +111,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             const element = document.createElement('div');
                             element.textContent = cartesianViewConfig.typeId;
                             element.addEventListener('click', () =>
-                                this.highchartsTool.renderCartesianChart(cartesianViewConfig.typeId, visualConfig.content, viewContainerElement)
+                                this.highchartsTool?.renderCartesianChart(cartesianViewConfig.typeId, visualConfig.content, viewContainerElement)
                             );
                             tabBarElement.appendChild(element);
                             break;
@@ -124,7 +124,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             }
                             const element = document.createElement('div');
                             element.textContent = viewCategoryId;
-                            element.addEventListener('click', () => this.highchartsTool.renderPeriodFlowBoundaries(visualConfig.content, viewContainerElement));
+                            element.addEventListener('click', () => this.highchartsTool?.renderPeriodFlowBoundaries(visualConfig.content, viewContainerElement));
                             tabBarElement.appendChild(element);
                             break;
                         }
@@ -136,7 +136,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             }
                             const element = document.createElement('div');
                             element.textContent = polarViewConfig.typeId;
-                            element.addEventListener('click', () => this.highchartsTool.renderPolarChart(polarViewConfig.typeId, visualConfig.content, viewContainerElement));
+                            element.addEventListener('click', () => this.highchartsTool?.renderPolarChart(polarViewConfig.typeId, visualConfig.content, viewContainerElement));
                             tabBarElement.appendChild(element);
                             break;
                         }
@@ -148,7 +148,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             }
                             const element = document.createElement('div');
                             element.textContent = rangeViewConfig.typeId;
-                            element.addEventListener('click', () => this.highchartsTool.renderRangeChart(rangeViewConfig.typeId, visualConfig.content, viewContainerElement));
+                            element.addEventListener('click', () => this.highchartsTool?.renderRangeChart(rangeViewConfig.typeId, visualConfig.content, viewContainerElement));
                             tabBarElement.appendChild(element);
                             break;
                         }

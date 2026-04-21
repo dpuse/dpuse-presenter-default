@@ -1,42 +1,37 @@
-/**
- * Vite configuration.
- */
-
-// Dependencies - Vendor.
-import config from './config.json';
+// External Dependencies
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { resolve } from 'node:path';
+import Sonda from 'sonda/vite';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { fileURLToPath, URL } from 'node:url';
 
-// Exposures - Configuration.
+// Data
+import config from './config.json';
+
+// Configuration.
 export default defineConfig({
     base: 'https://engine-eu.dpuse.app/presenters/',
     build: {
         lib: {
-            entry: resolve('src/index.ts'),
-            name: 'DPUseDefaultPresenter',
-            formats: ['es'],
-            fileName: (format) => `${config.id}.${format}.js`
+            entry: fileURLToPath(new URL('src/index.ts', import.meta.url)),
+            fileName: (format) => `${config.id}.${format}.js`,
+            formats: ['es']
         },
         rollupOptions: {
             external: [/^https:\/\/engine-eu\.dpuse\.app\//],
             plugins: [
-                visualizer({
-                    filename: 'stats/index.html', // HTML report.
-                    open: false, // Automatically opens in browser.
-                    gzipSize: true, // Show gzip sizes.
-                    brotliSize: true // Show brotli sizes.
-                })
+                Sonda({ filename: 'index', format: 'html', gzip: true, brotli: true, open: false, outputDir: './bundle-analysis-reports/sonda' }),
+                visualizer({ filename: './bundle-analysis-reports/rollup-visualiser/index.html', open: false, gzipSize: true, brotliSize: true })
             ]
         },
+        sourcemap: true,
         target: 'ESNext'
     },
     plugins: [dts({ outDir: 'dist/types' })],
     resolve: {
         alias: {
-            '~': resolve(__dirname, '.'),
-            '@': resolve(__dirname, 'src')
+            '~': fileURLToPath(new URL('./', import.meta.url)),
+            '@': fileURLToPath(new URL('src', import.meta.url))
         }
     }
 });
