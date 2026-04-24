@@ -79,7 +79,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1019",
+	version: "0.1.1020",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkFor/averageHeadcount": {
@@ -503,14 +503,20 @@ var o = class {
 		if (this.highchartsTool) return this.highchartsTool;
 		let e = this.toolConfigs.find((e) => e.id === "datapos-tool-highcharts");
 		if (!e) throw Error("No Highcharts tool module configuration.");
-		let t = (await import(`https://engine-eu.datapos.app/tools/highcharts_v${e.version}/datapos-tool-highcharts.es.js`)).HighchartsTool;
+		let t = (await import(
+			/* @vite-ignore */
+			`https://engine-eu.datapos.app/tools/highcharts_v${e.version}/datapos-tool-highcharts.es.js`
+)).HighchartsTool;
 		return new t();
 	}
 	async loadMicromarkTool() {
 		if (this.micromarkTool) return this.micromarkTool;
 		let e = this.toolConfigs.find((e) => e.id === "datapos-tool-micromark");
 		if (!e) throw Error("No Micromark tool module configuration.");
-		let t = (await import(`https://engine-eu.datapos.app/tools/micromark_v${e.version}/datapos-tool-micromark.es.js`)).MicromarkTool;
+		let t = (await import(
+			/* @vite-ignore */
+			`https://engine-eu.datapos.app/tools/micromark_v${e.version}/datapos-tool-micromark.es.js`
+)).MicromarkTool;
 		return new t();
 	}
 };

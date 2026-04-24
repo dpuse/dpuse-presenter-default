@@ -13,7 +13,12 @@ type PresentationItem = PresentationFolderItem | PresentationFileItem;
 type PresentationFolderItem = { id: string; typeId: 'folder'; children: PresentationItem[] };
 type PresentationFileItem = { id: string; typeId: 'file' };
 
-// Operations - Construct presentation configurations.
+// Processing ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+await constructPresentationConfigs();
+
+// Helpers ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
 async function constructPresentationConfigs() {
     const topPath = 'src/presentations';
     const presentationMap: Record<string, PresentationConfig> = {};
@@ -79,6 +84,3 @@ async function constructPresentationConfigs() {
         });
     }
 }
-
-// Pre-build Processing
-await constructPresentationConfigs();

@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-presenter-default",
-    "version": "0.1.1019",
+    "version": "0.1.1020",
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
     "private": false,
@@ -28,10 +28,10 @@
     "dependencies": {
         "@datapos/datapos-tool-highcharts": "^0.0.48",
         "@datapos/datapos-tool-micromark": "^0.1.992",
-        "@dpuse/dpuse-shared": "^0.3.641"
+        "@dpuse/dpuse-shared": "^0.3.650"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.496",
+        "@dpuse/dpuse-development": "^0.3.497",
         "@dpuse/eslint-config-dpuse": "^1.0.55",
         "@types/node": "^25.6.0",
         "@typescript-eslint/eslint-plugin": "^8.59.0",
@@ -54,9 +54,9 @@
         "rollup-plugin-visualizer": "^7.0.1",
         "sonda": "^0.11.1",
         "typescript": "^5.9.3",
-        "vite": "^8.0.9",
+        "vite": "^8.0.10",
         "vite-plugin-dts": "^4.5.4",
-        "vitest": "^4.1.4"
+        "vitest": "^4.1.5"
     },
     "scripts": {
         "audit": "op run --env-file=.env -- node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
