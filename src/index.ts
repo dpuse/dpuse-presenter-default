@@ -19,7 +19,7 @@ import type {
     PresentationVisualPolarChartViewConfig,
     PresentationVisualRangeChartViewConfig
 } from '@dpuse/dpuse-shared/component/module/presenter/presentation';
-import type { PresenterConfig, PresenterInterface, PresenterLocalisedConfig } from '@dpuse/dpuse-shared/component/module/presenter';
+import type { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
 
 // Dependencies - Tools.
 import type { MicromarkTool } from '@datapos/datapos-tool-micromark';
