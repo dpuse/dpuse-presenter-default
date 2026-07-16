@@ -8,22 +8,21 @@ import type { ComponentReference } from '@dpuse/dpuse-shared/component';
 import type { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import type {
     PresentationCartesianTypeId,
+    PresentationConfig,
     PresentationPolarTypeId,
     PresentationRangeTypeId,
-    PresentationVisualPeriodFlowBoundariesChartViewConfig,
-    PresentationVisualValueTableViewConfig
-} from '@dpuse/dpuse-shared/component/module/presenter/presentation';
-import type { PresentationConfig, PresentationVisualConfig } from '@dpuse/dpuse-shared/component/module/presenter/presentation';
-import type {
     PresentationVisualCartesianChartViewConfig,
+    PresentationVisualConfig,
+    PresentationVisualPeriodFlowBoundariesChartViewConfig,
     PresentationVisualPolarChartViewConfig,
-    PresentationVisualRangeChartViewConfig
-} from '@dpuse/dpuse-shared/component/module/presenter/presentation';
+    PresentationVisualRangeChartViewConfig,
+    PresentationVisualValueTableViewConfig
+} from '@dpuse/dpuse-shared/component/presentation';
 import type { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
 
 // Dependencies - Tools.
-import type { MicromarkTool } from '@datapos/datapos-tool-micromark';
-import type { HighchartsTool, HighchartsView } from '@datapos/datapos-tool-highcharts';
+import type { MicromarkTool } from '@dpuse/dpuse-tool-micromark';
+import type { HighchartsTool, HighchartsView } from '@dpuse/dpuse-tool-highcharts';
 
 // Dependencies - Data.
 import config from '~/config.json';
@@ -56,15 +55,15 @@ export default class DefaultPresenter implements PresenterInterface {
     }
 
     // Operations - Render.
+    // eslint-disable-next-line sonarjs/cognitive-complexity
     async render(presentationPath: keyof typeof configPresentations, renderTo: HTMLElement, data?: unknown): Promise<void> {
         // Use presentation path to retrieve presentation.
         const presentation = configPresentations[presentationPath] as PresentationConfig;
 
         // Substitute values for label and description placeholders in content.
         let processedMarkdown = presentation.content;
-        processedMarkdown = processedMarkdown
-            .replace(/\{\{label\}\}/g, presentation.label?.['en'] ?? `{{label}}`)
-            .replace(/\{\{description\}\}/g, presentation.description?.['en'] ?? `{{description}}`);
+        processedMarkdown = processedMarkdown.replaceAll('{{label}}', presentation.label.en ?? `{{label}}`);
+        // .replaceAll('{{description}}', presentation.description.en ?? `{{description}}`); // TODO
 
         // Render markdown to HTML
         this.micromarkTool = await this.loadMicromarkTool();
@@ -79,7 +78,7 @@ export default class DefaultPresenter implements PresenterInterface {
             const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset['options'] ?? '');
             const options = JSON.parse(datasetOptions);
             const viewContainerElement = document.createElement('div');
-            visualElements.appendChild(viewContainerElement);
+            visualElements.append(viewContainerElement);
             this.highchartsTool.render(options, viewContainerElement);
         }
 
@@ -97,8 +96,8 @@ export default class DefaultPresenter implements PresenterInterface {
                 const tabBarElement = document.createElement('div');
                 tabBarElement.className = 'dp-tab-bar';
                 const viewContainerElement = document.createElement('div');
-                let defaultCategoryId: string | undefined = undefined;
-                let defaultTypeId: string | undefined = undefined;
+                let defaultCategoryId: string | undefined;
+                let defaultTypeId: string | undefined;
                 for (const viewConfig of visualConfig.views) {
                     const viewCategoryId = viewConfig.categoryId;
                     switch (viewCategoryId) {
@@ -113,7 +112,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             element.addEventListener('click', () =>
                                 this.highchartsTool?.renderCartesianChart(cartesianViewConfig.typeId, visualConfig.content, viewContainerElement)
                             );
-                            tabBarElement.appendChild(element);
+                            tabBarElement.append(element);
                             break;
                         }
                         case 'periodFlowBoundariesChart': {
@@ -125,7 +124,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             const element = document.createElement('div');
                             element.textContent = viewCategoryId;
                             element.addEventListener('click', () => this.highchartsTool?.renderPeriodFlowBoundaries(visualConfig.content, viewContainerElement));
-                            tabBarElement.appendChild(element);
+                            tabBarElement.append(element);
                             break;
                         }
                         case 'polarChart': {
@@ -137,7 +136,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             const element = document.createElement('div');
                             element.textContent = polarViewConfig.typeId;
                             element.addEventListener('click', () => this.highchartsTool?.renderPolarChart(polarViewConfig.typeId, visualConfig.content, viewContainerElement));
-                            tabBarElement.appendChild(element);
+                            tabBarElement.append(element);
                             break;
                         }
                         case 'rangeChart': {
@@ -149,7 +148,7 @@ export default class DefaultPresenter implements PresenterInterface {
                             const element = document.createElement('div');
                             element.textContent = rangeViewConfig.typeId;
                             element.addEventListener('click', () => this.highchartsTool?.renderRangeChart(rangeViewConfig.typeId, visualConfig.content, viewContainerElement));
-                            tabBarElement.appendChild(element);
+                            tabBarElement.append(element);
                             break;
                         }
                         // case 'valueTable': {
@@ -166,20 +165,20 @@ export default class DefaultPresenter implements PresenterInterface {
                         // }
                     }
                 }
-                visualElements.appendChild(tabBarElement);
-                visualElements.appendChild(viewContainerElement);
+                visualElements.append(tabBarElement);
+                visualElements.append(viewContainerElement);
                 switch (defaultCategoryId) {
                     case 'cartesianChart':
                         this.highchartsTool.renderCartesianChart(defaultTypeId as PresentationCartesianTypeId, visualConfig.content, viewContainerElement);
                         break;
                     case 'periodFlowBoundariesChart':
-                        this.highchartsTool.renderPeriodFlowBoundaries(visualConfig.content, viewContainerElement);
+                        await this.highchartsTool.renderPeriodFlowBoundaries(visualConfig.content, viewContainerElement);
                         break;
                     case 'polarChart':
-                        this.highchartsTool.renderPolarChart(defaultTypeId as PresentationPolarTypeId, visualConfig.content, viewContainerElement);
+                        await this.highchartsTool.renderPolarChart(defaultTypeId as PresentationPolarTypeId, visualConfig.content, viewContainerElement);
                         break;
                     case 'rangeChart':
-                        this.highchartsTool.renderRangeChart(defaultTypeId as PresentationRangeTypeId, visualConfig.content, viewContainerElement);
+                        await this.highchartsTool.renderRangeChart(defaultTypeId as PresentationRangeTypeId, visualConfig.content, viewContainerElement);
                         break;
                     // case 'valueTable':
                     //     this.valueTable.render(visualConfig.content, viewContainerElement);
@@ -202,11 +201,12 @@ export default class DefaultPresenter implements PresenterInterface {
     private async loadHighchartsTool(): Promise<HighchartsTool> {
         if (this.highchartsTool) return this.highchartsTool;
 
-        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'datapos-tool-highcharts');
+        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-highcharts');
         if (!toolModuleConfig) throw new Error('No Highcharts tool module configuration.');
 
-        const url = `https://engine-eu.datapos.app/tools/highcharts_v${toolModuleConfig.version}/datapos-tool-highcharts.es.js`;
-        const HighchartsTool = (await import(/* @vite-ignore */ url)).HighchartsTool as new () => HighchartsTool;
+        const url = `https://engine-eu.dpuse.app/tools/highcharts_v${toolModuleConfig.version}/dpuse-tool-highcharts.es.js`;
+        const module = (await import(/* @vite-ignore */ url)) as { HighchartsTool: new () => HighchartsTool };
+        const HighchartsTool = module.HighchartsTool;
         return new HighchartsTool();
     }
 
@@ -214,11 +214,12 @@ export default class DefaultPresenter implements PresenterInterface {
     private async loadMicromarkTool(): Promise<MicromarkTool> {
         if (this.micromarkTool) return this.micromarkTool;
 
-        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'datapos-tool-micromark');
+        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-micromark');
         if (!toolModuleConfig) throw new Error('No Micromark tool module configuration.');
 
-        const url = `https://engine-eu.datapos.app/tools/micromark_v${toolModuleConfig.version}/datapos-tool-micromark.es.js`;
-        const MicromarkToolConstructor = (await import(/* @vite-ignore */ url)).MicromarkTool as new () => MicromarkTool;
+        const url = `https://engine-eu.dpuse.app/tools/micromark_v${toolModuleConfig.version}/dpuse-tool-micromark.es.js`;
+        const module = (await import(/* @vite-ignore */ url)) as { MicromarkTool: new () => MicromarkTool };
+        const MicromarkToolConstructor = module.MicromarkTool;
         return new MicromarkToolConstructor();
     }
 }

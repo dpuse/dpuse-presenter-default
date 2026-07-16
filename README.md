@@ -3,51 +3,45 @@
 [![npm version](https://img.shields.io/npm/v/@dpuse/dpuse-presenter-default)](https://www.npmjs.com/package/@dpuse/dpuse-presenter-default)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dpuse_dpuse_dpuse-presenter-default&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=data-positioning_dpuse-presenter-default)
-<span><!-- OWASP_BADGES_START -->
-[![OWASP](https://img.shields.io/badge/OWASP-passed-4CAF50)](https://dpuse.github.io/dpuse-presenter-default/dependency-check-reports/dependency-check-report.html)
-<!-- OWASP_BADGES_END --></span>
 
 A library that implements the default presenter in accordance with the Data Positioning presenter interface.
+
+<!-- OPENING_START -->
+
+<!-- OPENING_END -->
 
 ## Installation
 
 There's no need to install this presenter manually. Once released, it is uploaded to the Data Positioning Cloud and instantly available in all newly launched browser app instances. Running instances are notified of the update.
 
-## Repository Management Commands
+<!-- USAGE_START -->
 
-The following list details the repository management commands implementation by this project. For more details, please refer to the scripts section of the 'package.json' file in this project.
+<!-- USAGE_END -->
 
-| Name               | VS Code Shortcuts | Notes                                                                                                                                              |
-| ------------------ | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| audit              | alt+ctrl+shift+a  | Audit the project's dependencies for known security vulnerabilities.                                                                               |
-| build              | alt+ctrl+shift+b  | Build the package using Vite. Output to '/dist' directory.                                                                                         |
-| check              | alt+ctrl+shift+c  | Identify outdated dependencies using npm `outdated` and `npm-check-updates` with option to install latest versions. Also runs `retire` scanner.    |
-| document           | alt+ctrl+shift+d  | Identify licenses of the project's production and peer dependencies. See [LICENSES.json](./LICENSES.json).                                         |
-| format             | alt+ctrl+shift+f  | Use `prettier` to enforce formatting style rules.                                                                                                  |
-| lint               | alt+ctrl+shift+l  | Use `eslint` to check the code for potential errors and enforces coding style rules.                                                               |
-| publish            | alt+ctrl+shift+p  | Publish the package to `npm`.                                                                                                                      |
-| release            | alt+ctrl+shift+r  | Bump version, build configuration, build presenter, synchronise with `GitHub`, upload presenter to Data Positioning platform and publish to `npm`. |
-| sync:withGitHub    | alt+ctrl+shift+s  | Synchronise local repository with the main GitHub repository.                                                                                      |
-| test               | alt+ctrl+shift+t  | ❌ Not implemented.                                                                                                                                |
-| update:dataPosDeps | alt+ctrl+shift+u  | Install the latest version of all Data Positioning dependencies.                                                                                   |
-
-## Bundle Analysis
-
-View the [bundle report](https://data-positioning.github.io/dpuse-presenter-default/stats/index.html) to analyze the bundle composition and module sizes (generated with rollup-plugin-visualizer).
-
-## Compliance
-
-The following badge reflects FOSSA's assessment of this repository's open-source license compliance.
-
-<!-- DEPENDENCY_LICENSES_START -->
-|Name|Type|Installed|Latest|Latest Released|Deps|Document|
-|:-|:-|:-:|:-:|:-|-:|:-|
-|@datapos/datapos-tool-highcharts|MIT|0.0.48|0.0.48|3 months ago: 2025-11-27|2|[LICENSE](https://raw.githubusercontent.com/data-positioning/datapos-tool-highcharts/main/LICENSE)|
-|@datapos/datapos-tool-micromark|MIT|0.1.992|0.1.992|3 months ago: 2025-12-01|3|[LICENSE](https://raw.githubusercontent.com/data-positioning/datapos-tool-micromark/main/LICENSE)|
-|@dpuse/dpuse-shared|MIT|0.3.594|0.3.594|this month: 2026-03-22|0|[LICENSE](https://raw.githubusercontent.com/dpuse/dpuse-shared/main/LICENSE)|
+<!-- DEPENDENCY_LICENSES_START -->                   |
 
 <!-- DEPENDENCY_LICENSES_END -->
 
-## License
+<!-- DEPENDENCY_TREE_START -->
 
-[MIT](./LICENSE) © 2026 Data Positioning Pty Ltd
+<!-- DEPENDENCY_TREE_END -->
+
+ <!-- BUNDLE_START -->
+
+The Bundle Analysis Report is generated automatically on each release using [Sonda](https://sonda.dev/), which analyses final source maps to reveal the actual effects of tree-shaking and minification rather than relying on pre-build estimates.
+
+_Note: Sonda's Vite reports currently exclude CSS files, since Vite does not generate source maps for CSS._
+
+|Chunk/Module/File|Composition|
+|:------ |:-----------|
+| dist/dpuse-presenter-default.es.js | 28.6 kB · brotli 5.1 kB |
+| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `█████████████████░░░` 86.6% |
+| &nbsp;&nbsp;&nbsp;&nbsp;src | `███░░░░░░░░░░░░░░░░░` 13.4% |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.ts | `██░░░░░░░░░░░░░░░░░░` 12.2% |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useSampleData.ts | `░░░░░░░░░░░░░░░░░░░░` 1.2% |
+
+<!-- BUNDLE_END -->
+
+<!-- GOVERNANCE_START -->
+
+<!-- GOVERNANCE_END -->

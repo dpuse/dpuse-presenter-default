@@ -4,13 +4,15 @@
         "en": "Default Presenter"
     },
     "description": {
-        "en": "..."
+        "en": [
+            "..."
+        ]
     },
     "firstCreatedAt": null,
     "icon": null,
     "iconDark": null,
     "lastUpdatedAt": null,
-    "operations": [
+    "actionNames": [
         "list",
         "render",
         "setColorMode"
@@ -111,6 +113,6 @@
     "status": null,
     "statusId": "alpha",
     "typeId": "presenter",
-    "version": "0.1.1021",
+    "version": "0.1.1023",
     "usageId": "unknown"
 }
