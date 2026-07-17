@@ -67,7 +67,7 @@ export default class DefaultPresenter implements PresenterInterface {
 
         // Render markdown to HTML
         this.micromarkTool = await this.loadMicromarkTool();
-        const html = await this.micromarkTool.render(processedMarkdown, { tables: true }); // TODO: Need to pass tables from frontend.
+        const html = await this.micromarkTool.render(processedMarkdown, { directives: true, tables: true }); // TODO: Need to pass tables from frontend.
         renderTo.innerHTML = html;
         this.micromarkTool.highlight(renderTo, this.colorModeId);
 
