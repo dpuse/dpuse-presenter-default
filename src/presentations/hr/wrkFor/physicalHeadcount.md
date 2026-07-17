@@ -194,6 +194,7 @@ Describe opening/closing starting/ending comparison...
             "borderColor": "#d4d4d8",
             "upColor": "#86efac",
             "color": "#fed7aa",
+            "showInLegend": false,
             "data": [{ "y": 20, "color": "#e4e4e7" }, 20, 20, { "y": 20 }, -20, -20, 0, 0, 0, 0, 0, 0, 0, { "isSum": true, "color": "#e4e4e7" }]
         },
         {

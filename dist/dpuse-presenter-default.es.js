@@ -79,7 +79,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1024",
+	version: "0.1.1025",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkFor/averageHeadcount": {
