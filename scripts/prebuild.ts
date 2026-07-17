@@ -5,7 +5,7 @@ import path from 'node:path';
 
 // Dependencies - Framework.
 import type { ComponentReference } from '@dpuse/dpuse-shared/component';
-import type { PresentationConfig } from '@dpuse/dpuse-shared/component/module/presenter/presentation';
+import type { PresentationConfig } from '@dpuse/dpuse-shared/component/presentation';
 
 // Types
 type FrontMatter = { label: Record<string, string>; description: Record<string, string>; order: number };
@@ -27,9 +27,15 @@ async function constructPresentationConfigs() {
     await fs.writeFile('./configPresentations.json', JSON.stringify(presentationMap));
 
     const config = await JSON.parse(await fs.readFile('config.json', 'utf8'));
-    config.presentations = Object.entries(presentationMap).map(
-        (item): ComponentReference => ({ id: item[1].id, label: item[1].label, description: item[1].description, icon: null, iconDark: null, order: item[1].order, path: item[0] })
-    );
+    config.presentations = Object.entries(presentationMap).map((item): ComponentReference => ({
+        id: item[1].id,
+        label: item[1].label,
+        description: item[1].description,
+        icon: null,
+        iconDark: null,
+        order: item[1].order,
+        path: item[0]
+    }));
     await fs.writeFile('config.json', JSON.stringify(config, undefined, 4));
 
     // Utilities - Construct presentation configurations for path and update presentation map.

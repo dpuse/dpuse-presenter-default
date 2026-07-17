@@ -3,9 +3,12 @@
     "compilerOptions": {
         "target": "ESNext",
         "outDir": "dist-scripts",
+        "rootDir": "scripts",
         "esModuleInterop": true,
         "strict": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "types": ["node"],
+        "tsBuildInfoFile": "./dist-scripts/.tsbuildinfo"
     },
     "include": ["scripts/**/*.ts"]
 }
