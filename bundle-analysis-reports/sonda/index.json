@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-07-17T11:36:21.185Z",
+    "generatedAt": "2026-07-17T11:41:58.139Z",
     "integration": "vite",
     "sources": false,
     "gzip": false,
@@ -21,9 +21,9 @@
       "name": "[unassigned]",
       "type": "other",
       "format": "other",
-      "uncompressed": 25469,
+      "uncompressed": 25523,
       "gzip": 0,
-      "brotli": 4204,
+      "brotli": 4207,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -38,15 +38,15 @@
       "name": "configPresentations.json",
       "type": "script",
       "format": "esm",
-      "uncompressed": 18035
+      "uncompressed": 18089
     },
     {
       "kind": "asset",
       "name": "dist/dpuse-presenter-default.es.js",
       "type": "script",
-      "uncompressed": 29417,
+      "uncompressed": 29471,
       "gzip": 0,
-      "brotli": 5234
+      "brotli": 5241
     },
     {
       "kind": "filesystem",
@@ -62,7 +62,7 @@
       "format": "esm",
       "uncompressed": 354,
       "gzip": 0,
-      "brotli": 163,
+      "brotli": 164,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -79,7 +79,7 @@
       "format": "esm",
       "uncompressed": 3594,
       "gzip": 0,
-      "brotli": 867,
+      "brotli": 870,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {

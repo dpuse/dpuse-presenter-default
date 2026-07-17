@@ -272,12 +272,14 @@ Describe opening/closing starting/ending comparison...
                         }
                     }
                 }
-            ]
+            ],
+            "showInLegend": false
         },
         {
             "zIndex": 0,
             "upColor": "rgba(21, 175, 21, 0.3)",
             "color": "rgba(0, 136, 255, 0.3)",
+            "showInLegend": false,
             "data": [
                 20,
                 40,
