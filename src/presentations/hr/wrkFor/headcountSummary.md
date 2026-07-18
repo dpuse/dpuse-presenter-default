@@ -1,7 +1,7 @@
 ---
 label:
-    en-gb: Headcount Summary
+    en: Headcount Summary
 description:
-    en-gb: This is a description...
+    en: This is a description...
 order: 7
 ---

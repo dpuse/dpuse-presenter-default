@@ -21,10 +21,12 @@
         {
             "id": "hrWrkForAverageHeadcount",
             "label": {
-                "en-gb": "Average Headcount"
+                "en": "Average Headcount"
             },
             "description": {
-                "en-gb": "This is a description..."
+                "en": [
+                    "This is a description..."
+                ]
             },
             "icon": null,
             "iconDark": null,
@@ -34,10 +36,12 @@
         {
             "id": "hrWrkForFtes",
             "label": {
-                "en-gb": "Full-Time Equivalents"
+                "en": "Full-Time Equivalents"
             },
             "description": {
-                "en-gb": "This is a description..."
+                "en": [
+                    "This is a description..."
+                ]
             },
             "icon": null,
             "iconDark": null,
@@ -47,10 +51,12 @@
         {
             "id": "hrWrkForHeadcountSummary",
             "label": {
-                "en-gb": "Headcount Summary"
+                "en": "Headcount Summary"
             },
             "description": {
-                "en-gb": "This is a description..."
+                "en": [
+                    "This is a description..."
+                ]
             },
             "icon": null,
             "iconDark": null,
@@ -60,10 +66,12 @@
         {
             "id": "hrWrkForHiresTerminations",
             "label": {
-                "en-gb": "Hires & Terminations"
+                "en": "Hires & Terminations"
             },
             "description": {
-                "en-gb": "This is a description..."
+                "en": [
+                    "This is a description..."
+                ]
             },
             "icon": null,
             "iconDark": null,
@@ -73,10 +81,12 @@
         {
             "id": "hrWrkForMovementFlows",
             "label": {
-                "en-gb": "Movement Flows"
+                "en": "Movement Flows"
             },
             "description": {
-                "en-gb": "This is a description..."
+                "en": [
+                    "This is a description..."
+                ]
             },
             "icon": null,
             "iconDark": null,
@@ -86,10 +96,12 @@
         {
             "id": "hrWrkForMovements",
             "label": {
-                "en-gb": "Movements (Entry, Internal & Exit)"
+                "en": "Movements (Entry, Internal & Exit)"
             },
             "description": {
-                "en-gb": "This is a description..."
+                "en": [
+                    "This is a description..."
+                ]
             },
             "icon": null,
             "iconDark": null,
@@ -99,10 +111,12 @@
         {
             "id": "hrWrkForPhysicalHeadcount",
             "label": {
-                "en-gb": "Physical Headcount"
+                "en": "Physical Headcount"
             },
             "description": {
-                "en-gb": "This is a description..."
+                "en": [
+                    "This is a description..."
+                ]
             },
             "icon": null,
             "iconDark": null,
@@ -113,6 +127,6 @@
     "status": null,
     "statusId": "alpha",
     "typeId": "presenter",
-    "version": "0.1.1028",
+    "version": "0.1.1029",
     "usageId": "unknown"
 }

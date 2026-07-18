@@ -1,8 +1,8 @@
 ---
 label:
-    en-gb: Full-Time Equivalents
+    en: Full-Time Equivalents
 description:
-    en-gb: This is a description...
+    en: This is a description...
 order: 4
 ---
 

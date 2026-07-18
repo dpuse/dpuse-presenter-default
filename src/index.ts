@@ -15,14 +15,14 @@ import type {
     PresentationVisualConfig,
     PresentationVisualPeriodFlowBoundariesChartViewConfig,
     PresentationVisualPolarChartViewConfig,
-    PresentationVisualRangeChartViewConfig,
-    PresentationVisualValueTableViewConfig
+    PresentationVisualRangeChartViewConfig
+    // PresentationVisualValueTableViewConfig
 } from '@dpuse/dpuse-shared/component/presentation';
 import type { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
 
 // Dependencies - Tools.
+import type { HighchartsTool } from '@dpuse/dpuse-tool-highcharts';
 import type { MicromarkTool } from '@dpuse/dpuse-tool-micromark';
-import type { HighchartsTool, HighchartsView } from '@dpuse/dpuse-tool-highcharts';
 
 // Dependencies - Data.
 import config from '~/config.json';
