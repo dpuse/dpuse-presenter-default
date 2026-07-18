@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-presenter-default",
-    "version": "0.1.1030",
+    "version": "0.1.1031",
     "private": false,
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
@@ -57,7 +57,7 @@
     },
     "dependencies": {
         "@dpuse/dpuse-shared": "^0.3.743",
-        "@dpuse/dpuse-tool-highcharts": "^0.0.63",
+        "@dpuse/dpuse-tool-highcharts": "^0.0.64",
         "@dpuse/dpuse-tool-micromark": "^0.1.1002"
     },
     "devDependencies": {

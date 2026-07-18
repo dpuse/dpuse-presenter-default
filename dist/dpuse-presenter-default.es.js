@@ -79,7 +79,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1030",
+	version: "0.1.1031",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkFor/averageHeadcount": {
@@ -432,13 +432,13 @@ var o = class {
 	}
 	async render(e, n, r) {
 		let i = t[e], a = i.content;
-		a = a.replaceAll("{{label}}", i.label.en ?? "{{label}}"), this.micromarkTool = await this.loadMicromarkTool(), n.innerHTML = await this.micromarkTool.render(a, {
+		a = a.replaceAll("{{label}}", () => i.label.en ?? "{{label}}"), this.micromarkTool = await this.loadMicromarkTool(), n.innerHTML = await this.micromarkTool.render(a, {
 			directives: !0,
 			tables: !0
-		}), this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool();
+		}), await this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool();
 		for (let e of n.querySelectorAll(".dpuse-highcharts")) {
 			let t = decodeURIComponent(e.dataset.options ?? ""), n = JSON.parse(t), r = document.createElement("div");
-			e.append(r), this.highchartsTool.render(n, r);
+			e.append(r), await this.highchartsTool.render(n, r);
 		}
 		for (let e of n.querySelectorAll(".dpuse-visual")) {
 			let t = decodeURIComponent(e.dataset.options ?? "");
@@ -449,51 +449,10 @@ var o = class {
 				i.className = "dp-tab-bar";
 				let a = document.createElement("div"), o, s;
 				for (let e of n.views) {
-					let t = e.categoryId;
-					switch (t) {
-						case "cartesianChart": {
-							let r = e;
-							(!s || r.default) && (o = t, s = r.typeId);
-							let c = document.createElement("div");
-							c.textContent = r.typeId, c.addEventListener("click", () => this.highchartsTool?.renderCartesianChart(r.typeId, n.content, a)), i.append(c);
-							break;
-						}
-						case "periodFlowBoundariesChart": {
-							(!s || e.default) && (o = t, s = void 0);
-							let r = document.createElement("div");
-							r.textContent = t, r.addEventListener("click", () => this.highchartsTool?.renderPeriodFlowBoundaries(n.content, a)), i.append(r);
-							break;
-						}
-						case "polarChart": {
-							let r = e;
-							(!s || r.default) && (o = t, s = r.typeId);
-							let c = document.createElement("div");
-							c.textContent = r.typeId, c.addEventListener("click", () => this.highchartsTool?.renderPolarChart(r.typeId, n.content, a)), i.append(c);
-							break;
-						}
-						case "rangeChart": {
-							let r = e;
-							(!s || r.default) && (o = t, s = r.typeId);
-							let c = document.createElement("div");
-							c.textContent = r.typeId, c.addEventListener("click", () => this.highchartsTool?.renderRangeChart(r.typeId, n.content, a)), i.append(c);
-							break;
-						}
-					}
+					let t = this.createVisualViewTab(e, n, a);
+					t && ((!s || t.isDefault) && (o = t.categoryId, s = t.typeId), i.append(t.element));
 				}
-				switch (e.append(i), e.append(a), o) {
-					case "cartesianChart":
-						this.highchartsTool.renderCartesianChart(s, n.content, a);
-						break;
-					case "periodFlowBoundariesChart":
-						await this.highchartsTool.renderPeriodFlowBoundaries(n.content, a);
-						break;
-					case "polarChart":
-						await this.highchartsTool.renderPolarChart(s, n.content, a);
-						break;
-					case "rangeChart":
-						await this.highchartsTool.renderRangeChart(s, n.content, a);
-						break;
-				}
+				e.append(i), e.append(a), await this.renderDefaultVisualView(o, s, n, a);
 			} catch (t) {
 				console.error(t), e.textContent = "Invalid options.";
 			}
@@ -501,6 +460,69 @@ var o = class {
 	}
 	setColorMode(e) {
 		this.colorModeId = e, this.micromarkTool && this.micromarkTool.setColorMode(this.colorModeId);
+	}
+	createVisualViewTab(e, t, n) {
+		let r = e.categoryId, i = document.createElement("div");
+		switch (r) {
+			case "cartesianChart": {
+				let a = e;
+				return i.textContent = a.typeId, i.addEventListener("click", () => this.highchartsTool?.renderCartesianChart(a.typeId, t.content, n)), {
+					element: i,
+					categoryId: r,
+					typeId: a.typeId,
+					isDefault: a.default
+				};
+			}
+			case "periodFlowBoundariesChart": {
+				let a = e;
+				return i.textContent = r, i.addEventListener("click", () => {
+					this.highchartsTool?.renderPeriodFlowBoundaries(t.content, n);
+				}), {
+					element: i,
+					categoryId: r,
+					isDefault: a.default
+				};
+			}
+			case "polarChart": {
+				let a = e;
+				return i.textContent = a.typeId, i.addEventListener("click", () => {
+					this.highchartsTool?.renderPolarChart(a.typeId, t.content, n);
+				}), {
+					element: i,
+					categoryId: r,
+					typeId: a.typeId,
+					isDefault: a.default
+				};
+			}
+			case "rangeChart": {
+				let a = e;
+				return i.textContent = a.typeId, i.addEventListener("click", () => {
+					this.highchartsTool?.renderRangeChart(a.typeId, t.content, n);
+				}), {
+					element: i,
+					categoryId: r,
+					typeId: a.typeId,
+					isDefault: a.default
+				};
+			}
+			default: return;
+		}
+	}
+	async renderDefaultVisualView(e, t, n, r) {
+		if (this.highchartsTool) switch (e) {
+			case "cartesianChart":
+				this.highchartsTool.renderCartesianChart(t, n.content, r);
+				break;
+			case "periodFlowBoundariesChart":
+				await this.highchartsTool.renderPeriodFlowBoundaries(n.content, r);
+				break;
+			case "polarChart":
+				await this.highchartsTool.renderPolarChart(t, n.content, r);
+				break;
+			case "rangeChart":
+				await this.highchartsTool.renderRangeChart(t, n.content, r);
+				break;
+		}
 	}
 	async loadHighchartsTool() {
 		if (this.highchartsTool) return this.highchartsTool;

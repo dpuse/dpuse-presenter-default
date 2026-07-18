@@ -1,8 +1,8 @@
 import { ComponentReference } from '@dpuse/dpuse-shared/component';
 import { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
-import { HighchartsTool } from '@dpuse/dpuse-tool-highcharts';
 import { MicromarkTool } from '@dpuse/dpuse-tool-micromark';
+import { HighchartsTool } from '@dpuse/dpuse-tool-highcharts';
 import { default as configPresentations } from '../configPresentations.json';
 export default class DefaultPresenter implements PresenterInterface {
     readonly config: PresenterConfig;
@@ -17,6 +17,8 @@ export default class DefaultPresenter implements PresenterInterface {
     list(): ComponentReference[];
     render(presentationPath: keyof typeof configPresentations, renderTo: HTMLElement, data?: unknown): Promise<void>;
     setColorMode(id: string): void;
+    private createVisualViewTab;
+    private renderDefaultVisualView;
     private loadHighchartsTool;
     private loadMicromarkTool;
 }
