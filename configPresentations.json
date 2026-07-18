@@ -2,7 +2,7 @@
     "hr/wrkFor/averageHeadcount": {
         "id": "hrWrkForAverageHeadcount",
         "label": { "en": "Average Headcount" },
-        "description": { "en": "This is a description..." },
+        "description": { "en": ["This is a description..."] },
         "firstCreatedAt": null,
         "icon": null,
         "iconDark": null,
@@ -16,7 +16,7 @@
     "hr/wrkFor/ftes": {
         "id": "hrWrkForFtes",
         "label": { "en": "Full-Time Equivalents" },
-        "description": { "en": "This is a description..." },
+        "description": { "en": ["This is a description..."] },
         "firstCreatedAt": null,
         "icon": null,
         "iconDark": null,
@@ -30,7 +30,7 @@
     "hr/wrkFor/headcountSummary": {
         "id": "hrWrkForHeadcountSummary",
         "label": { "en": "Headcount Summary" },
-        "description": { "en": "This is a description..." },
+        "description": { "en": ["This is a description..."] },
         "firstCreatedAt": null,
         "icon": null,
         "iconDark": null,
@@ -44,7 +44,7 @@
     "hr/wrkFor/hiresTerminations": {
         "id": "hrWrkForHiresTerminations",
         "label": { "en": "Hires & Terminations" },
-        "description": { "en": "This is a description..." },
+        "description": { "en": ["This is a description..."] },
         "firstCreatedAt": null,
         "icon": null,
         "iconDark": null,
@@ -58,7 +58,7 @@
     "hr/wrkFor/movementFlows": {
         "id": "hrWrkForMovementFlows",
         "label": { "en": "Movement Flows" },
-        "description": { "en": "This is a description..." },
+        "description": { "en": ["This is a description..."] },
         "firstCreatedAt": null,
         "icon": null,
         "iconDark": null,
@@ -72,7 +72,7 @@
     "hr/wrkFor/movements": {
         "id": "hrWrkForMovements",
         "label": { "en": "Movements (Entry, Internal & Exit)" },
-        "description": { "en": "This is a description..." },
+        "description": { "en": ["This is a description..."] },
         "firstCreatedAt": null,
         "icon": null,
         "iconDark": null,
@@ -86,7 +86,7 @@
     "hr/wrkFor/physicalHeadcount": {
         "id": "hrWrkForPhysicalHeadcount",
         "label": { "en": "Physical Headcount" },
-        "description": { "en": "This is a description..." },
+        "description": { "en": ["This is a description..."] },
         "firstCreatedAt": null,
         "icon": null,
         "iconDark": null,
