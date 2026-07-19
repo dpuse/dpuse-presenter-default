@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-07-19T12:07:03.559Z",
+    "generatedAt": "2026-07-19T14:44:14.851Z",
     "integration": "vite",
     "sources": false,
     "gzip": false,
@@ -46,7 +46,7 @@
       "type": "script",
       "uncompressed": 29534,
       "gzip": 0,
-      "brotli": 5306
+      "brotli": 5307
     },
     {
       "kind": "filesystem",

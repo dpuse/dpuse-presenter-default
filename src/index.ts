@@ -27,7 +27,7 @@ import config from '~/config.json';
 import configPresentations from '~/configPresentations.json';
 import { useSampleData } from '@/composers/useSampleData';
 
-// ── Classes ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+// ── Presenters ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
 export default class DefaultPresenter implements PresenterInterface {
     readonly config: PresenterConfig; // TODO: If we remove list method, then config is not needed. Would make presenter slightly smaller.
@@ -48,12 +48,13 @@ export default class DefaultPresenter implements PresenterInterface {
         this.sampleData = useSampleData(); // TODO?
     }
 
+    // ── Actions ──────────────────────────────────────────────────────────────────────────────────────────────────────
+
     // Operations - List. TODO: Is this needed? Is 'configPresentations.json' needed????
     list(): ComponentReference[] {
         return this.config.presentations;
     }
 
-    // Operations - Render.
     // eslint-disable-next-line sonarjs/cognitive-complexity
     async render(presentationPath: keyof typeof configPresentations, renderTo: HTMLElement, data?: unknown): Promise<void> {
         // Use presentation path to retrieve presentation.
@@ -120,7 +121,6 @@ export default class DefaultPresenter implements PresenterInterface {
         }
     }
 
-    // Operations - Set color mode.
     setColorMode(id: string) {
         this.colorModeId = id;
         // Guarded because micromarkTool may not be loaded yet (it's created lazily in render()); if it isn't, there
@@ -128,7 +128,8 @@ export default class DefaultPresenter implements PresenterInterface {
         if (this.micromarkTool) this.micromarkTool.setColorMode(this.colorModeId);
     }
 
-    // Helpers - Create visual view tab.
+    // ── Helpers ──────────────────────────────────────────────────────────────────────────────────────────────────────
+
     private createVisualViewTab(
         viewConfig: PresentationVisualViewConfig,
         visualConfig: PresentationVisualConfig,
@@ -179,7 +180,6 @@ export default class DefaultPresenter implements PresenterInterface {
         }
     }
 
-    // Helpers - Render default visual view.
     private async renderDefaultVisualView(
         categoryId: PresentationCategoryId | undefined,
         typeId: string | undefined,
@@ -207,7 +207,6 @@ export default class DefaultPresenter implements PresenterInterface {
         }
     }
 
-    // Helpers - Load Highcharts tool.
     private async loadHighchartsTool(): Promise<HighchartsTool> {
         if (this.highchartsTool) return this.highchartsTool;
 
@@ -220,7 +219,6 @@ export default class DefaultPresenter implements PresenterInterface {
         return new HighchartsTool();
     }
 
-    // Helpers - Load Micromark tool.
     private async loadMicromarkTool(): Promise<MicromarkTool> {
         if (this.micromarkTool) return this.micromarkTool;
 

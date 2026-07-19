@@ -1,0 +1,47 @@
+{
+    "label": { "en": "Default" },
+    "focuses": [
+        { "id": "customerService", "label": { "en": "Customer Service" }, "folders": [] },
+        {
+            "id": "humanResources",
+            "label": { "en": "Human Resources" },
+            "folders": [
+                { "id": "learning", "label": { "en": "Learning" }, "folders": [] },
+                { "id": "recruitmentOnboarding", "label": { "en": "Recruitment & Onboarding" }, "folders": [] },
+                {
+                    "id": "talentManagement",
+                    "label": { "en": "Talent Management (Performance)" },
+                    "folders": [
+                        { "id": "experience", "label": { "en": "Experience" }, "folders": [], "presentations": [] },
+                        { "id": "management", "label": { "en": "Management" }, "folders": [], "presentations": [] },
+                        { "id": "sourcing", "label": { "en": "Sourcing" }, "folders": [], "presentations": [] }
+                    ]
+                },
+                {
+                    "id": "workforce",
+                    "label": { "en": "Workforce" },
+                    "folders": [
+                        { "id": "hiresTerminations", "label": { "en": "Hires & Terminations" }, "folders": [], "presentations": [] },
+                        { "id": "movementFlows", "label": { "en": "Movement Flows" }, "folders": [], "presentations": [] },
+                        { "id": "movements", "label": { "en": "Movements" }, "folders": [], "presentations": [] },
+                        { "id": "profiles", "label": { "en": "Profiles" }, "folders": [], "presentations": [] },
+                        { "id": "size", "label": { "en": "Size" }, "folders": [], "presentations": [{ "id": "physicalHeadcount" }] }
+                    ]
+                }
+            ]
+        },
+        { "id": "inventoryManagement", "label": { "en": "Inventory Management" }, "folders": [] },
+        { "id": "orderManagement", "label": { "en": "Order Management" }, "folders": [] },
+        {
+            "id": "salesManagement",
+            "label": { "en": "Sales Management" },
+            "folders": [
+                { "id": "contacts", "label": { "en": "Contacts" }, "folders": [] },
+                { "id": "leads", "label": { "en": "Leads" }, "folders": [] },
+                { "id": "opportunities", "label": { "en": "Opportunities" }, "folders": [] }
+            ]
+        },
+        { "id": "socialNetworking", "label": { "en": "Social Networking" }, "folders": [] },
+        { "id": "workManagement", "label": { "en": "Work Management" }, "folders": [] }
+    ]
+}
