@@ -2,7 +2,8 @@
 label:
     en: Physical Headcount
 description:
-    en: This is a description...
+    en:
+        - This is a description...
 order: 1
 ---
 
@@ -16,7 +17,7 @@ Physical headcount measures the actual number of people being counted at a fixed
 
 Quantifies the variation in physical headcount between the opening and closing of specific reporting periods.
 
-```json dpuse-visual
+```visual
 {
     "content": {
         "title": { "text": "Opening/Closing Headcount" },
@@ -74,7 +75,7 @@ Describe opening/closing headcounts...
 
 Quantifies the variation in physical headcount between the starting and ending of specific reporting periods.
 
-```json dpuse-visual
+```visual
 {
     "content": {
         "title": { "text": "Starting/Ending Headcount" },
@@ -121,7 +122,7 @@ Describe starting ending headcounts...
 
 ...
 
-```json dpuse-visual
+```visual
 {
     "content": {
         "title": { "text": "Monthly Headcount Flow & Boundaries" },
@@ -158,7 +159,7 @@ Describe starting ending headcounts...
 
 Describe opening/closing starting/ending comparison...
 
-```json dpuse-highcharts
+```highcharts
 {
     "chart": { "type": "waterfall" },
     "title": { "text": "Period Flow & Boundary Chart" },
@@ -212,7 +213,7 @@ Describe opening/closing starting/ending comparison...
 }
 ```
 
-```json dpuse-highcharts
+```highcharts
 {
     "colors": ["rgba(124, 181, 236, 0.3)", "rgba(144, 237, 125, 0.3)"],
     "chart": { "type": "waterfall" },
@@ -353,7 +354,7 @@ console.log('A very long line of text that will test how the code block wraps on
 console.log(count);
 ```
 
-```json dpuse-formula
+```formula
 {
     "expression": "Termination Rate=Average Headcount/Terminations*100'"
 }

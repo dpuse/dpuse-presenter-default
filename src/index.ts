@@ -68,6 +68,9 @@ export default class DefaultPresenter implements PresenterInterface {
         this.micromarkTool = await this.loadMicromarkTool();
         const html = await this.micromarkTool.render(processedMarkdown, { directives: true, tables: true }); // TODO: Need to pass tables from frontend.
         renderTo.innerHTML = html;
+        // colorModeId is passed explicitly (rather than relying on the tool's own state) because micromarkTool is
+        // lazily created above: any setColorMode() call received before this instance existed never reached it, so
+        // its internal state could still be the 'light' default even if this.colorModeId is 'dark'.
         await this.micromarkTool.highlight(renderTo, this.colorModeId);
 
         // ????
@@ -120,6 +123,8 @@ export default class DefaultPresenter implements PresenterInterface {
     // Operations - Set color mode.
     setColorMode(id: string) {
         this.colorModeId = id;
+        // Guarded because micromarkTool may not be loaded yet (it's created lazily in render()); if it isn't, there
+        // are no highlighted code blocks to update yet, and the next render() will pick up this.colorModeId anyway.
         if (this.micromarkTool) this.micromarkTool.setColorMode(this.colorModeId);
     }
 

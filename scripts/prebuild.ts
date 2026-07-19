@@ -73,16 +73,14 @@ async function constructPresentationConfigs() {
 
     // Utilities - Compress JSON code blocks.
     function compressJSONBlocks(markdown: string): string {
-        // Capture optional info string after the json language tag into group 1, and json code into group 2.
-        const regExp = /```json([^\n`]*)\n([\s\S]*?)\n```/g;
-        return markdown.replace(regExp, (match, infoString, jsonCode): string => {
-            const trimmedInfoString = (infoString || '').trim(); // e.g. 'datapos-visual'.
+        // visual/formula/highcharts are top-level fenced block types (e.g. ```visual) whose content is JSON;
+        // capture the language tag into group 1 and the JSON code into group 2 so it can be minified.
+        const regExp = /```(visual|formula|highcharts)\n([\s\S]*?)\n```/g;
+        return markdown.replace(regExp, (match, language, jsonCode): string => {
             const trimmedJSONCode = jsonCode.trim();
             try {
-                // Rebuild fenced JSON code block with info and compressed JSON code.
                 const stringifiedJsonCode = JSON.stringify(JSON.parse(trimmedJSONCode));
-                const attributeString = trimmedInfoString ? ` ${trimmedInfoString}` : '';
-                return ['```json' + attributeString, stringifiedJsonCode, '```'].join('\n');
+                return ['```' + language, stringifiedJsonCode, '```'].join('\n');
             } catch (error) {
                 console.error('JSON parsing error', error); // TODO: Use development error format.
                 return match;
