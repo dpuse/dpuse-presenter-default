@@ -1,9 +1,9 @@
 import { ComponentReference } from '@dpuse/dpuse-shared/component';
+import { LocalisedReference } from '@dpuse/dpuse-shared/locale';
 import { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
 import { MicromarkTool } from '@dpuse/dpuse-tool-micromark';
 import { HighchartsTool } from '@dpuse/dpuse-tool-highcharts';
-import { default as configPresentations } from '../configPresentations.json';
 export default class DefaultPresenter implements PresenterInterface {
     readonly config: PresenterConfig;
     colorModeId: string;
@@ -15,7 +15,7 @@ export default class DefaultPresenter implements PresenterInterface {
     micromarkTool?: MicromarkTool;
     constructor(toolConfigs: ToolConfig[], colorModeId: string);
     list(): ComponentReference[];
-    render(presentationPath: keyof typeof configPresentations, renderTo: HTMLElement, data?: unknown): Promise<void>;
+    render(presentationReference: LocalisedReference<ComponentReference>, renderTo: HTMLElement, data?: unknown): Promise<void>;
     setColorMode(id: string): void;
     private createVisualViewTab;
     private renderDefaultVisualView;

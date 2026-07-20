@@ -1,6 +1,7 @@
 // ── External Dependencies & Registrations
 // import { useDataTable } from '@dpuse/dpuse-shared';
 import type { ComponentReference } from '@dpuse/dpuse-shared/component';
+import type { LocalisedReference } from '@dpuse/dpuse-shared/locale';
 import type { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import type {
     PresentationCartesianTypeId,
@@ -56,14 +57,18 @@ export default class DefaultPresenter implements PresenterInterface {
     }
 
     // eslint-disable-next-line sonarjs/cognitive-complexity
-    async render(presentationPath: keyof typeof configPresentations, renderTo: HTMLElement, data?: unknown): Promise<void> {
+    async render(presentationReference: LocalisedReference<ComponentReference>, renderTo: HTMLElement, data?: unknown): Promise<void> {
         // Use presentation path to retrieve presentation.
+        const presentationPath = presentationReference.path as keyof typeof configPresentations;
+        const presentationLabel = presentationReference.label;
+        const presentationDescription = presentationReference.description;
+
         const presentation = configPresentations[presentationPath] as PresentationConfig;
 
         // Substitute values for label and description placeholders in content.
         let processedMarkdown = presentation.content;
-        processedMarkdown = processedMarkdown.replaceAll('{{label}}', () => presentation.label.en ?? `{{label}}`);
-        // .replaceAll('{{description}}', presentation.description.en ?? `{{description}}`); // TODO
+        processedMarkdown = processedMarkdown.replaceAll('{{label}}', () => presentationLabel);
+        // processedMarkdown = processedMarkdown.replaceAll('{{description}}', () => presentationDescription); // TODO
 
         // Render markdown to HTML
         this.micromarkTool = await this.loadMicromarkTool();
