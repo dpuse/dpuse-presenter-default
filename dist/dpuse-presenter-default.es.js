@@ -79,7 +79,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1035",
+	version: "0.1.1036",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkFor/averageHeadcount": {
@@ -435,7 +435,7 @@ var o = class {
 		a = a.replaceAll("{{label}}", () => i.label.en ?? "{{label}}"), this.micromarkTool = await this.loadMicromarkTool(), n.innerHTML = await this.micromarkTool.render(a, {
 			directives: !0,
 			tables: !0
-		}), await this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool();
+		}), await this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool(), this.highchartsTool.setColorMode(this.colorModeId);
 		for (let e of n.querySelectorAll(".dpuse-highcharts")) {
 			let t = decodeURIComponent(e.dataset.options ?? ""), n = JSON.parse(t), r = document.createElement("div");
 			e.append(r), await this.highchartsTool.render(n, r);

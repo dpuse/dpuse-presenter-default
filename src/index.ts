@@ -76,6 +76,9 @@ export default class DefaultPresenter implements PresenterInterface {
 
         // ????
         this.highchartsTool = await this.loadHighchartsTool();
+        // colorModeId is passed explicitly for the same reason as micromarkTool.highlight() above: highchartsTool
+        // is lazily created here, so any setColorMode() call received before this instance existed never reached it.
+        this.highchartsTool.setColorMode(this.colorModeId);
 
         for (const visualElements of renderTo.querySelectorAll('.dpuse-highcharts')) {
             const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset['options'] ?? '');
