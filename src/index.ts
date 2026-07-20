@@ -126,9 +126,10 @@ export default class DefaultPresenter implements PresenterInterface {
 
     setColorMode(id: string) {
         this.colorModeId = id;
-        // Guarded because micromarkTool may not be loaded yet (it's created lazily in render()); if it isn't, there
-        // are no highlighted code blocks to update yet, and the next render() will pick up this.colorModeId anyway.
+        // Guarded because micromarkTool/highchartsTool may not be loaded yet (they're created lazily in render());
+        // if not loaded, there's nothing rendered yet to update, and the next render() will pick up this.colorModeId anyway.
         if (this.micromarkTool) this.micromarkTool.setColorMode(this.colorModeId);
+        if (this.highchartsTool) this.highchartsTool.setColorMode(this.colorModeId);
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────────────────────────────────────────────

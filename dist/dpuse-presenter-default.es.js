@@ -79,7 +79,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1036",
+	version: "0.1.1037",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkFor/averageHeadcount": {
@@ -459,7 +459,7 @@ var o = class {
 		}
 	}
 	setColorMode(e) {
-		this.colorModeId = e, this.micromarkTool && this.micromarkTool.setColorMode(this.colorModeId);
+		this.colorModeId = e, this.micromarkTool && this.micromarkTool.setColorMode(this.colorModeId), this.highchartsTool && this.highchartsTool.setColorMode(this.colorModeId);
 	}
 	createVisualViewTab(e, t, n) {
 		let r = e.categoryId, i = document.createElement("div");
