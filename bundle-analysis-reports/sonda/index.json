@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-07-20T14:41:17.729Z",
+    "generatedAt": "2026-07-20T15:17:17.204Z",
     "integration": "vite",
     "sources": false,
     "gzip": false,
@@ -23,7 +23,7 @@
       "format": "other",
       "uncompressed": 25326,
       "gzip": 0,
-      "brotli": 4179,
+      "brotli": 4177,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -46,7 +46,7 @@
       "type": "script",
       "uncompressed": 29661,
       "gzip": 0,
-      "brotli": 5325
+      "brotli": 5323
     },
     {
       "kind": "filesystem",
