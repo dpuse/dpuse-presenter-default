@@ -19,7 +19,7 @@
     ],
     "presentations": [
         {
-            "id": "hrWrkForAverageHeadcount",
+            "id": "hrWrkForceAverageHeadcount",
             "label": {
                 "en": "Average Headcount"
             },
@@ -31,10 +31,10 @@
             "icon": null,
             "iconDark": null,
             "order": 2,
-            "path": "hr/wrkFor/averageHeadcount"
+            "path": "hr/wrkForce/averageHeadcount"
         },
         {
-            "id": "hrWrkForFtes",
+            "id": "hrWrkForceFtes",
             "label": {
                 "en": "Full-Time Equivalents"
             },
@@ -46,10 +46,10 @@
             "icon": null,
             "iconDark": null,
             "order": 4,
-            "path": "hr/wrkFor/ftes"
+            "path": "hr/wrkForce/ftes"
         },
         {
-            "id": "hrWrkForHeadcountSummary",
+            "id": "hrWrkForceHeadcountSummary",
             "label": {
                 "en": "Headcount Summary"
             },
@@ -61,10 +61,10 @@
             "icon": null,
             "iconDark": null,
             "order": 7,
-            "path": "hr/wrkFor/headcountSummary"
+            "path": "hr/wrkForce/headcountSummary"
         },
         {
-            "id": "hrWrkForHiresTerminations",
+            "id": "hrWrkForceHiresTerminations",
             "label": {
                 "en": "Hires & Terminations"
             },
@@ -76,10 +76,10 @@
             "icon": null,
             "iconDark": null,
             "order": 3,
-            "path": "hr/wrkFor/hiresTerminations"
+            "path": "hr/wrkForce/hiresTerminations"
         },
         {
-            "id": "hrWrkForMovementFlows",
+            "id": "hrWrkForceMovementFlows",
             "label": {
                 "en": "Movement Flows"
             },
@@ -91,10 +91,10 @@
             "icon": null,
             "iconDark": null,
             "order": 6,
-            "path": "hr/wrkFor/movementFlows"
+            "path": "hr/wrkForce/movementFlows"
         },
         {
-            "id": "hrWrkForMovements",
+            "id": "hrWrkForceMovements",
             "label": {
                 "en": "Movements (Entry, Internal & Exit)"
             },
@@ -106,10 +106,10 @@
             "icon": null,
             "iconDark": null,
             "order": 5,
-            "path": "hr/wrkFor/movements"
+            "path": "hr/wrkForce/movements"
         },
         {
-            "id": "hrWrkForPhysicalHeadcount",
+            "id": "hrWrkForcePhysicalHeadcount",
             "label": {
                 "en": "Physical Headcount"
             },
@@ -121,12 +121,12 @@
             "icon": null,
             "iconDark": null,
             "order": 1,
-            "path": "hr/wrkFor/physicalHeadcount"
+            "path": "hr/wrkForce/physicalHeadcount"
         }
     ],
     "status": null,
     "statusId": "alpha",
     "typeId": "presenter",
-    "version": "0.1.1038",
+    "version": "0.1.1039",
     "usageId": "unknown"
 }
