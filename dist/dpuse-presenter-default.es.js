@@ -79,7 +79,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1040",
+	version: "0.1.1041",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkForce/averageHeadcount": {
@@ -438,9 +438,14 @@ var o = class {
 			directives: !0,
 			tables: !0
 		}), await this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool(), this.highchartsTool.setColorMode(this.colorModeId);
-		for (let e of n.querySelectorAll(".dpuse-highcharts")) {
-			let t = decodeURIComponent(e.dataset.options ?? ""), n = JSON.parse(t), r = document.createElement("div");
+		for (let e of n.querySelectorAll(".dpuse-highcharts")) try {
+			console.log(111);
+			let t = decodeURIComponent(e.dataset.options ?? "");
+			console.log(222, t);
+			let n = JSON.parse(t), r = document.createElement("div");
 			e.append(r), await this.highchartsTool.render(n, r);
+		} catch (e) {
+			console.log(999, e);
 		}
 		for (let e of n.querySelectorAll(".dpuse-visual")) {
 			let t = decodeURIComponent(e.dataset.options ?? "");
