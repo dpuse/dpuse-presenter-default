@@ -87,9 +87,7 @@ export default class DefaultPresenter implements PresenterInterface {
 
         for (const visualElements of renderTo.querySelectorAll('.dpuse-highcharts')) {
             try {
-                console.log(111);
                 const datasetOptions = decodeURIComponent((visualElements as HTMLElement).dataset['options'] ?? '');
-                console.log(222, datasetOptions);
                 const options = JSON.parse(datasetOptions) as HighchartsOptions;
                 const viewContainerElement = document.createElement('div');
                 visualElements.append(viewContainerElement);
