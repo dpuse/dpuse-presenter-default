@@ -34,7 +34,8 @@ async function constructPresentationConfigs() {
         icon: null,
         iconDark: null,
         order: item[1].order,
-        path: item[0]
+        path: item[0],
+        typeId: 'presenterPresentation'
     }));
     await fs.writeFile('config.json', JSON.stringify(config, undefined, 4));
 

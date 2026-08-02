@@ -86,7 +86,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1052",
+	version: "0.1.1054",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkForce/averageHeadcount": {
@@ -535,21 +535,21 @@ var o = class {
 	}
 	async loadHighchartsTool() {
 		if (this.highchartsTool) return this.highchartsTool;
-		let e = this.toolConfigs.find((e) => e.id === "dpuse-tool-highcharts");
+		let e = this.toolConfigs.find((e) => e.id === "dpuse-tool-highcharts-visualiser");
 		if (!e) throw Error("No Highcharts tool module configuration.");
 		let t = (await import(
 			/* @vite-ignore */
-			`https://engine-eu.dpuse.app/tools/highcharts_v${e.version}/dpuse-tool-highcharts.es.js`
+			`https://engine-eu.dpuse.app/tools/highcharts-visualiser_v${e.version}/dpuse-tool-highcharts-visualiser.es.js`
 )).HighchartsTool;
 		return new t();
 	}
 	async loadMicromarkTool() {
 		if (this.micromarkTool) return this.micromarkTool;
-		let e = this.toolConfigs.find((e) => e.id === "dpuse-tool-micromark");
+		let e = this.toolConfigs.find((e) => e.id === "dpuse-tool-micromark-markdown-parser");
 		if (!e) throw Error("No Micromark tool module configuration.");
 		let t = (await import(
 			/* @vite-ignore */
-			`https://engine-eu.dpuse.app/tools/micromark_v${e.version}/dpuse-tool-micromark.es.js`
+			`https://engine-eu.dpuse.app/tools/micromark-markdown-parser_v${e.version}/dpuse-tool-micromark-markdown-parser.es.js`
 )).MicromarkTool;
 		return new t();
 	}

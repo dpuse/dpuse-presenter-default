@@ -20,8 +20,8 @@ import type {
 import type { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
 
 // ── DPUse Tools
-import type { MicromarkTool } from '@dpuse/dpuse-tool-micromark';
-import type { HighchartsOptions, HighchartsTool } from '@dpuse/dpuse-tool-highcharts';
+import type { MicromarkTool } from '@dpuse/dpuse-tool-micromark-markdown-parser';
+import type { HighchartsOptions, HighchartsTool } from '@dpuse/dpuse-tool-highcharts-visualiser';
 
 // ── Data
 import config from '~/config.json';
@@ -223,10 +223,10 @@ export default class DefaultPresenter implements PresenterInterface {
     private async loadHighchartsTool(): Promise<HighchartsTool> {
         if (this.highchartsTool) return this.highchartsTool;
 
-        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-highcharts');
+        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-highcharts-visualiser');
         if (!toolModuleConfig) throw new Error('No Highcharts tool module configuration.');
 
-        const url = `https://engine-eu.dpuse.app/tools/highcharts_v${toolModuleConfig.version}/dpuse-tool-highcharts.es.js`;
+        const url = `https://engine-eu.dpuse.app/tools/highcharts-visualiser_v${toolModuleConfig.version}/dpuse-tool-highcharts-visualiser.es.js`;
         const module = (await import(/* @vite-ignore */ url)) as { HighchartsTool: new () => HighchartsTool };
         const HighchartsTool = module.HighchartsTool;
         return new HighchartsTool();
@@ -235,10 +235,10 @@ export default class DefaultPresenter implements PresenterInterface {
     private async loadMicromarkTool(): Promise<MicromarkTool> {
         if (this.micromarkTool) return this.micromarkTool;
 
-        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-micromark');
+        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-micromark-markdown-parser');
         if (!toolModuleConfig) throw new Error('No Micromark tool module configuration.');
 
-        const url = `https://engine-eu.dpuse.app/tools/micromark_v${toolModuleConfig.version}/dpuse-tool-micromark.es.js`;
+        const url = `https://engine-eu.dpuse.app/tools/micromark-markdown-parser_v${toolModuleConfig.version}/dpuse-tool-micromark-markdown-parser.es.js`;
         const module = (await import(/* @vite-ignore */ url)) as { MicromarkTool: new () => MicromarkTool };
         const MicromarkToolConstructor = module.MicromarkTool;
         return new MicromarkToolConstructor();
