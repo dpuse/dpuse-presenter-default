@@ -35,8 +35,8 @@ _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not gen
 |Chunk/Module/File|Composition|
 |:------ |:-----------|
 | dist/dpuse-presenter-default.es.js | 31.7 kB · brotli 5.9 kB |
-| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `█████████████████░░░` 86.3% |
-| &nbsp;&nbsp;&nbsp;&nbsp;src | `███░░░░░░░░░░░░░░░░░` 13.7% |
+| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `█████████████████░░░` 86.2% |
+| &nbsp;&nbsp;&nbsp;&nbsp;src | `███░░░░░░░░░░░░░░░░░` 13.8% |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.ts | `███░░░░░░░░░░░░░░░░░` 12.7% |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useSampleData.ts | `░░░░░░░░░░░░░░░░░░░░` 1.1% |
 
