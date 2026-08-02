@@ -1,7 +1,7 @@
 var e = {
 	id: "dpuse-presenter-default",
 	label: { en: "Default Presenter" },
-	description: { en: ["..."] },
+	description: { en: "..." },
 	firstCreatedAt: null,
 	icon: "<svg viewBox=\"0 0 333 263\"><path fill=\"#3b82f6\" d=\"M128.947 122.88c6.104 0 11.053 4.949 11.053 11.053v117.894c0 6.105-4.949 11.053-11.053 11.053H70c-38.66 0-70-31.339-70-70 0-38.659 31.34-70 70-70z\" transform-origin=\"70px 192.88px\"/><rect width=\"39.121\" height=\"145.706\" x=\"100.844\" fill=\"#3b82f6\" paint-order=\"fill\" rx=\"7.057\" ry=\"7.057\"/><path fill=\"#ca8a04\" d=\"M171.053 140.001c-6.104 0-11.053-4.949-11.053-11.053V11.054C160 4.949 164.949.001 171.053.001H230c38.66 0 70 31.34 70 70s-31.34 70-70 70z\" transform-origin=\"230px 70.001px\"/><rect width=\"39.121\" height=\"145.706\" x=\"-199.16\" y=\"-262.88\" fill=\"#ca8a04\" paint-order=\"fill\" rx=\"7.057\" ry=\"7.057\" transform=\"scale(-1)\"/><path fill=\"#0d9488\" d=\"M276 263c-31.481 0-57-25.52-57-57v-49.046a7.953 7.953 0 0 1 7.952-7.954h98.095a7.954 7.954 0 0 1 7.953 7.954V206c0 31.48-25.521 57-57 57\" transform-origin=\"276px 206px\"/></svg>",
 	iconDark: null,
@@ -15,71 +15,78 @@ var e = {
 		{
 			id: "hrWrkForceAverageHeadcount",
 			label: { en: "Average Headcount" },
-			description: { en: ["This is a description..."] },
+			description: { en: "This is a description..." },
 			icon: null,
 			iconDark: null,
 			order: 2,
-			path: "hr/wrkForce/averageHeadcount"
+			path: "hr/wrkForce/averageHeadcount",
+			typeId: "presenterPresentation"
 		},
 		{
 			id: "hrWrkForceFtes",
 			label: { en: "Full-Time Equivalents" },
-			description: { en: ["This is a description..."] },
+			description: { en: "This is a description..." },
 			icon: null,
 			iconDark: null,
 			order: 4,
-			path: "hr/wrkForce/ftes"
+			path: "hr/wrkForce/ftes",
+			typeId: "presenterPresentation"
 		},
 		{
 			id: "hrWrkForceHeadcountSummary",
 			label: { en: "Headcount Summary" },
-			description: { en: ["This is a description..."] },
+			description: { en: "This is a description..." },
 			icon: null,
 			iconDark: null,
 			order: 7,
-			path: "hr/wrkForce/headcountSummary"
+			path: "hr/wrkForce/headcountSummary",
+			typeId: "presenterPresentation"
 		},
 		{
 			id: "hrWrkForceHiresTerminations",
 			label: { en: "Hires & Terminations" },
-			description: { en: ["This is a description..."] },
+			description: { en: "This is a description..." },
 			icon: null,
 			iconDark: null,
 			order: 3,
-			path: "hr/wrkForce/hiresTerminations"
+			path: "hr/wrkForce/hiresTerminations",
+			typeId: "presenterPresentation"
 		},
 		{
 			id: "hrWrkForceMovementFlows",
 			label: { en: "Movement Flows" },
-			description: { en: ["This is a description..."] },
+			description: { en: "This is a description..." },
 			icon: null,
 			iconDark: null,
 			order: 6,
-			path: "hr/wrkForce/movementFlows"
+			path: "hr/wrkForce/movementFlows",
+			typeId: "presenterPresentation"
 		},
 		{
 			id: "hrWrkForceMovements",
 			label: { en: "Movements (Entry, Internal & Exit)" },
-			description: { en: ["This is a description..."] },
+			description: { en: "This is a description..." },
 			icon: null,
 			iconDark: null,
 			order: 5,
-			path: "hr/wrkForce/movements"
+			path: "hr/wrkForce/movements",
+			typeId: "presenterPresentation"
 		},
 		{
 			id: "hrWrkForcePhysicalHeadcount",
 			label: { en: "Physical Headcount" },
-			description: { en: ["This is a description..."] },
+			description: { en: "This is a description..." },
 			icon: null,
 			iconDark: null,
 			order: 1,
-			path: "hr/wrkForce/physicalHeadcount"
+			path: "hr/wrkForce/physicalHeadcount",
+			typeId: "presenterPresentation"
 		}
 	],
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1047",
+	version: "0.1.1051",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkForce/averageHeadcount": {
@@ -523,9 +530,7 @@ var o = class {
 			case "polarChart":
 				await this.highchartsTool.renderPolarChart(t, n.content, r);
 				break;
-			case "rangeChart":
-				await this.highchartsTool.renderRangeChart(t, n.content, r);
-				break;
+			case "rangeChart": await this.highchartsTool.renderRangeChart(t, n.content, r);
 		}
 	}
 	async loadHighchartsTool() {
