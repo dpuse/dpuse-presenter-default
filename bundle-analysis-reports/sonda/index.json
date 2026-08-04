@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-08-02T14:41:53.794Z",
+    "generatedAt": "2026-08-04T15:50:25.412Z",
     "integration": "vite",
     "sources": false,
     "gzip": false,
@@ -23,7 +23,7 @@
       "format": "other",
       "uncompressed": 27969,
       "gzip": 0,
-      "brotli": 4849,
+      "brotli": 4841,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -46,7 +46,7 @@
       "type": "script",
       "uncompressed": 32432,
       "gzip": 0,
-      "brotli": 6018
+      "brotli": 6008
     },
     {
       "kind": "filesystem",
@@ -79,7 +79,7 @@
       "format": "esm",
       "uncompressed": 4109,
       "gzip": 0,
-      "brotli": 1006,
+      "brotli": 1004,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
