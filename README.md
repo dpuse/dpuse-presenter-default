@@ -1,6 +1,6 @@
 # Data Positioning Default Presenter
 
-Consider an ApexCharts tool.
+Consider ApexCharts and eCharts tools.
 
 [![npm version](https://img.shields.io/npm/v/@dpuse/dpuse-presenter-default)](https://www.npmjs.com/package/@dpuse/dpuse-presenter-default)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
