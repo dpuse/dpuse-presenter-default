@@ -1,6 +1,6 @@
 // ── External Dependencies & Registrations
 // import { useDataTable } from '@dpuse/dpuse-shared';
-import type { ComponentReference } from '@dpuse/dpuse-shared/component';
+import type { ComponentReferenceConfig } from '@dpuse/dpuse-shared/component';
 import type { LocalisedReference } from '@dpuse/dpuse-shared/locale';
 import type { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import type {
@@ -52,12 +52,12 @@ export default class DefaultPresenter implements PresenterInterface {
     // ── Actions ──────────────────────────────────────────────────────────────────────────────────────────────────────
 
     // Operations - List. TODO: Is this needed? Is 'configPresentations.json' needed????
-    list(): ComponentReference[] {
+    list(): ComponentReferenceConfig[] {
         return this.config.presentations;
     }
 
     // eslint-disable-next-line sonarjs/cognitive-complexity
-    async render(presentationReference: LocalisedReference<ComponentReference>, renderTo: HTMLElement, data?: unknown): Promise<void> {
+    async render(presentationReference: LocalisedReference<ComponentReferenceConfig>, renderTo: HTMLElement, data?: unknown): Promise<void> {
         // Use presentation path to retrieve presentation.
         const presentationPath = presentationReference.path as keyof typeof configPresentations;
         const presentationLabel = presentationReference.label;

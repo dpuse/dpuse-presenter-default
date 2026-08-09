@@ -4,7 +4,7 @@ import frontMatter from 'front-matter';
 import path from 'node:path';
 
 // Dependencies - Framework.
-import type { ComponentReference } from '@dpuse/dpuse-shared/component';
+import type { ComponentReferenceConfig } from '@dpuse/dpuse-shared/component';
 import type { PresentationConfig } from '@dpuse/dpuse-shared/component/presentation';
 
 // Types
@@ -27,7 +27,7 @@ async function constructPresentationConfigs() {
     await fs.writeFile('./configPresentations.json', JSON.stringify(presentationMap));
 
     const config = await JSON.parse(await fs.readFile('config.json', 'utf8'));
-    config.presentations = Object.entries(presentationMap).map((item): ComponentReference => ({
+    config.presentations = Object.entries(presentationMap).map((item): ComponentReferenceConfig => ({
         id: item[1].id,
         label: item[1].label,
         description: item[1].description,
