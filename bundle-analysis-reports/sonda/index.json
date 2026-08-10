@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-08-04T15:50:25.412Z",
+    "generatedAt": "2026-08-10T11:32:20.900Z",
     "integration": "vite",
     "sources": false,
     "gzip": false,
@@ -21,9 +21,9 @@
       "name": "[unassigned]",
       "type": "other",
       "format": "other",
-      "uncompressed": 27969,
+      "uncompressed": 27974,
       "gzip": 0,
-      "brotli": 4841,
+      "brotli": 4844,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -44,9 +44,9 @@
       "kind": "asset",
       "name": "dist/dpuse-presenter-default.es.js",
       "type": "script",
-      "uncompressed": 32432,
+      "uncompressed": 32507,
       "gzip": 0,
-      "brotli": 6008
+      "brotli": 6041
     },
     {
       "kind": "filesystem",
@@ -62,7 +62,7 @@
       "format": "esm",
       "uncompressed": 354,
       "gzip": 0,
-      "brotli": 163,
+      "brotli": 164,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -70,16 +70,16 @@
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 7106
+      "uncompressed": 7190
     },
     {
       "kind": "chunk",
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 4109,
+      "uncompressed": 4179,
       "gzip": 0,
-      "brotli": 1004,
+      "brotli": 1033,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {

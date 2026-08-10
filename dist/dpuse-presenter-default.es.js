@@ -86,7 +86,7 @@ var e = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1056",
+	version: "0.1.1060",
 	usageId: "unknown"
 }, t = {
 	"hr/wrkForce/averageHeadcount": {
@@ -428,11 +428,12 @@ var o = class {
 	config;
 	colorModeId;
 	sampleData;
+	sanitizeHTML;
 	toolConfigs;
 	highchartsTool;
 	micromarkTool;
-	constructor(t, n) {
-		this.config = e, this.toolConfigs = t, this.colorModeId = n, this.sampleData = r();
+	constructor(t, n, i) {
+		this.config = e, this.toolConfigs = t, this.colorModeId = n, this.sanitizeHTML = i, this.sampleData = r();
 	}
 	list() {
 		return this.config.presentations;
@@ -441,10 +442,12 @@ var o = class {
 		let i = e.path, a = e.label;
 		e.description;
 		let o = t[i].content;
-		o = o.replaceAll("{{label}}", () => a), this.micromarkTool = await this.loadMicromarkTool(), n.innerHTML = await this.micromarkTool.render(o, {
+		o = o.replaceAll("{{label}}", () => a), this.micromarkTool = await this.loadMicromarkTool();
+		let s = await this.micromarkTool.render(o, {
 			directives: !0,
 			tables: !0
-		}), await this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool(), this.highchartsTool.setColorMode(this.colorModeId);
+		});
+		n.innerHTML = this.sanitizeHTML(s), await this.micromarkTool.highlight(n, this.colorModeId), this.highchartsTool = await this.loadHighchartsTool(), this.highchartsTool.setColorMode(this.colorModeId);
 		for (let e of n.querySelectorAll(".dpuse-highcharts")) try {
 			let t = decodeURIComponent(e.dataset.options ?? ""), n = JSON.parse(t), r = document.createElement("div");
 			e.append(r), await this.highchartsTool.render(n, r);
