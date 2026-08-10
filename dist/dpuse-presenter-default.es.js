@@ -855,7 +855,7 @@ var Ue = He(), N = {
 	status: null,
 	statusId: "alpha",
 	typeId: "presenter",
-	version: "0.1.1061",
+	version: "0.1.1062",
 	usageId: "unknown"
 }, P = {
 	"hr/wrkForce/averageHeadcount": {
