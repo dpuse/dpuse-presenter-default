@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-08-10T11:32:20.900Z",
+    "generatedAt": "2026-08-10T15:26:23.718Z",
     "integration": "vite",
     "sources": false,
     "gzip": false,
@@ -21,9 +21,9 @@
       "name": "[unassigned]",
       "type": "other",
       "format": "other",
-      "uncompressed": 27974,
+      "uncompressed": 29630,
       "gzip": 0,
-      "brotli": 4844,
+      "brotli": 4979,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -44,9 +44,26 @@
       "kind": "asset",
       "name": "dist/dpuse-presenter-default.es.js",
       "type": "script",
-      "uncompressed": 32507,
+      "uncompressed": 65628,
       "gzip": 0,
-      "brotli": 6041
+      "brotli": 15913
+    },
+    {
+      "kind": "filesystem",
+      "name": "node_modules/dompurify/dist/purify.es.mjs",
+      "type": "script",
+      "format": "esm",
+      "uncompressed": 121978
+    },
+    {
+      "kind": "chunk",
+      "name": "node_modules/dompurify/dist/purify.es.mjs",
+      "type": "script",
+      "format": "esm",
+      "uncompressed": 31506,
+      "gzip": 0,
+      "brotli": 9720,
+      "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
       "kind": "filesystem",
@@ -60,9 +77,9 @@
       "name": "src/composers/useSampleData.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 354,
+      "uncompressed": 358,
       "gzip": 0,
-      "brotli": 164,
+      "brotli": 169,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -70,16 +87,16 @@
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 7190
+      "uncompressed": 7161
     },
     {
       "kind": "chunk",
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 4179,
+      "uncompressed": 4134,
       "gzip": 0,
-      "brotli": 1033,
+      "brotli": 1045,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
@@ -98,7 +115,14 @@
       "original": null
     }
   ],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "name": "dompurify",
+      "paths": [
+        "node_modules/dompurify"
+      ]
+    }
+  ],
   "issues": [],
   "sourcemaps": []
 }

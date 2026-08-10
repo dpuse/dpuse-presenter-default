@@ -1,4 +1,5 @@
 // ── External Dependencies & Registrations
+import DOMPurify from 'dompurify';
 // import { useDataTable } from '@dpuse/dpuse-shared';
 import type { ComponentReferenceConfig } from '@dpuse/dpuse-shared/component';
 import type { LocalisedReference } from '@dpuse/dpuse-shared/locale';
@@ -17,7 +18,7 @@ import type {
     PresentationVisualViewConfig
     // PresentationVisualValueTableViewConfig
 } from '@dpuse/dpuse-shared/component/presentation';
-import type { PresenterConfig, PresenterInterface, SanitizeHTML } from '@dpuse/dpuse-shared/component/module/presenter';
+import type { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
 
 // ── DPUse Tools
 import type { MicromarkTool } from '@dpuse/dpuse-tool-micromark-markdown-parser';
@@ -35,17 +36,15 @@ export default class DefaultPresenter implements PresenterInterface {
     colorModeId: string;
     // readonly valueTable;
     readonly sampleData;
-    readonly sanitizeHTML: SanitizeHTML;
     readonly toolConfigs;
 
     highchartsTool?: HighchartsTool;
     micromarkTool?: MicromarkTool;
 
-    constructor(toolConfigs: ToolConfig[], colorModeId: string, sanitizeHTML: SanitizeHTML) {
+    constructor(toolConfigs: ToolConfig[], colorModeId: string) {
         this.config = config as PresenterConfig;
         this.toolConfigs = toolConfigs;
         this.colorModeId = colorModeId;
-        this.sanitizeHTML = sanitizeHTML;
 
         // this.valueTable = useDataTable(); // TODO?
         this.sampleData = useSampleData(); // TODO?
@@ -75,8 +74,7 @@ export default class DefaultPresenter implements PresenterInterface {
         // Render markdown to HTML
         this.micromarkTool = await this.loadMicromarkTool();
         const html = await this.micromarkTool.render(processedMarkdown, { directives: true, tables: true }); // TODO: Need to pass tables from frontend.
-        // renderTo.innerHTML = html;
-        renderTo.innerHTML = this.sanitizeHTML(html);
+        renderTo.innerHTML = DOMPurify.sanitize(html);
         // colorModeId is passed explicitly (rather than relying on the tool's own state) because micromarkTool is
         // lazily created above: any setColorMode() call received before this instance existed never reached it, so
         // its internal state could still be the 'light' default even if this.colorModeId is 'dark'.
