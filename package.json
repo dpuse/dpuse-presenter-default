@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-presenter-default",
-    "version": "0.1.1063",
+    "version": "0.1.1065",
     "private": false,
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
@@ -36,7 +36,7 @@
         "fsevents@2.3.3": true,
         "sharp@0.34.5": true,
         "unrs-resolver@1.12.2": true,
-        "workerd@1.20260801.1": true
+        "workerd@1.20260815.1": true
     },
     "scripts": {
         "audit": "node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
@@ -56,14 +56,14 @@
         "test": "node -e \"import('@dpuse/dpuse-development').then(m => m.testProject())\""
     },
     "dependencies": {
-        "@dpuse/dpuse-shared": "^0.3.770",
-        "@dpuse/dpuse-tool-highcharts-visualiser": "^0.0.80",
-        "@dpuse/dpuse-tool-micromark-markdown-parser": "^0.1.1039",
-        "dompurify": "^3.4.13"
+        "@dpuse/dpuse-shared": "^0.3.777",
+        "@dpuse/dpuse-tool-highcharts-visualiser": "^0.0.82",
+        "@dpuse/dpuse-tool-micromark-markdown-parser": "^0.1.1042",
+        "dompurify": "^3.4.14"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.703",
-        "@dpuse/eslint-config-dpuse": "^1.0.113",
+        "@dpuse/dpuse-development": "^0.3.706",
+        "@dpuse/eslint-config-dpuse": "^1.0.116",
         "@types/node": "^26.2.0",
         "eslint": "^10.8.1",
         "front-matter": "^4.0.2",
@@ -71,9 +71,9 @@
         "prettier": "^3.9.6",
         "sonda": "^0.14.0",
         "typescript": "^6.0.3",
-        "vite": "^8.2.1",
+        "vite": "^8.2.2",
         "vite-plugin-dts": "^5.0.3",
-        "vitest": "^4.1.10",
-        "wrangler": "^4.120.0"
+        "vitest": "^4.1.11",
+        "wrangler": "^4.124.0"
     }
 }

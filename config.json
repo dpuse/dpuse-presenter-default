@@ -118,6 +118,9 @@
     "status": null,
     "statusId": "alpha",
     "typeId": "presenter",
-    "version": "0.1.1063",
-    "usageId": "unknown"
+    "version": "0.1.1065",
+    "usageId": "unknown",
+    "vendorAccountURL": null,
+    "vendorDocumentationURL": null,
+    "vendorHomeURL": null
 }
