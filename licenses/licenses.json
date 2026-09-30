@@ -22,13 +22,13 @@
         "path": "node_modules/@dpuse/dpuse-tool-highcharts-visualiser",
         "licenseFile": "downloads/@dpuse/dpuse-tool-highcharts-visualiser@0.0.90-LICENSE.txt"
     },
-    "@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1043": {
+    "@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1050": {
         "licenses": "MIT",
         "repository": "https://github.com/dpuse/dpuse-tool-micromark-markdown-parser",
         "publisher": "Jonathan Terrell",
         "email": "terrell.jm@gmail.com",
         "path": "node_modules/@dpuse/dpuse-tool-micromark-markdown-parser",
-        "licenseFile": "downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1043-LICENSE.txt"
+        "licenseFile": "downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1050-LICENSE.txt"
     },
     "@speed-highlight/core@2.1.0": {
         "licenses": "CC0-1.0",
@@ -195,13 +195,13 @@
         "path": "node_modules/is-hexadecimal",
         "licenseFile": "downloads/is-hexadecimal@2.0.1-LICENSE.txt"
     },
-    "micromark-core-commonmark@2.0.3": {
+    "micromark-core-commonmark@2.0.4": {
         "licenses": "MIT",
         "repository": "https://github.com/micromark/micromark.git#main",
         "publisher": "Titus Wormer",
         "email": "tituswormer@gmail.com",
         "path": "node_modules/micromark-core-commonmark",
-        "licenseFile": "downloads/micromark-core-commonmark@2.0.3-LICENSE.txt"
+        "licenseFile": "downloads/micromark-core-commonmark@2.0.4-LICENSE.txt"
     },
     "micromark-extension-directive@4.0.0": {
         "licenses": "MIT",
@@ -235,13 +235,13 @@
         "path": "node_modules/micromark-factory-label",
         "licenseFile": "downloads/micromark-factory-label@2.0.1-LICENSE.txt"
     },
-    "micromark-factory-space@2.0.1": {
+    "micromark-factory-space@2.1.0": {
         "licenses": "MIT",
         "repository": "https://github.com/micromark/micromark.git#main",
         "publisher": "Titus Wormer",
         "email": "tituswormer@gmail.com",
         "path": "node_modules/micromark-factory-space",
-        "licenseFile": "downloads/micromark-factory-space@2.0.1-LICENSE.txt"
+        "licenseFile": "downloads/micromark-factory-space@2.1.0-LICENSE.txt"
     },
     "micromark-factory-title@2.0.1": {
         "licenses": "MIT",
@@ -299,6 +299,14 @@
         "path": "node_modules/micromark-util-decode-numeric-character-reference",
         "licenseFile": "downloads/micromark-util-decode-numeric-character-reference@2.0.2-LICENSE.txt"
     },
+    "micromark-util-edit-map@1.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-edit-map",
+        "licenseFile": "downloads/micromark-util-edit-map@1.0.0-LICENSE.txt"
+    },
     "micromark-util-encode@2.0.1": {
         "licenses": "MIT",
         "repository": "https://github.com/micromark/micromark.git#main",
@@ -355,21 +363,21 @@
         "path": "node_modules/micromark-util-symbol",
         "licenseFile": "downloads/micromark-util-symbol@2.0.1-LICENSE.txt"
     },
-    "micromark-util-types@2.0.2": {
+    "micromark-util-types@2.0.3": {
         "licenses": "MIT",
         "repository": "https://github.com/micromark/micromark.git#main",
         "publisher": "Titus Wormer",
         "email": "tituswormer@gmail.com",
         "path": "node_modules/micromark-util-types",
-        "licenseFile": "downloads/micromark-util-types@2.0.2-LICENSE.txt"
+        "licenseFile": "downloads/micromark-util-types@2.0.3-LICENSE.txt"
     },
-    "micromark@4.0.2": {
+    "micromark@4.0.3": {
         "licenses": "MIT",
         "repository": "https://github.com/micromark/micromark.git#main",
         "publisher": "Titus Wormer",
         "email": "tituswormer@gmail.com",
         "path": "node_modules/micromark",
-        "licenseFile": "downloads/micromark@4.0.2-LICENSE.txt"
+        "licenseFile": "downloads/micromark@4.0.3-LICENSE.txt"
     },
     "ms@2.1.3": {
         "licenses": "MIT",

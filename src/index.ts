@@ -117,13 +117,13 @@ export default class DefaultPresenter implements PresenterInterface {
                 let defaultTypeId: string | undefined;
                 for (const viewConfig of visualConfig.views) {
                     const viewTab = this.createVisualViewTab(viewConfig, visualConfig, viewContainerElement);
-                    if (viewTab) {
-                        if (!defaultTypeId || viewTab.isDefault) {
-                            defaultCategoryId = viewTab.categoryId;
-                            defaultTypeId = viewTab.typeId;
-                        }
-                        tabBarElement.append(viewTab.element);
+                    if (!viewTab) continue;
+
+                    if (!defaultTypeId || viewTab.isDefault) {
+                        defaultCategoryId = viewTab.categoryId;
+                        defaultTypeId = viewTab.typeId;
                     }
+                    tabBarElement.append(viewTab.element);
                 }
                 visualElements.append(tabBarElement);
                 visualElements.append(viewContainerElement);

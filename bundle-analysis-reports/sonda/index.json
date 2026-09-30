@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-09-30T11:07:15.517Z",
+    "generatedAt": "2026-09-30T11:32:12.565Z",
     "integration": "vite",
     "sources": false,
     "gzip": true,
@@ -45,7 +45,7 @@
       "name": "dist/dpuse-presenter-default.es.js",
       "type": "script",
       "uncompressed": 67080,
-      "gzip": 19177,
+      "gzip": 19174,
       "brotli": 0
     },
     {
@@ -78,7 +78,7 @@
       "type": "script",
       "format": "esm",
       "uncompressed": 358,
-      "gzip": 214,
+      "gzip": 211,
       "brotli": 0,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
@@ -87,7 +87,7 @@
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 7161
+      "uncompressed": 7158
     },
     {
       "kind": "chunk",

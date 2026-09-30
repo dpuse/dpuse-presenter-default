@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1067",
+  "version": "0.1.1068",
   "name": "@dpuse/dpuse-presenter-default",
   "dependencies": {
     "@dpuse/dpuse-shared": {
@@ -98,8 +98,8 @@
       }
     },
     "@dpuse/dpuse-tool-micromark-markdown-parser": {
-      "version": "0.1.1043",
-      "resolved": "https://registry.npmjs.org/@dpuse/dpuse-tool-micromark-markdown-parser/-/dpuse-tool-micromark-markdown-parser-0.1.1043.tgz",
+      "version": "0.1.1050",
+      "resolved": "https://registry.npmjs.org/@dpuse/dpuse-tool-micromark-markdown-parser/-/dpuse-tool-micromark-markdown-parser-0.1.1050.tgz",
       "overridden": false,
       "dependencies": {
         "@speed-highlight/core": {
@@ -125,15 +125,15 @@
               }
             },
             "micromark-factory-space": {
-              "version": "2.0.1",
-              "resolved": "https://registry.npmjs.org/micromark-factory-space/-/micromark-factory-space-2.0.1.tgz",
+              "version": "2.1.0",
+              "resolved": "https://registry.npmjs.org/micromark-factory-space/-/micromark-factory-space-2.1.0.tgz",
               "overridden": false,
               "dependencies": {
                 "micromark-util-character": {
                   "version": "2.1.1"
                 },
                 "micromark-util-types": {
-                  "version": "2.0.2"
+                  "version": "2.0.3"
                 }
               }
             },
@@ -143,7 +143,7 @@
               "overridden": false,
               "dependencies": {
                 "micromark-factory-space": {
-                  "version": "2.0.1"
+                  "version": "2.1.0"
                 },
                 "micromark-util-character": {
                   "version": "2.1.1"
@@ -152,7 +152,7 @@
                   "version": "2.0.1"
                 },
                 "micromark-util-types": {
-                  "version": "2.0.2"
+                  "version": "2.0.3"
                 }
               }
             },
@@ -165,7 +165,7 @@
                   "version": "2.0.1"
                 },
                 "micromark-util-types": {
-                  "version": "2.0.2"
+                  "version": "2.0.3"
                 }
               }
             },
@@ -175,8 +175,8 @@
               "overridden": false
             },
             "micromark-util-types": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/micromark-util-types/-/micromark-util-types-2.0.2.tgz",
+              "version": "2.0.3",
+              "resolved": "https://registry.npmjs.org/micromark-util-types/-/micromark-util-types-2.0.3.tgz",
               "overridden": false
             },
             "parse-entities": {
@@ -240,7 +240,7 @@
               "version": "1.1.0"
             },
             "micromark-factory-space": {
-              "version": "2.0.1"
+              "version": "2.1.0"
             },
             "micromark-util-character": {
               "version": "2.1.1"
@@ -249,13 +249,13 @@
               "version": "2.0.1"
             },
             "micromark-util-types": {
-              "version": "2.0.2"
+              "version": "2.0.3"
             }
           }
         },
         "micromark": {
-          "version": "4.0.2",
-          "resolved": "https://registry.npmjs.org/micromark/-/micromark-4.0.2.tgz",
+          "version": "4.0.3",
+          "resolved": "https://registry.npmjs.org/micromark/-/micromark-4.0.3.tgz",
           "overridden": false,
           "dependencies": {
             "@types/debug": {
@@ -298,8 +298,8 @@
               "version": "1.1.0"
             },
             "micromark-core-commonmark": {
-              "version": "2.0.3",
-              "resolved": "https://registry.npmjs.org/micromark-core-commonmark/-/micromark-core-commonmark-2.0.3.tgz",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/micromark-core-commonmark/-/micromark-core-commonmark-2.0.4.tgz",
               "overridden": false,
               "dependencies": {
                 "decode-named-character-reference": {
@@ -320,7 +320,7 @@
                       "version": "2.0.1"
                     },
                     "micromark-util-types": {
-                      "version": "2.0.2"
+                      "version": "2.0.3"
                     }
                   }
                 },
@@ -339,12 +339,12 @@
                       "version": "2.0.1"
                     },
                     "micromark-util-types": {
-                      "version": "2.0.2"
+                      "version": "2.0.3"
                     }
                   }
                 },
                 "micromark-factory-space": {
-                  "version": "2.0.1"
+                  "version": "2.1.0"
                 },
                 "micromark-factory-title": {
                   "version": "2.0.1",
@@ -352,7 +352,7 @@
                   "overridden": false,
                   "dependencies": {
                     "micromark-factory-space": {
-                      "version": "2.0.1"
+                      "version": "2.1.0"
                     },
                     "micromark-util-character": {
                       "version": "2.1.1"
@@ -361,7 +361,7 @@
                       "version": "2.0.1"
                     },
                     "micromark-util-types": {
-                      "version": "2.0.2"
+                      "version": "2.0.3"
                     }
                   }
                 },
@@ -386,9 +386,12 @@
                       "version": "2.0.1"
                     },
                     "micromark-util-types": {
-                      "version": "2.0.2"
+                      "version": "2.0.3"
                     }
                   }
+                },
+                "micromark-util-edit-map": {
+                  "version": "1.0.0"
                 },
                 "micromark-util-html-tag-name": {
                   "version": "2.0.1",
@@ -408,12 +411,12 @@
                   "version": "2.0.1"
                 },
                 "micromark-util-types": {
-                  "version": "2.0.2"
+                  "version": "2.0.3"
                 }
               }
             },
             "micromark-factory-space": {
-              "version": "2.0.1"
+              "version": "2.1.0"
             },
             "micromark-util-character": {
               "version": "2.1.1"
@@ -437,7 +440,7 @@
                   "version": "2.0.1"
                 },
                 "micromark-util-types": {
-                  "version": "2.0.2"
+                  "version": "2.0.3"
                 }
               }
             },
@@ -448,6 +451,16 @@
               "dependencies": {
                 "micromark-util-symbol": {
                   "version": "2.0.1"
+                }
+              }
+            },
+            "micromark-util-edit-map": {
+              "version": "1.0.0",
+              "resolved": "https://registry.npmjs.org/micromark-util-edit-map/-/micromark-util-edit-map-1.0.0.tgz",
+              "overridden": false,
+              "dependencies": {
+                "micromark-util-types": {
+                  "version": "2.0.3"
                 }
               }
             },
@@ -472,7 +485,7 @@
               "overridden": false,
               "dependencies": {
                 "micromark-util-types": {
-                  "version": "2.0.2"
+                  "version": "2.0.3"
                 }
               }
             },
@@ -507,7 +520,7 @@
                   "version": "2.0.1"
                 },
                 "micromark-util-types": {
-                  "version": "2.0.2"
+                  "version": "2.0.3"
                 }
               }
             },
@@ -515,7 +528,7 @@
               "version": "2.0.1"
             },
             "micromark-util-types": {
-              "version": "2.0.2"
+              "version": "2.0.3"
             }
           }
         }
