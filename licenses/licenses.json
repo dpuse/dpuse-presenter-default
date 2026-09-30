@@ -1,1 +1,417 @@
-[{"department":"kessler","relatedTo":"stuff","name":"@datapos/datapos-tool-highcharts","licensePeriod":"perpetual","material":"material","licenseType":"MIT","link":"git+https://github.com/data-positioning/datapos-tool-highcharts.git","remoteVersion":"0.0.48","installedVersion":"0.0.48","definedVersion":"^0.0.48","author":"n/a","latestRemoteModified":"2025-11-27T21:52:29.059Z"},{"department":"kessler","relatedTo":"stuff","name":"@datapos/datapos-tool-micromark","licensePeriod":"perpetual","material":"material","licenseType":"MIT","link":"git+https://github.com/data-positioning/datapos-tool-micromark.git","remoteVersion":"0.1.992","installedVersion":"0.1.992","definedVersion":"^0.1.992","author":"n/a","latestRemoteModified":"2025-12-01T23:21:33.148Z"},{"department":"kessler","relatedTo":"stuff","name":"@dpuse/dpuse-shared","licensePeriod":"perpetual","material":"material","licenseType":"MIT","link":"git+https://github.com/data-positioning/dpuse-shared.git","remoteVersion":"0.3.594","installedVersion":"0.3.594","definedVersion":"^0.3.594","author":"Jonathan Terrell <terrell.jm@gmail.com>","latestRemoteModified":"2026-03-22T12:28:08.048Z"}]
+{
+    "@borewit/text-codec@0.2.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Borewit/text-codec",
+        "publisher": "Borewit",
+        "path": "node_modules/@borewit/text-codec",
+        "licenseFile": "downloads/@borewit/text-codec@0.2.2-LICENSE.txt"
+    },
+    "@dpuse/dpuse-shared@0.3.865": {
+        "licenses": "MIT",
+        "repository": "https://github.com/dpuse/dpuse-shared",
+        "publisher": "Jonathan Terrell",
+        "email": "terrell.jm@gmail.com",
+        "path": "node_modules/@dpuse/dpuse-shared",
+        "licenseFile": "downloads/@dpuse/dpuse-shared@0.3.865-LICENSE.txt"
+    },
+    "@dpuse/dpuse-tool-highcharts-visualiser@0.0.90": {
+        "licenses": "MIT",
+        "repository": "https://github.com/dpuse/dpuse-tool-highcharts-visualiser",
+        "publisher": "Jonathan Terrell",
+        "email": "terrell.jm@gmail.com",
+        "path": "node_modules/@dpuse/dpuse-tool-highcharts-visualiser",
+        "licenseFile": "downloads/@dpuse/dpuse-tool-highcharts-visualiser@0.0.90-LICENSE.txt"
+    },
+    "@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1043": {
+        "licenses": "MIT",
+        "repository": "https://github.com/dpuse/dpuse-tool-micromark-markdown-parser",
+        "publisher": "Jonathan Terrell",
+        "email": "terrell.jm@gmail.com",
+        "path": "node_modules/@dpuse/dpuse-tool-micromark-markdown-parser",
+        "licenseFile": "downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1043-LICENSE.txt"
+    },
+    "@speed-highlight/core@2.1.0": {
+        "licenses": "CC0-1.0",
+        "repository": "https://github.com/speed-highlight/core",
+        "publisher": "matubu",
+        "email": "hi@mathias.ninja",
+        "path": "node_modules/@speed-highlight/core",
+        "licenseFile": "downloads/@speed-highlight/core@2.1.0-LICENSE.txt"
+    },
+    "@tokenizer/inflate@0.4.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Borewit/tokenizer-inflate",
+        "publisher": "Borewit",
+        "path": "node_modules/@tokenizer/inflate",
+        "licenseFile": "downloads/@tokenizer/inflate@0.4.1-LICENSE.txt"
+    },
+    "@tokenizer/token@0.3.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Borewit/tokenizer-token",
+        "publisher": "Borewit",
+        "path": "node_modules/@tokenizer/token",
+        "licenseFile": "downloads/@tokenizer/token@0.3.0-LICENSE.txt"
+    },
+    "@types/debug@4.1.13": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+        "path": "node_modules/@types/debug",
+        "licenseFile": "downloads/@types/debug@4.1.13-LICENSE.txt"
+    },
+    "@types/ms@2.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+        "path": "node_modules/@types/ms",
+        "licenseFile": "downloads/@types/ms@2.1.0-LICENSE.txt"
+    },
+    "@types/trusted-types@2.0.7": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+        "path": "node_modules/@types/trusted-types",
+        "licenseFile": "downloads/@types/trusted-types@2.0.7-LICENSE.txt"
+    },
+    "@types/unist@2.0.11": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+        "path": "node_modules/@types/unist",
+        "licenseFile": "downloads/@types/unist@2.0.11-LICENSE.txt"
+    },
+    "character-entities-legacy@3.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/character-entities-legacy",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/character-entities-legacy",
+        "licenseFile": "downloads/character-entities-legacy@3.0.0-LICENSE.txt"
+    },
+    "character-entities@2.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/character-entities",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/character-entities",
+        "licenseFile": "downloads/character-entities@2.0.2-LICENSE.txt"
+    },
+    "character-reference-invalid@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/character-reference-invalid",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/character-reference-invalid",
+        "licenseFile": "downloads/character-reference-invalid@2.0.1-LICENSE.txt"
+    },
+    "debug@4.4.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/debug-js/debug",
+        "publisher": "Josh Junon",
+        "path": "node_modules/debug",
+        "licenseFile": "downloads/debug@4.4.3-LICENSE.txt"
+    },
+    "decode-named-character-reference@1.3.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/decode-named-character-reference",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/decode-named-character-reference",
+        "licenseFile": "downloads/decode-named-character-reference@1.3.0-LICENSE.txt"
+    },
+    "dequal@2.0.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/lukeed/dequal",
+        "publisher": "Luke Edwards",
+        "email": "luke.edwards05@gmail.com",
+        "path": "node_modules/dequal",
+        "licenseFile": "downloads/dequal@2.0.3-LICENSE.txt"
+    },
+    "devlop@1.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/devlop",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/devlop",
+        "licenseFile": "downloads/devlop@1.1.0-LICENSE.txt"
+    },
+    "dompurify@3.4.16": {
+        "licenses": "(MPL-2.0 OR Apache-2.0)",
+        "repository": "https://github.com/cure53/DOMPurify",
+        "publisher": "Dr.-Ing. Mario Heiderich, Cure53",
+        "email": "mario@cure53.de",
+        "path": "node_modules/dompurify",
+        "licenseFile": "downloads/dompurify@3.4.16-LICENSE.txt"
+    },
+    "file-type@22.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/file-type",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/file-type",
+        "licenseFile": "downloads/file-type@22.1.1-LICENSE.txt"
+    },
+    "highcharts@13.1.1": {
+        "licenses": "Custom: https://www.highcharts.com/license",
+        "repository": "https://github.com/highcharts/highcharts-dist",
+        "publisher": "Highsoft AS",
+        "email": "support@highcharts.com",
+        "path": "node_modules/highcharts",
+        "licenseFile": "downloads/highcharts@13.1.1-LICENSE.txt"
+    },
+    "ieee754@1.2.1": {
+        "licenses": "BSD-3-Clause",
+        "repository": "https://github.com/feross/ieee754",
+        "publisher": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "path": "node_modules/ieee754",
+        "licenseFile": "downloads/ieee754@1.2.1-LICENSE.txt"
+    },
+    "is-alphabetical@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/is-alphabetical",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/is-alphabetical",
+        "licenseFile": "downloads/is-alphabetical@2.0.1-LICENSE.txt"
+    },
+    "is-alphanumerical@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/is-alphanumerical",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/is-alphanumerical",
+        "licenseFile": "downloads/is-alphanumerical@2.0.1-LICENSE.txt"
+    },
+    "is-decimal@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/is-decimal",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/is-decimal",
+        "licenseFile": "downloads/is-decimal@2.0.1-LICENSE.txt"
+    },
+    "is-hexadecimal@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/is-hexadecimal",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/is-hexadecimal",
+        "licenseFile": "downloads/is-hexadecimal@2.0.1-LICENSE.txt"
+    },
+    "micromark-core-commonmark@2.0.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-core-commonmark",
+        "licenseFile": "downloads/micromark-core-commonmark@2.0.3-LICENSE.txt"
+    },
+    "micromark-extension-directive@4.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark-extension-directive",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-extension-directive",
+        "licenseFile": "downloads/micromark-extension-directive@4.0.0-LICENSE.txt"
+    },
+    "micromark-extension-gfm-table@2.1.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark-extension-gfm-table",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-extension-gfm-table",
+        "licenseFile": "downloads/micromark-extension-gfm-table@2.1.2-LICENSE.txt"
+    },
+    "micromark-factory-destination@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-factory-destination",
+        "licenseFile": "downloads/micromark-factory-destination@2.0.1-LICENSE.txt"
+    },
+    "micromark-factory-label@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-factory-label",
+        "licenseFile": "downloads/micromark-factory-label@2.0.1-LICENSE.txt"
+    },
+    "micromark-factory-space@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-factory-space",
+        "licenseFile": "downloads/micromark-factory-space@2.0.1-LICENSE.txt"
+    },
+    "micromark-factory-title@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-factory-title",
+        "licenseFile": "downloads/micromark-factory-title@2.0.1-LICENSE.txt"
+    },
+    "micromark-factory-whitespace@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-factory-whitespace",
+        "licenseFile": "downloads/micromark-factory-whitespace@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-character@2.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-character",
+        "licenseFile": "downloads/micromark-util-character@2.1.1-LICENSE.txt"
+    },
+    "micromark-util-chunked@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-chunked",
+        "licenseFile": "downloads/micromark-util-chunked@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-classify-character@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-classify-character",
+        "licenseFile": "downloads/micromark-util-classify-character@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-combine-extensions@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-combine-extensions",
+        "licenseFile": "downloads/micromark-util-combine-extensions@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-decode-numeric-character-reference@2.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-decode-numeric-character-reference",
+        "licenseFile": "downloads/micromark-util-decode-numeric-character-reference@2.0.2-LICENSE.txt"
+    },
+    "micromark-util-encode@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-encode",
+        "licenseFile": "downloads/micromark-util-encode@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-html-tag-name@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-html-tag-name",
+        "licenseFile": "downloads/micromark-util-html-tag-name@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-normalize-identifier@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-normalize-identifier",
+        "licenseFile": "downloads/micromark-util-normalize-identifier@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-resolve-all@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-resolve-all",
+        "licenseFile": "downloads/micromark-util-resolve-all@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-sanitize-uri@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-sanitize-uri",
+        "licenseFile": "downloads/micromark-util-sanitize-uri@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-subtokenize@2.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-subtokenize",
+        "licenseFile": "downloads/micromark-util-subtokenize@2.1.0-LICENSE.txt"
+    },
+    "micromark-util-symbol@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-symbol",
+        "licenseFile": "downloads/micromark-util-symbol@2.0.1-LICENSE.txt"
+    },
+    "micromark-util-types@2.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark-util-types",
+        "licenseFile": "downloads/micromark-util-types@2.0.2-LICENSE.txt"
+    },
+    "micromark@4.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromark/micromark.git#main",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/micromark",
+        "licenseFile": "downloads/micromark@4.0.2-LICENSE.txt"
+    },
+    "ms@2.1.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/vercel/ms",
+        "path": "node_modules/ms",
+        "licenseFile": "downloads/ms@2.1.3-LICENSE.txt"
+    },
+    "parse-entities@4.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/wooorm/parse-entities",
+        "publisher": "Titus Wormer",
+        "email": "tituswormer@gmail.com",
+        "path": "node_modules/parse-entities",
+        "licenseFile": "downloads/parse-entities@4.0.2-LICENSE.txt"
+    },
+    "strtok3@10.3.5": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Borewit/strtok3",
+        "publisher": "Borewit",
+        "path": "node_modules/strtok3",
+        "licenseFile": "downloads/strtok3@10.3.5-LICENSE.txt"
+    },
+    "token-types@6.1.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Borewit/token-types",
+        "publisher": "Borewit",
+        "path": "node_modules/token-types",
+        "licenseFile": "downloads/token-types@6.1.2-LICENSE.txt"
+    },
+    "uint8array-extras@1.6.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/uint8array-extras",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/uint8array-extras",
+        "licenseFile": "downloads/uint8array-extras@1.6.0-LICENSE.txt"
+    },
+    "valibot@1.5.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/open-circle/valibot",
+        "publisher": "Fabian Hiller",
+        "path": "node_modules/valibot",
+        "licenseFile": "downloads/valibot@1.5.0-LICENSE.txt"
+    }
+}

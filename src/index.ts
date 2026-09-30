@@ -1,10 +1,9 @@
 // ── External Dependencies & Registrations
 import DOMPurify from 'dompurify';
 // import { useDataTable } from '@dpuse/dpuse-shared';
-import type { ComponentReferenceConfig } from '@dpuse/dpuse-shared/component';
-import type { LocalisedReference } from '@dpuse/dpuse-shared/locale';
-import type { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import type {
+    ComponentReferenceConfig,
+    LocalisedReference,
     PresentationCartesianTypeId,
     PresentationCategoryId,
     PresentationConfig,
@@ -15,10 +14,12 @@ import type {
     PresentationVisualPeriodFlowBoundariesChartViewConfig,
     PresentationVisualPolarChartViewConfig,
     PresentationVisualRangeChartViewConfig,
-    PresentationVisualViewConfig
-    // PresentationVisualValueTableViewConfig
-} from '@dpuse/dpuse-shared/component/presentation';
-import type { PresenterConfig, PresenterInterface } from '@dpuse/dpuse-shared/component/module/presenter';
+    // PresentationVisualValueTableViewConfig,
+    PresentationVisualViewConfig,
+    PresenterConfig,
+    PresenterInterface,
+    ToolConfig
+} from '@dpuse/dpuse-shared';
 
 // ── DPUse Tools
 import type { MicromarkTool } from '@dpuse/dpuse-tool-micromark-markdown-parser';

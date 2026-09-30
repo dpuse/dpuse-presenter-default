@@ -1,15 +1,16 @@
-// External Dependencies
+// ── External Dependencies & Registrations
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import Sonda from 'sonda/vite';
 import { fileURLToPath, URL } from 'node:url';
 
-// Data
+// ── Data
 import config from './config.json' with { type: 'json' };
 
-// Configuration.
+// ── Vite Configuration ───────────────────────────────────────────────────────────────────────────────────────────────
+
 export default defineConfig({
-    base: 'https://engine-eu.dpuse.app/presenters/',
+    base: 'https://engine-eu.dpuse.app/presenters/', // Presenters are served from the engine's domain, and load its shared files from there.
     build: {
         lib: {
             entry: fileURLToPath(new URL('src/index.ts', import.meta.url)),
@@ -18,12 +19,14 @@ export default defineConfig({
         },
         rollupOptions: {
             external: [/^https:\/\/engine-eu\.dpuse\.app\//],
-            plugins: [Sonda({ filename: 'index', format: 'json', brotli: true, gzip: false, open: false, outputDir: './bundle-analysis-reports/sonda' })]
+            plugins: [Sonda({ filename: 'index', format: 'json', brotli: false, gzip: true, open: false, outputDir: './bundle-analysis-reports/sonda' })]
         },
         sourcemap: 'hidden',
         target: 'ESNext'
     },
-    plugins: [dts({ outDirs: 'dist/types' })],
+    // Tests and config files sit in the tsconfig so they get type-checked, but their declarations must not reach the
+    // published package. 'entryRoot' keeps the types under 'dist/types/src', where package.json points.
+    plugins: [dts({ entryRoot: '.', exclude: ['tests/**', '*.config.*'], outDirs: 'dist/types' })],
     resolve: {
         alias: {
             '~': fileURLToPath(new URL('./', import.meta.url)),

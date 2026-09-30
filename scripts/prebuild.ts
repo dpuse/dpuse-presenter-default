@@ -4,8 +4,7 @@ import frontMatter from 'front-matter';
 import path from 'node:path';
 
 // Dependencies - Framework.
-import type { ComponentReferenceConfig } from '@dpuse/dpuse-shared/component';
-import type { PresentationConfig } from '@dpuse/dpuse-shared/component/presentation';
+import type { ComponentReferenceConfig, PresentationConfig } from '@dpuse/dpuse-shared';
 
 // Types
 type FrontMatter = { label: Record<string, string>; description: Record<string, string>; order: number };
@@ -26,7 +25,7 @@ async function constructPresentationConfigs() {
 
     await fs.writeFile('./configPresentations.json', JSON.stringify(presentationMap));
 
-    const config = await JSON.parse(await fs.readFile('config.json', 'utf8'));
+    const config = await JSON.parse(await fs.readFile('config.json', 'utf-8'));
     config.presentations = Object.entries(presentationMap).map((item): ComponentReferenceConfig => ({
         id: item[1].id,
         label: item[1].label,
@@ -49,7 +48,7 @@ async function constructPresentationConfigs() {
                 await constructPresentationConfigsForPath(itemPath, presentationMap);
             } else {
                 if (path.extname(itemPath) !== '.md') continue;
-                const itemContent = await fs.readFile(itemPath, 'utf8');
+                const itemContent = await fs.readFile(itemPath, 'utf-8');
                 if (!itemContent) continue;
                 const content = frontMatter<FrontMatter>(itemContent);
                 const contentBody = compressJSONBlocks(content.body);
