@@ -68,63 +68,22 @@ There's no need to install this presenter manually. Once released, it is uploade
 
 License data is updated each time `npm run document` is run, using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use https://www.highcharts.com/license, BSD-3-Clause, CC0-1.0, MIT, or (MPL-2.0 OR Apache-2.0) — all permissive, commercially-friendly licenses. Users of the uploaded library are covered by these checks; developers cloning this repository should independently verify development dependencies.
 
-| Dependency                                                                                                   | Version  | License(s)                                 | Document                                                                                          |
-| :----------------------------------------------------------------------------------------------------------- | :------: | :----------------------------------------- | :------------------------------------------------------------------------------------------------ |
-| [@borewit/text-codec](https://github.com/Borewit/text-codec)                                                 |  0.2.2   | MIT                                        | [LICENSE](licenses/downloads/@borewit/text-codec@0.2.2-LICENSE.txt)                               |
-| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)                                                 | 0.3.865  | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.865-LICENSE.txt)                             |
-| [@dpuse/dpuse-tool-highcharts-visualiser](https://github.com/dpuse/dpuse-tool-highcharts-visualiser)         |  0.0.91  | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-tool-highcharts-visualiser@0.0.91-LICENSE.txt)          |
-| [@dpuse/dpuse-tool-micromark-markdown-parser](https://github.com/dpuse/dpuse-tool-micromark-markdown-parser) | 0.1.1051 | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1051-LICENSE.txt)    |
-| [@speed-highlight/core](https://github.com/speed-highlight/core)                                             |  2.1.0   | CC0-1.0                                    | [LICENSE](licenses/downloads/@speed-highlight/core@2.1.0-LICENSE.txt)                             |
-| [@tokenizer/inflate](https://github.com/Borewit/tokenizer-inflate)                                           |  0.4.1   | MIT                                        | [LICENSE](licenses/downloads/@tokenizer/inflate@0.4.1-LICENSE.txt)                                |
-| [@tokenizer/token](https://github.com/Borewit/tokenizer-token)                                               |  0.3.0   | MIT                                        | [LICENSE](licenses/downloads/@tokenizer/token@0.3.0-LICENSE.txt)                                  |
-| [@types/debug](https://github.com/DefinitelyTyped/DefinitelyTyped)                                           |  4.1.13  | MIT                                        | [LICENSE](licenses/downloads/@types/debug@4.1.13-LICENSE.txt)                                     |
-| [@types/ms](https://github.com/DefinitelyTyped/DefinitelyTyped)                                              |  2.1.0   | MIT                                        | [LICENSE](licenses/downloads/@types/ms@2.1.0-LICENSE.txt)                                         |
-| [@types/trusted-types](https://github.com/DefinitelyTyped/DefinitelyTyped)                                   |  2.0.7   | MIT                                        | [LICENSE](licenses/downloads/@types/trusted-types@2.0.7-LICENSE.txt)                              |
-| [@types/unist](https://github.com/DefinitelyTyped/DefinitelyTyped)                                           |  2.0.11  | MIT                                        | [LICENSE](licenses/downloads/@types/unist@2.0.11-LICENSE.txt)                                     |
-| [character-entities-legacy](https://github.com/wooorm/character-entities-legacy)                             |  3.0.0   | MIT                                        | [LICENSE](licenses/downloads/character-entities-legacy@3.0.0-LICENSE.txt)                         |
-| [character-entities](https://github.com/wooorm/character-entities)                                           |  2.0.2   | MIT                                        | [LICENSE](licenses/downloads/character-entities@2.0.2-LICENSE.txt)                                |
-| [character-reference-invalid](https://github.com/wooorm/character-reference-invalid)                         |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/character-reference-invalid@2.0.1-LICENSE.txt)                       |
-| [debug](https://github.com/debug-js/debug)                                                                   |  4.4.3   | MIT                                        | [LICENSE](licenses/downloads/debug@4.4.3-LICENSE.txt)                                             |
-| [decode-named-character-reference](https://github.com/wooorm/decode-named-character-reference)               |  1.3.0   | MIT                                        | [LICENSE](licenses/downloads/decode-named-character-reference@1.3.0-LICENSE.txt)                  |
-| [dequal](https://github.com/lukeed/dequal)                                                                   |  2.0.3   | MIT                                        | [LICENSE](licenses/downloads/dequal@2.0.3-LICENSE.txt)                                            |
-| [devlop](https://github.com/wooorm/devlop)                                                                   |  1.1.0   | MIT                                        | [LICENSE](licenses/downloads/devlop@1.1.0-LICENSE.txt)                                            |
-| [dompurify](https://github.com/cure53/DOMPurify)                                                             |  3.4.16  | (MPL-2.0 OR Apache-2.0)                    | [LICENSE](licenses/downloads/dompurify@3.4.16-LICENSE.txt)                                        |
-| [file-type](https://github.com/sindresorhus/file-type)                                                       |  22.1.1  | MIT                                        | [LICENSE](licenses/downloads/file-type@22.1.1-LICENSE.txt)                                        |
-| [highcharts](https://github.com/highcharts/highcharts-dist)                                                  |  13.1.1  | Custom: https://www.highcharts.com/license | [LICENSE](licenses/downloads/highcharts@13.1.1-LICENSE.txt)                                       |
-| [ieee754](https://github.com/feross/ieee754)                                                                 |  1.2.1   | BSD-3-Clause                               | [LICENSE](licenses/downloads/ieee754@1.2.1-LICENSE.txt)                                           |
-| [is-alphabetical](https://github.com/wooorm/is-alphabetical)                                                 |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/is-alphabetical@2.0.1-LICENSE.txt)                                   |
-| [is-alphanumerical](https://github.com/wooorm/is-alphanumerical)                                             |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/is-alphanumerical@2.0.1-LICENSE.txt)                                 |
-| [is-decimal](https://github.com/wooorm/is-decimal)                                                           |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/is-decimal@2.0.1-LICENSE.txt)                                        |
-| [is-hexadecimal](https://github.com/wooorm/is-hexadecimal)                                                   |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/is-hexadecimal@2.0.1-LICENSE.txt)                                    |
-| [micromark-core-commonmark](https://github.com/micromark/micromark.git#main)                                 |  2.0.4   | MIT                                        | [LICENSE](licenses/downloads/micromark-core-commonmark@2.0.4-LICENSE.txt)                         |
-| [micromark-extension-directive](https://github.com/micromark/micromark-extension-directive)                  |  4.0.0   | MIT                                        | [LICENSE](licenses/downloads/micromark-extension-directive@4.0.0-LICENSE.txt)                     |
-| [micromark-extension-gfm-table](https://github.com/micromark/micromark-extension-gfm-table)                  |  2.1.2   | MIT                                        | [LICENSE](licenses/downloads/micromark-extension-gfm-table@2.1.2-LICENSE.txt)                     |
-| [micromark-factory-destination](https://github.com/micromark/micromark.git#main)                             |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-factory-destination@2.0.1-LICENSE.txt)                     |
-| [micromark-factory-label](https://github.com/micromark/micromark.git#main)                                   |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-factory-label@2.0.1-LICENSE.txt)                           |
-| [micromark-factory-space](https://github.com/micromark/micromark.git#main)                                   |  2.1.0   | MIT                                        | [LICENSE](licenses/downloads/micromark-factory-space@2.1.0-LICENSE.txt)                           |
-| [micromark-factory-title](https://github.com/micromark/micromark.git#main)                                   |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-factory-title@2.0.1-LICENSE.txt)                           |
-| [micromark-factory-whitespace](https://github.com/micromark/micromark.git#main)                              |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-factory-whitespace@2.0.1-LICENSE.txt)                      |
-| [micromark-util-character](https://github.com/micromark/micromark.git#main)                                  |  2.1.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-character@2.1.1-LICENSE.txt)                          |
-| [micromark-util-chunked](https://github.com/micromark/micromark.git#main)                                    |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-chunked@2.0.1-LICENSE.txt)                            |
-| [micromark-util-classify-character](https://github.com/micromark/micromark.git#main)                         |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-classify-character@2.0.1-LICENSE.txt)                 |
-| [micromark-util-combine-extensions](https://github.com/micromark/micromark.git#main)                         |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-combine-extensions@2.0.1-LICENSE.txt)                 |
-| [micromark-util-decode-numeric-character-reference](https://github.com/micromark/micromark.git#main)         |  2.0.2   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-decode-numeric-character-reference@2.0.2-LICENSE.txt) |
-| [micromark-util-edit-map](https://github.com/micromark/micromark.git#main)                                   |  1.0.0   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-edit-map@1.0.0-LICENSE.txt)                           |
-| [micromark-util-encode](https://github.com/micromark/micromark.git#main)                                     |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-encode@2.0.1-LICENSE.txt)                             |
-| [micromark-util-html-tag-name](https://github.com/micromark/micromark.git#main)                              |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-html-tag-name@2.0.1-LICENSE.txt)                      |
-| [micromark-util-normalize-identifier](https://github.com/micromark/micromark.git#main)                       |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-normalize-identifier@2.0.1-LICENSE.txt)               |
-| [micromark-util-resolve-all](https://github.com/micromark/micromark.git#main)                                |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-resolve-all@2.0.1-LICENSE.txt)                        |
-| [micromark-util-sanitize-uri](https://github.com/micromark/micromark.git#main)                               |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-sanitize-uri@2.0.1-LICENSE.txt)                       |
-| [micromark-util-subtokenize](https://github.com/micromark/micromark.git#main)                                |  2.1.0   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-subtokenize@2.1.0-LICENSE.txt)                        |
-| [micromark-util-symbol](https://github.com/micromark/micromark.git#main)                                     |  2.0.1   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-symbol@2.0.1-LICENSE.txt)                             |
-| [micromark-util-types](https://github.com/micromark/micromark.git#main)                                      |  2.0.3   | MIT                                        | [LICENSE](licenses/downloads/micromark-util-types@2.0.3-LICENSE.txt)                              |
-| [micromark](https://github.com/micromark/micromark.git#main)                                                 |  4.0.3   | MIT                                        | [LICENSE](licenses/downloads/micromark@4.0.3-LICENSE.txt)                                         |
-| [ms](https://github.com/vercel/ms)                                                                           |  2.1.3   | MIT                                        | [LICENSE](licenses/downloads/ms@2.1.3-LICENSE.txt)                                                |
-| [parse-entities](https://github.com/wooorm/parse-entities)                                                   |  4.0.2   | MIT                                        | [LICENSE](licenses/downloads/parse-entities@4.0.2-LICENSE.txt)                                    |
-| [strtok3](https://github.com/Borewit/strtok3)                                                                |  10.3.5  | MIT                                        | [LICENSE](licenses/downloads/strtok3@10.3.5-LICENSE.txt)                                          |
-| [token-types](https://github.com/Borewit/token-types)                                                        |  6.1.2   | MIT                                        | [LICENSE](licenses/downloads/token-types@6.1.2-LICENSE.txt)                                       |
-| [uint8array-extras](https://github.com/sindresorhus/uint8array-extras)                                       |  1.6.0   | MIT                                        | [LICENSE](licenses/downloads/uint8array-extras@1.6.0-LICENSE.txt)                                 |
-| [valibot](https://github.com/open-circle/valibot)                                                            |  1.5.0   | MIT                                        | [LICENSE](licenses/downloads/valibot@1.5.0-LICENSE.txt)                                           |
+| Dependency                                                                 | Version | License(s)              | Document                                                              |
+| :------------------------------------------------------------------------- | :-----: | :---------------------- | :-------------------------------------------------------------------- |
+| [@borewit/text-codec](https://github.com/Borewit/text-codec)               |  0.2.2  | MIT                     | [LICENSE](licenses/downloads/@borewit/text-codec@0.2.2-LICENSE.txt)   |
+| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)               | 0.3.865 | MIT                     | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.865-LICENSE.txt) |
+| [@tokenizer/inflate](https://github.com/Borewit/tokenizer-inflate)         |  0.4.1  | MIT                     | [LICENSE](licenses/downloads/@tokenizer/inflate@0.4.1-LICENSE.txt)    |
+| [@tokenizer/token](https://github.com/Borewit/tokenizer-token)             |  0.3.0  | MIT                     | [LICENSE](licenses/downloads/@tokenizer/token@0.3.0-LICENSE.txt)      |
+| [@types/trusted-types](https://github.com/DefinitelyTyped/DefinitelyTyped) |  2.0.7  | MIT                     | [LICENSE](licenses/downloads/@types/trusted-types@2.0.7-LICENSE.txt)  |
+| [debug](https://github.com/debug-js/debug)                                 |  4.4.3  | MIT                     | [LICENSE](licenses/downloads/debug@4.4.3-LICENSE.txt)                 |
+| [dompurify](https://github.com/cure53/DOMPurify)                           | 3.4.16  | (MPL-2.0 OR Apache-2.0) | [LICENSE](licenses/downloads/dompurify@3.4.16-LICENSE.txt)            |
+| [file-type](https://github.com/sindresorhus/file-type)                     | 22.1.1  | MIT                     | [LICENSE](licenses/downloads/file-type@22.1.1-LICENSE.txt)            |
+| [ieee754](https://github.com/feross/ieee754)                               |  1.2.1  | BSD-3-Clause            | [LICENSE](licenses/downloads/ieee754@1.2.1-LICENSE.txt)               |
+| [ms](https://github.com/vercel/ms)                                         |  2.1.3  | MIT                     | [LICENSE](licenses/downloads/ms@2.1.3-LICENSE.txt)                    |
+| [strtok3](https://github.com/Borewit/strtok3)                              | 10.3.5  | MIT                     | [LICENSE](licenses/downloads/strtok3@10.3.5-LICENSE.txt)              |
+| [token-types](https://github.com/Borewit/token-types)                      |  6.1.2  | MIT                     | [LICENSE](licenses/downloads/token-types@6.1.2-LICENSE.txt)           |
+| [uint8array-extras](https://github.com/sindresorhus/uint8array-extras)     |  1.6.0  | MIT                     | [LICENSE](licenses/downloads/uint8array-extras@1.6.0-LICENSE.txt)     |
+| [valibot](https://github.com/open-circle/valibot)                          |  1.5.0  | MIT                     | [LICENSE](licenses/downloads/valibot@1.5.0-LICENSE.txt)               |
 
 ### Dependency Tree
 
@@ -134,6 +93,7 @@ The dependency tree below lists every package in this project — direct and tra
     - **[file-type](https://github.com/sindresorhus/file-type)** 22.1.1 — this month: 2026-09-17
         - **[@tokenizer/inflate](https://github.com/Borewit/tokenizer-inflate)** 0.4.1 — **10 months** ago: 2025-11-18 ⚠️
             - **[debug](https://github.com/debug-js/debug)** 4.4.3 — **12 months** ago: 2025-09-13 ⚠️
+                - **[ms](https://github.com/vercel/ms)** 2.1.3 — **69 months** ago: 2020-12-08 ⚠️
             - **[token-types](https://github.com/Borewit/token-types)** 6.1.2 — **9 months** ago: 2026-01-01 ⚠️
         - **[strtok3](https://github.com/Borewit/strtok3)** 10.3.5 — **6 months** ago: 2026-03-21
             - **[@tokenizer/token](https://github.com/Borewit/tokenizer-token)** 0.3.0 — **62 months** ago: 2021-07-12 ⚠️
@@ -143,112 +103,6 @@ The dependency tree below lists every package in this project — direct and tra
             - **[ieee754](https://github.com/feross/ieee754)** 1.2.1 — **71 months** ago: 2020-10-27 ⚠️
         - **[uint8array-extras](https://github.com/sindresorhus/uint8array-extras)** 1.6.0 — this month: 2026-09-26
     - **[valibot](https://github.com/open-circle/valibot)** 1.5.0 — this month: 2026-09-09
-- **[@dpuse/dpuse-tool-highcharts-visualiser](https://github.com/dpuse/dpuse-tool-highcharts-visualiser)** 0.0.91 — this month: 2026-10-01
-    - **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 0.3.865 — this month: 2026-09-29
-    - **[highcharts](https://github.com/highcharts/highcharts-dist)** 13.1.1 — this month: 2026-09-20
-        - **jspdf**
-        - **svg2pdf.js**
-- **[@dpuse/dpuse-tool-micromark-markdown-parser](https://github.com/dpuse/dpuse-tool-micromark-markdown-parser)** 0.1.1051 — this month: 2026-10-01
-    - **[@speed-highlight/core](https://github.com/speed-highlight/core)** 2.1.0 — **1 month** ago: 2026-08-25
-    - **[micromark-extension-directive](https://github.com/micromark/micromark-extension-directive)** 4.0.0 — **19 months** ago: 2025-02-27 ⚠️
-        - **[devlop](https://github.com/wooorm/devlop)** 1.1.0 — **39 months** ago: 2023-06-29 ⚠️
-            - **[dequal](https://github.com/lukeed/dequal)** 2.0.3 — **50 months** ago: 2022-07-11 ⚠️
-        - **[micromark-factory-space](https://github.com/micromark/micromark.git#main)** 2.1.0 — this month: 2026-09-26
-            - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-factory-whitespace](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-factory-space](https://github.com/micromark/micromark.git#main)** 2.1.0 — this month: 2026-09-26
-            - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[parse-entities](https://github.com/wooorm/parse-entities)** 4.0.2 — **21 months** ago: 2024-12-13 ⚠️
-            - **[@types/unist](https://github.com/DefinitelyTyped/DefinitelyTyped)** 2.0.11 — **25 months** ago: 2024-08-15 ⚠️ → **latest**: 3.0.3 — **25 months** ago: 2024-08-15 ⚠️ ❗
-            - **[character-entities-legacy](https://github.com/wooorm/character-entities-legacy)** 3.0.0 — **59 months** ago: 2021-10-29 ⚠️
-            - **[character-reference-invalid](https://github.com/wooorm/character-reference-invalid)** 2.0.1 — **59 months** ago: 2021-10-27 ⚠️
-            - **[decode-named-character-reference](https://github.com/wooorm/decode-named-character-reference)** 1.3.0 — **8 months** ago: 2026-01-19 ⚠️
-            - **[is-alphanumerical](https://github.com/wooorm/is-alphanumerical)** 2.0.1 — **58 months** ago: 2021-11-04 ⚠️
-                - **[is-alphabetical](https://github.com/wooorm/is-alphabetical)** 2.0.1 — **58 months** ago: 2021-11-04 ⚠️
-                - **[is-decimal](https://github.com/wooorm/is-decimal)** 2.0.1 — **58 months** ago: 2021-11-04 ⚠️
-            - **[is-decimal](https://github.com/wooorm/is-decimal)** 2.0.1 — **58 months** ago: 2021-11-04 ⚠️
-            - **[is-hexadecimal](https://github.com/wooorm/is-hexadecimal)** 2.0.1 — **58 months** ago: 2021-11-04 ⚠️
-    - **[micromark-extension-gfm-table](https://github.com/micromark/micromark-extension-gfm-table)** 2.1.2 — this month: 2026-09-11
-        - **[devlop](https://github.com/wooorm/devlop)** 1.1.0 — **39 months** ago: 2023-06-29 ⚠️
-        - **[micromark-factory-space](https://github.com/micromark/micromark.git#main)** 2.1.0 — this month: 2026-09-26
-        - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-    - **[micromark](https://github.com/micromark/micromark.git#main)** 4.0.3 — this month: 2026-09-26
-        - **[@types/debug](https://github.com/DefinitelyTyped/DefinitelyTyped)** 4.1.13 — **6 months** ago: 2026-03-19
-            - **[@types/ms](https://github.com/DefinitelyTyped/DefinitelyTyped)** 2.1.0 — **20 months** ago: 2025-01-16 ⚠️
-        - **[debug](https://github.com/debug-js/debug)** 4.4.3 — **12 months** ago: 2025-09-13 ⚠️
-            - **[ms](https://github.com/vercel/ms)** 2.1.3 — **69 months** ago: 2020-12-08 ⚠️
-        - **[decode-named-character-reference](https://github.com/wooorm/decode-named-character-reference)** 1.3.0 — **8 months** ago: 2026-01-19 ⚠️
-            - **[character-entities](https://github.com/wooorm/character-entities)** 2.0.2 — **51 months** ago: 2022-06-22 ⚠️
-        - **[devlop](https://github.com/wooorm/devlop)** 1.1.0 — **39 months** ago: 2023-06-29 ⚠️
-        - **[micromark-core-commonmark](https://github.com/micromark/micromark.git#main)** 2.0.4 — this month: 2026-09-26
-            - **[decode-named-character-reference](https://github.com/wooorm/decode-named-character-reference)** 1.3.0 — **8 months** ago: 2026-01-19 ⚠️
-            - **[devlop](https://github.com/wooorm/devlop)** 1.1.0 — **39 months** ago: 2023-06-29 ⚠️
-            - **[micromark-factory-destination](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-            - **[micromark-factory-label](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[devlop](https://github.com/wooorm/devlop)** 1.1.0 — **39 months** ago: 2023-06-29 ⚠️
-                - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-            - **[micromark-factory-space](https://github.com/micromark/micromark.git#main)** 2.1.0 — this month: 2026-09-26
-            - **[micromark-factory-title](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-factory-space](https://github.com/micromark/micromark.git#main)** 2.1.0 — this month: 2026-09-26
-                - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-            - **[micromark-factory-whitespace](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-chunked](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-classify-character](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-                - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-            - **[micromark-util-edit-map](https://github.com/micromark/micromark.git#main)** 1.0.0 — this month: 2026-09-26
-            - **[micromark-util-html-tag-name](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-normalize-identifier](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-resolve-all](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-subtokenize](https://github.com/micromark/micromark.git#main)** 2.1.0 — **19 months** ago: 2025-02-27 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-factory-space](https://github.com/micromark/micromark.git#main)** 2.1.0 — this month: 2026-09-26
-        - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-chunked](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-combine-extensions](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-chunked](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-util-decode-numeric-character-reference](https://github.com/micromark/micromark.git#main)** 2.0.2 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-edit-map](https://github.com/micromark/micromark.git#main)** 1.0.0 — this month: 2026-09-26
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-util-encode](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-normalize-identifier](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-resolve-all](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-util-sanitize-uri](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-character](https://github.com/micromark/micromark.git#main)** 2.1.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-encode](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-subtokenize](https://github.com/micromark/micromark.git#main)** 2.1.0 — **19 months** ago: 2025-02-27 ⚠️
-            - **[devlop](https://github.com/wooorm/devlop)** 1.1.0 — **39 months** ago: 2023-06-29 ⚠️
-            - **[micromark-util-chunked](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-            - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
-        - **[micromark-util-symbol](https://github.com/micromark/micromark.git#main)** 2.0.1 — **22 months** ago: 2024-11-12 ⚠️
-        - **[micromark-util-types](https://github.com/micromark/micromark.git#main)** 2.0.3 — this month: 2026-09-26
 - **[dompurify](https://github.com/cure53/DOMPurify)** 3.4.16 — this month: 2026-09-23
     - **[@types/trusted-types](https://github.com/DefinitelyTyped/DefinitelyTyped)** 2.0.7 — **34 months** ago: 2023-11-21 ⚠️
 
