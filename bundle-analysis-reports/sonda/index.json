@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-09-30T11:32:12.565Z",
+    "generatedAt": "2026-10-01T09:32:52.977Z",
     "integration": "vite",
     "sources": false,
     "gzip": true,
@@ -21,8 +21,8 @@
       "name": "[unassigned]",
       "type": "other",
       "format": "other",
-      "uncompressed": 29794,
-      "gzip": 6084,
+      "uncompressed": 31034,
+      "gzip": 6167,
       "brotli": 0,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
@@ -31,7 +31,7 @@
       "name": "config.json",
       "type": "script",
       "format": "esm",
-      "uncompressed": 3351
+      "uncompressed": 3393
     },
     {
       "kind": "filesystem",
@@ -44,9 +44,26 @@
       "kind": "asset",
       "name": "dist/dpuse-presenter-default.es.js",
       "type": "script",
-      "uncompressed": 67080,
-      "gzip": 19174,
+      "uncompressed": 76298,
+      "gzip": 21774,
       "brotli": 0
+    },
+    {
+      "kind": "filesystem",
+      "name": "node_modules/@dpuse/dpuse-shared/dist/dpuse-shared.es.js",
+      "type": "script",
+      "format": "esm",
+      "uncompressed": 33907
+    },
+    {
+      "kind": "chunk",
+      "name": "node_modules/@dpuse/dpuse-shared/dist/dpuse-shared.es.js",
+      "type": "script",
+      "format": "esm",
+      "uncompressed": 8714,
+      "gzip": 2817,
+      "brotli": 0,
+      "parent": "dist/dpuse-presenter-default.es.js"
     },
     {
       "kind": "filesystem",
@@ -60,8 +77,8 @@
       "name": "node_modules/dompurify/dist/purify.es.mjs",
       "type": "script",
       "format": "esm",
-      "uncompressed": 32794,
-      "gzip": 11640,
+      "uncompressed": 32813,
+      "gzip": 11539,
       "brotli": 0,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
@@ -77,8 +94,8 @@
       "name": "src/composers/useSampleData.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 358,
-      "gzip": 211,
+      "uncompressed": 360,
+      "gzip": 209,
       "brotli": 0,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
@@ -87,15 +104,15 @@
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 7158
+      "uncompressed": 6102
     },
     {
       "kind": "chunk",
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 4134,
-      "gzip": 1238,
+      "uncompressed": 3377,
+      "gzip": 1042,
       "brotli": 0,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
@@ -116,6 +133,12 @@
     }
   ],
   "dependencies": [
+    {
+      "name": "@dpuse/dpuse-shared",
+      "paths": [
+        "node_modules/@dpuse/dpuse-shared"
+      ]
+    },
     {
       "name": "dompurify",
       "paths": [

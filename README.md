@@ -34,6 +34,8 @@ In addition, DPUse provides [Tools](https://www.dpuse.app) used by the applicati
 
 ...
 
+Consider ApexCharts and eCharts tools.
+
 <!-- OPENING_END -->
 
 <!-- USAGE_START -->
@@ -70,8 +72,8 @@ License data is updated each time `npm run document` is run, using [license-chec
 | :----------------------------------------------------------------------------------------------------------- | :------: | :----------------------------------------- | :------------------------------------------------------------------------------------------------ |
 | [@borewit/text-codec](https://github.com/Borewit/text-codec)                                                 |  0.2.2   | MIT                                        | [LICENSE](licenses/downloads/@borewit/text-codec@0.2.2-LICENSE.txt)                               |
 | [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)                                                 | 0.3.865  | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.865-LICENSE.txt)                             |
-| [@dpuse/dpuse-tool-highcharts-visualiser](https://github.com/dpuse/dpuse-tool-highcharts-visualiser)         |  0.0.90  | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-tool-highcharts-visualiser@0.0.90-LICENSE.txt)          |
-| [@dpuse/dpuse-tool-micromark-markdown-parser](https://github.com/dpuse/dpuse-tool-micromark-markdown-parser) | 0.1.1050 | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1050-LICENSE.txt)    |
+| [@dpuse/dpuse-tool-highcharts-visualiser](https://github.com/dpuse/dpuse-tool-highcharts-visualiser)         |  0.0.91  | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-tool-highcharts-visualiser@0.0.91-LICENSE.txt)          |
+| [@dpuse/dpuse-tool-micromark-markdown-parser](https://github.com/dpuse/dpuse-tool-micromark-markdown-parser) | 0.1.1051 | MIT                                        | [LICENSE](licenses/downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1051-LICENSE.txt)    |
 | [@speed-highlight/core](https://github.com/speed-highlight/core)                                             |  2.1.0   | CC0-1.0                                    | [LICENSE](licenses/downloads/@speed-highlight/core@2.1.0-LICENSE.txt)                             |
 | [@tokenizer/inflate](https://github.com/Borewit/tokenizer-inflate)                                           |  0.4.1   | MIT                                        | [LICENSE](licenses/downloads/@tokenizer/inflate@0.4.1-LICENSE.txt)                                |
 | [@tokenizer/token](https://github.com/Borewit/tokenizer-token)                                               |  0.3.0   | MIT                                        | [LICENSE](licenses/downloads/@tokenizer/token@0.3.0-LICENSE.txt)                                  |
@@ -132,21 +134,21 @@ The dependency tree below lists every package in this project — direct and tra
     - **[file-type](https://github.com/sindresorhus/file-type)** 22.1.1 — this month: 2026-09-17
         - **[@tokenizer/inflate](https://github.com/Borewit/tokenizer-inflate)** 0.4.1 — **10 months** ago: 2025-11-18 ⚠️
             - **[debug](https://github.com/debug-js/debug)** 4.4.3 — **12 months** ago: 2025-09-13 ⚠️
-            - **[token-types](https://github.com/Borewit/token-types)** 6.1.2 — **8 months** ago: 2026-01-01 ⚠️
+            - **[token-types](https://github.com/Borewit/token-types)** 6.1.2 — **9 months** ago: 2026-01-01 ⚠️
         - **[strtok3](https://github.com/Borewit/strtok3)** 10.3.5 — **6 months** ago: 2026-03-21
             - **[@tokenizer/token](https://github.com/Borewit/tokenizer-token)** 0.3.0 — **62 months** ago: 2021-07-12 ⚠️
-        - **[token-types](https://github.com/Borewit/token-types)** 6.1.2 — **8 months** ago: 2026-01-01 ⚠️
+        - **[token-types](https://github.com/Borewit/token-types)** 6.1.2 — **9 months** ago: 2026-01-01 ⚠️
             - **[@borewit/text-codec](https://github.com/Borewit/text-codec)** 0.2.2 — **6 months** ago: 2026-03-11
             - **[@tokenizer/token](https://github.com/Borewit/tokenizer-token)** 0.3.0 — **62 months** ago: 2021-07-12 ⚠️
             - **[ieee754](https://github.com/feross/ieee754)** 1.2.1 — **71 months** ago: 2020-10-27 ⚠️
         - **[uint8array-extras](https://github.com/sindresorhus/uint8array-extras)** 1.6.0 — this month: 2026-09-26
     - **[valibot](https://github.com/open-circle/valibot)** 1.5.0 — this month: 2026-09-09
-- **[@dpuse/dpuse-tool-highcharts-visualiser](https://github.com/dpuse/dpuse-tool-highcharts-visualiser)** 0.0.90 — this month: 2026-09-30
+- **[@dpuse/dpuse-tool-highcharts-visualiser](https://github.com/dpuse/dpuse-tool-highcharts-visualiser)** 0.0.91 — this month: 2026-10-01
     - **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 0.3.865 — this month: 2026-09-29
     - **[highcharts](https://github.com/highcharts/highcharts-dist)** 13.1.1 — this month: 2026-09-20
         - **jspdf**
         - **svg2pdf.js**
-- **[@dpuse/dpuse-tool-micromark-markdown-parser](https://github.com/dpuse/dpuse-tool-micromark-markdown-parser)** 0.1.1050 — this month: 2026-09-30
+- **[@dpuse/dpuse-tool-micromark-markdown-parser](https://github.com/dpuse/dpuse-tool-micromark-markdown-parser)** 0.1.1051 — this month: 2026-10-01
     - **[@speed-highlight/core](https://github.com/speed-highlight/core)** 2.1.0 — **1 month** ago: 2026-08-25
     - **[micromark-extension-directive](https://github.com/micromark/micromark-extension-directive)** 4.0.0 — **19 months** ago: 2025-02-27 ⚠️
         - **[devlop](https://github.com/wooorm/devlop)** 1.1.0 — **39 months** ago: 2023-06-29 ⚠️
@@ -260,14 +262,15 @@ This report is updated with each release, from the bundle the release builds, us
 
 _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not generate source maps for CSS._
 
-| Chunk/Module/File                                                | Composition                  |
-| :--------------------------------------------------------------- | :--------------------------- |
-| dist/dpuse-presenter-default.es.js                               | 65.5 kB · gzip 18.7 kB       |
-| &nbsp;&nbsp;&nbsp;&nbsp;dompurify → dist/purify.es.mjs           | `██████████░░░░░░░░░░` 48.9% |
-| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)      | `█████████░░░░░░░░░░░` 44.4% |
-| &nbsp;&nbsp;&nbsp;&nbsp;src                                      | `█░░░░░░░░░░░░░░░░░░░` 6.7%  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.ts         | `█░░░░░░░░░░░░░░░░░░░` 6.2%  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useSampleData.ts | `░░░░░░░░░░░░░░░░░░░░` 0.5%  |
+| Chunk/Module/File                                                     | Composition                  |
+| :-------------------------------------------------------------------- | :--------------------------- |
+| dist/dpuse-presenter-default.es.js                                    | 74.5 kB · gzip 21.3 kB       |
+| &nbsp;&nbsp;&nbsp;&nbsp;dompurify → dist/purify.es.mjs                | `█████████░░░░░░░░░░░` 43.0% |
+| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `████████░░░░░░░░░░░░` 40.7% |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `██░░░░░░░░░░░░░░░░░░` 11.4% |
+| &nbsp;&nbsp;&nbsp;&nbsp;src                                           | `█░░░░░░░░░░░░░░░░░░░` 4.9%  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.ts              | `█░░░░░░░░░░░░░░░░░░░` 4.4%  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useSampleData.ts      | `░░░░░░░░░░░░░░░░░░░░` 0.5%  |
 
 (bundler output, whitespace & JSON) = bytes Sonda can't trace to a source file: whitespace (indentation and line breaks), code the bundler generates (region comments, the combined import/export lines, its small runtime helper and wrappers), and imported JSON such as `config.json`, which the bundler doesn't map. The JSON and the generated code are real bytes that ship; the whitespace mostly disappears once compressed.
 

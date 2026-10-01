@@ -1,6 +1,7 @@
 // ── External Dependencies & Registrations
 import DOMPurify from 'dompurify';
 // import { useDataTable } from '@dpuse/dpuse-shared';
+import { loadTool } from '@dpuse/dpuse-shared';
 import type {
     ComponentReferenceConfig,
     LocalisedReference,
@@ -22,8 +23,8 @@ import type {
 } from '@dpuse/dpuse-shared';
 
 // ── DPUse Tools
-import type { MicromarkTool } from '@dpuse/dpuse-tool-micromark-markdown-parser';
-import type { HighchartsOptions, HighchartsTool } from '@dpuse/dpuse-tool-highcharts-visualiser';
+import type { Tool as MicromarkTool } from '@dpuse/dpuse-tool-micromark-markdown-parser';
+import type { HighchartsOptions, Tool as HighchartsTool } from '@dpuse/dpuse-tool-highcharts-visualiser';
 
 // ── Data
 import config from '~/config.json';
@@ -73,7 +74,7 @@ export default class DefaultPresenter implements PresenterInterface {
         // processedMarkdown = processedMarkdown.replaceAll('{{description}}', () => presentationDescription); // TODO
 
         // Render markdown to HTML
-        this.micromarkTool = await this.loadMicromarkTool();
+        this.micromarkTool ??= await loadTool<MicromarkTool>(this.toolConfigs, 'micromark-markdown-parser');
         const html = await this.micromarkTool.render(processedMarkdown, { directives: true, tables: true }); // TODO: Need to pass tables from frontend.
         renderTo.innerHTML = DOMPurify.sanitize(html);
         // colorModeId is passed explicitly (rather than relying on the tool's own state) because micromarkTool is
@@ -82,7 +83,7 @@ export default class DefaultPresenter implements PresenterInterface {
         await this.micromarkTool.highlight(renderTo, this.colorModeId);
 
         // ????
-        this.highchartsTool = await this.loadHighchartsTool();
+        this.highchartsTool ??= await loadTool<HighchartsTool>(this.toolConfigs, 'highcharts-visualiser');
         // colorModeId is passed explicitly for the same reason as micromarkTool.highlight() above: highchartsTool
         // is lazily created here, so any setColorMode() call received before this instance existed never reached it.
         this.highchartsTool.setColorMode(this.colorModeId);
@@ -220,29 +221,5 @@ export default class DefaultPresenter implements PresenterInterface {
             //     this.valueTable.render(visualConfig.content, viewContainerElement);
             //     break;
         }
-    }
-
-    private async loadHighchartsTool(): Promise<HighchartsTool> {
-        if (this.highchartsTool) return this.highchartsTool;
-
-        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-highcharts-visualiser');
-        if (!toolModuleConfig) throw new Error('No Highcharts tool module configuration.');
-
-        const url = `https://engine-eu.dpuse.app/tools/highcharts-visualiser_v${toolModuleConfig.version}/dpuse-tool-highcharts-visualiser.es.js`;
-        const module = (await import(/* @vite-ignore */ url)) as { HighchartsTool: new () => HighchartsTool };
-        const HighchartsTool = module.HighchartsTool;
-        return new HighchartsTool();
-    }
-
-    private async loadMicromarkTool(): Promise<MicromarkTool> {
-        if (this.micromarkTool) return this.micromarkTool;
-
-        const toolModuleConfig = this.toolConfigs.find((config) => config.id === 'dpuse-tool-micromark-markdown-parser');
-        if (!toolModuleConfig) throw new Error('No Micromark tool module configuration.');
-
-        const url = `https://engine-eu.dpuse.app/tools/micromark-markdown-parser_v${toolModuleConfig.version}/dpuse-tool-micromark-markdown-parser.es.js`;
-        const module = (await import(/* @vite-ignore */ url)) as { MicromarkTool: new () => MicromarkTool };
-        const MicromarkToolConstructor = module.MicromarkTool;
-        return new MicromarkToolConstructor();
     }
 }

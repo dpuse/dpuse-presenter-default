@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-presenter-default",
-    "version": "0.1.1069",
+    "version": "0.1.1070",
     "private": false,
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
@@ -47,7 +47,7 @@
         "esbuild@0.28.1": true,
         "fsevents@2.3.3": true,
         "unrs-resolver@1.12.2": true,
-        "workerd@1.20260926.1": true
+        "workerd@1.20260930.2": true
     },
     "scripts": {
         "audit": "node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
@@ -57,19 +57,18 @@
         "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentProject('https://www.highcharts.com/license;BSD-3-Clause;CC0-1.0;MIT;(MPL-2.0 OR Apache-2.0)'))\"",
         "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
-        "publish": "node -e \"import('@dpuse/dpuse-development').then(m => m.publishProject())\"",
         "release": "npm run build && npm run document && npm run sync && gh release create \"v$(npm pkg get version | tr -d '\"')\" --target \"$(git rev-parse HEAD)\" --generate-notes --latest",
         "sync": "node -e \"import('@dpuse/dpuse-development').then(m => m.syncProjectWithGitHub())\"",
         "test": "node -e \"import('@dpuse/dpuse-development').then(m => m.testProject())\""
     },
     "dependencies": {
         "@dpuse/dpuse-shared": "^0.3.865",
-        "@dpuse/dpuse-tool-highcharts-visualiser": "^0.0.90",
-        "@dpuse/dpuse-tool-micromark-markdown-parser": "^0.1.1050",
+        "@dpuse/dpuse-tool-highcharts-visualiser": "^0.0.91",
+        "@dpuse/dpuse-tool-micromark-markdown-parser": "^0.1.1051",
         "dompurify": "^3.4.16"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.796",
+        "@dpuse/dpuse-development": "^0.3.802",
         "@dpuse/eslint-config-dpuse": "^1.0.124",
         "@types/node": "^26.6.3",
         "eslint": "^10.11.0",
@@ -81,6 +80,6 @@
         "vite": "^8.3.1",
         "vite-plugin-dts": "^5.1.1",
         "vitest": "^5.0.3",
-        "wrangler": "^4.144.0"
+        "wrangler": "^4.145.0"
     }
 }

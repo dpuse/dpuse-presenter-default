@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1068",
+  "version": "0.1.1069",
   "name": "@dpuse/dpuse-presenter-default",
   "dependencies": {
     "@dpuse/dpuse-shared": {
@@ -79,8 +79,8 @@
       }
     },
     "@dpuse/dpuse-tool-highcharts-visualiser": {
-      "version": "0.0.90",
-      "resolved": "https://registry.npmjs.org/@dpuse/dpuse-tool-highcharts-visualiser/-/dpuse-tool-highcharts-visualiser-0.0.90.tgz",
+      "version": "0.0.91",
+      "resolved": "https://registry.npmjs.org/@dpuse/dpuse-tool-highcharts-visualiser/-/dpuse-tool-highcharts-visualiser-0.0.91.tgz",
       "overridden": false,
       "dependencies": {
         "@dpuse/dpuse-shared": {
@@ -98,8 +98,8 @@
       }
     },
     "@dpuse/dpuse-tool-micromark-markdown-parser": {
-      "version": "0.1.1050",
-      "resolved": "https://registry.npmjs.org/@dpuse/dpuse-tool-micromark-markdown-parser/-/dpuse-tool-micromark-markdown-parser-0.1.1050.tgz",
+      "version": "0.1.1051",
+      "resolved": "https://registry.npmjs.org/@dpuse/dpuse-tool-micromark-markdown-parser/-/dpuse-tool-micromark-markdown-parser-0.1.1051.tgz",
       "overridden": false,
       "dependencies": {
         "@speed-highlight/core": {

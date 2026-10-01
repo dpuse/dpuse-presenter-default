@@ -14,21 +14,21 @@
         "path": "node_modules/@dpuse/dpuse-shared",
         "licenseFile": "downloads/@dpuse/dpuse-shared@0.3.865-LICENSE.txt"
     },
-    "@dpuse/dpuse-tool-highcharts-visualiser@0.0.90": {
+    "@dpuse/dpuse-tool-highcharts-visualiser@0.0.91": {
         "licenses": "MIT",
         "repository": "https://github.com/dpuse/dpuse-tool-highcharts-visualiser",
         "publisher": "Jonathan Terrell",
         "email": "terrell.jm@gmail.com",
         "path": "node_modules/@dpuse/dpuse-tool-highcharts-visualiser",
-        "licenseFile": "downloads/@dpuse/dpuse-tool-highcharts-visualiser@0.0.90-LICENSE.txt"
+        "licenseFile": "downloads/@dpuse/dpuse-tool-highcharts-visualiser@0.0.91-LICENSE.txt"
     },
-    "@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1050": {
+    "@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1051": {
         "licenses": "MIT",
         "repository": "https://github.com/dpuse/dpuse-tool-micromark-markdown-parser",
         "publisher": "Jonathan Terrell",
         "email": "terrell.jm@gmail.com",
         "path": "node_modules/@dpuse/dpuse-tool-micromark-markdown-parser",
-        "licenseFile": "downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1050-LICENSE.txt"
+        "licenseFile": "downloads/@dpuse/dpuse-tool-micromark-markdown-parser@0.1.1051-LICENSE.txt"
     },
     "@speed-highlight/core@2.1.0": {
         "licenses": "CC0-1.0",
