@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-presenter-default",
-    "version": "0.1.1072",
+    "version": "0.1.1073",
     "private": false,
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
@@ -54,7 +54,7 @@
         "prebuild": "node scripts/prebuild.ts",
         "build": "node -e \"import('@dpuse/dpuse-development').then(m => m.buildProject())\"",
         "check": "node -e \"import('@dpuse/dpuse-development').then(m => m.checkProject())\"",
-        "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentProject('Apache-2.0;BSD-3-Clause;CC0-1.0;https://www.highcharts.com/license;MIT'))\"",
+        "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentProject('Apache-2.0;BSD-3-Clause;MIT'))\"",
         "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
         "release": "npm run build && npm run document && npm run sync && gh release create \"v$(npm pkg get version | tr -d '\"')\" --target \"$(git rev-parse HEAD)\" --generate-notes --latest",

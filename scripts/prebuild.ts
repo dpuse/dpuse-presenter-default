@@ -1,23 +1,25 @@
-// Dependencies - Vendor.
+// ── External Dependencies & Registrations
 import { promises as fs } from 'node:fs';
 import frontMatter from 'front-matter';
 import path from 'node:path';
 
-// Dependencies - Framework.
+// ── DPUse Framework
 import type { ComponentReferenceConfig, PresentationConfig } from '@dpuse/dpuse-shared';
 
-// Types
+// ── Types ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
 type FrontMatter = { label: Record<string, string>; description: Record<string, string>; order: number };
 type PresentationItem = PresentationFolderItem | PresentationFileItem;
 type PresentationFolderItem = { id: string; typeId: 'folder'; children: PresentationItem[] };
 type PresentationFileItem = { id: string; typeId: 'file' };
 
-// Processing ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+// ── Processing ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
 await constructPresentationConfigs();
 
-// Helpers ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
+// ── Helpers ──────────────────────────────────────────────────────────────────────────────────────────────────────────
 
+// Writes every presentation's config to 'configPresentations.json', and lists them in 'config.json'.
 async function constructPresentationConfigs() {
     const topPath = 'src/presentations';
     const presentationMap: Record<string, PresentationConfig> = {};
@@ -38,7 +40,7 @@ async function constructPresentationConfigs() {
     }));
     await fs.writeFile('config.json', JSON.stringify(config, undefined, 4));
 
-    // Utilities - Construct presentation configurations for path and update presentation map.
+    // Adds a config for each Markdown file in the folder and its subfolders, keyed by its path.
     async function constructPresentationConfigsForPath(currentPath: string, presentationMap: Record<string, PresentationConfig>) {
         const dirItems = await fs.readdir(currentPath);
         for (const itemName of dirItems) {
@@ -71,7 +73,7 @@ async function constructPresentationConfigs() {
         }
     }
 
-    // Utilities - Compress JSON code blocks.
+    // Minifies the JSON in each visual, formula and highcharts code block, so it ships without whitespace.
     function compressJSONBlocks(markdown: string): string {
         // visual/formula/highcharts are top-level fenced block types (e.g. ```visual) whose content is JSON;
         // capture the language tag into group 1 and the JSON code into group 2 so it can be minified.

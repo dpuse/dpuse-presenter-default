@@ -33,7 +33,7 @@ import { useSampleData } from '@/composers/useSampleData';
 
 // ── Presenters ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
-export default class DefaultPresenter implements PresenterInterface {
+export class Presenter implements PresenterInterface {
     readonly config: PresenterConfig; // TODO: If we remove list method, then config is not needed. Would make presenter slightly smaller.
     colorModeId: string;
     // readonly valueTable;
@@ -223,3 +223,7 @@ export default class DefaultPresenter implements PresenterInterface {
         }
     }
 }
+
+// TODO: Remove once every running app loads presenters through the named 'Presenter' export; until then, older app builds
+// still load the default one.
+// export default Presenter;
