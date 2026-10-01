@@ -1,4 +1,4 @@
-# Data Positioning Default Presenter
+# DPUse Default Presenter
 
 Consider ApexCharts and eCharts tools.
 
@@ -66,7 +66,7 @@ There's no need to install this presenter manually. Once released, it is uploade
 
 ## Dependency Licenses
 
-License data is updated each time `npm run document` is run, using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use https://www.highcharts.com/license, BSD-3-Clause, CC0-1.0, MIT, or (MPL-2.0 OR Apache-2.0) — all permissive, commercially-friendly licenses. Users of the uploaded library are covered by these checks; developers cloning this repository should independently verify development dependencies.
+License data is updated each time `npm run document` is run, using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use Apache-2.0, BSD-3-Clause, CC0-1.0, https://www.highcharts.com/license, or MIT — all permissive, commercially-friendly licenses. Users of the uploaded library are covered by these checks; developers cloning this repository should independently verify development dependencies.
 
 | Dependency                                                                 | Version | License(s)              | Document                                                              |
 | :------------------------------------------------------------------------- | :-----: | :---------------------- | :-------------------------------------------------------------------- |
@@ -116,15 +116,17 @@ This report is updated with each release, from the bundle the release builds, us
 
 _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not generate source maps for CSS._
 
-| Chunk/Module/File                                                     | Composition                  |
-| :-------------------------------------------------------------------- | :--------------------------- |
-| dist/dpuse-presenter-default.es.js                                    | 74.5 kB · gzip 21.3 kB       |
-| &nbsp;&nbsp;&nbsp;&nbsp;dompurify → dist/purify.es.mjs                | `█████████░░░░░░░░░░░` 43.0% |
-| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `████████░░░░░░░░░░░░` 40.7% |
-| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `██░░░░░░░░░░░░░░░░░░` 11.4% |
-| &nbsp;&nbsp;&nbsp;&nbsp;src                                           | `█░░░░░░░░░░░░░░░░░░░` 4.9%  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.ts              | `█░░░░░░░░░░░░░░░░░░░` 4.4%  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useSampleData.ts      | `░░░░░░░░░░░░░░░░░░░░` 0.5%  |
+| Chunk/Module/File                                                     | Composition                                  |
+| :-------------------------------------------------------------------- | :------------------------------------------- |
+| **dist/dpuse-presenter-default.es.js**                                | 74.5 kB · gzip 21.3 kB · 100.0% of the build |
+| &nbsp;&nbsp;&nbsp;&nbsp;dompurify → dist/purify.es.mjs                | `█████████░░░░░░░░░░░` 43.0% · 32.0 kB       |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `██░░░░░░░░░░░░░░░░░░` 11.4% · 8.5 kB        |
+| &nbsp;&nbsp;&nbsp;&nbsp;src                                           | `█░░░░░░░░░░░░░░░░░░░` 4.9% · 3.6 kB         |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ index.ts            | `▒░░░░░░░░░░░░░░░░░░░` 4.4% · 3.3 kB         |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ useSampleData.ts    | `░░░░░░░░░░░░░░░░░░░░` 0.5% · 360 B          |
+| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `████████░░░░░░░░░░░░` 40.7% · 30.3 kB       |
+
+Bars show each row's share of its output file. ↳ rows are part of the row above.
 
 (bundler output, whitespace & JSON) = bytes Sonda can't trace to a source file: whitespace (indentation and line breaks), code the bundler generates (region comments, the combined import/export lines, its small runtime helper and wrappers), and imported JSON such as `config.json`, which the bundler doesn't map. The JSON and the generated code are real bytes that ship; the whitespace mostly disappears once compressed.
 
