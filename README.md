@@ -66,7 +66,7 @@ There's no need to install this presenter manually. Once released, it is uploade
 
 ## Dependency Licenses
 
-License data is updated each time `npm run document` is run, using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use Apache-2.0, BSD-3-Clause, or MIT — all permissive, commercially-friendly licenses. Users of the uploaded library are covered by these checks; developers cloning this repository should independently verify development dependencies.
+License data is updated each time `npm run document` is run, using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use Apache-2.0, BSD-3-Clause, or MIT, all of which allow commercial use. All are used unmodified, so any licence conditions that apply only to modified versions are not triggered. These checks cover the dependencies of the published library; developers cloning this repository should independently verify development dependencies.
 
 | Dependency                                                                 | Version | License(s)              | Document                                                              |
 | :------------------------------------------------------------------------- | :-----: | :---------------------- | :-------------------------------------------------------------------- |

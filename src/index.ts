@@ -223,7 +223,3 @@ export class Presenter implements PresenterInterface {
         }
     }
 }
-
-// TODO: Remove once every running app loads presenters through the named 'Presenter' export; until then, older app builds
-// still load the default one.
-// export default Presenter;

@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-presenter-default",
-    "version": "0.1.1073",
+    "version": "0.1.1074",
     "private": false,
     "description": "A library that implements the default presenter in accordance with the Data Positioning presenter interface.",
     "license": "MIT",
@@ -47,7 +47,7 @@
         "esbuild@0.28.1": true,
         "fsevents@2.3.3": true,
         "unrs-resolver@1.12.2": true,
-        "workerd@1.20260930.2": true
+        "workerd@1.20261001.1": true
     },
     "scripts": {
         "audit": "node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
@@ -66,11 +66,11 @@
         "dompurify": "^3.4.16"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.808",
+        "@dpuse/dpuse-development": "^0.3.811",
         "@dpuse/dpuse-tool-highcharts-visualiser": "^0.0.92",
         "@dpuse/dpuse-tool-micromark-markdown-parser": "^0.1.1051",
         "@dpuse/eslint-config-dpuse": "^1.0.124",
-        "@types/node": "^26.6.3",
+        "@types/node": "^26.6.4",
         "eslint": "^10.11.0",
         "front-matter": "^4.0.2",
         "prettier": "^3.9.9",
@@ -79,6 +79,6 @@
         "vite": "^8.3.2",
         "vite-plugin-dts": "^5.1.1",
         "vitest": "^5.0.3",
-        "wrangler": "^4.145.0"
+        "wrangler": "^4.146.0"
     }
 }

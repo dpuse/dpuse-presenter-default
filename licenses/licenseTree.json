@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1072",
+  "version": "0.1.1073",
   "name": "@dpuse/dpuse-presenter-default",
   "dependencies": {
     "@dpuse/dpuse-shared": {
