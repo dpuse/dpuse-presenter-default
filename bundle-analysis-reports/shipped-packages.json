@@ -1,0 +1,8 @@
+{
+    "packages": [
+        "@dpuse/dpuse-shared@0.3.868",
+        "dompurify@3.4.16",
+        "valibot@1.5.0"
+    ],
+    "external": []
+}

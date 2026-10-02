@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-10-02T09:23:16.463Z",
+    "generatedAt": "2026-10-02T10:28:08.466Z",
     "integration": "vite",
     "sources": false,
     "gzip": true,
@@ -22,7 +22,7 @@
       "type": "other",
       "format": "other",
       "uncompressed": 31036,
-      "gzip": 6166,
+      "gzip": 6167,
       "brotli": 0,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
@@ -78,7 +78,7 @@
       "type": "script",
       "format": "esm",
       "uncompressed": 32813,
-      "gzip": 11539,
+      "gzip": 11538,
       "brotli": 0,
       "parent": "dist/dpuse-presenter-default.es.js"
     },
