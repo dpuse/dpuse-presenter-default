@@ -59,7 +59,7 @@ export class Presenter implements PresenterInterface {
         return this.config.presentations;
     }
 
-    // eslint-disable-next-line sonarjs/cognitive-complexity
+    // eslint-disable-next-line sonarjs/cognitive-complexity -- Kept as one function so each step reads in order.
     async render(presentationReference: LocalisedReference<ComponentReferenceConfig>, renderTo: HTMLElement, data?: unknown): Promise<void> {
         // Use presentation path to retrieve presentation.
         const presentationPath = presentationReference.path as keyof typeof configPresentations;

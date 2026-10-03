@@ -141,8 +141,8 @@ describe('useSampleData', () => {
         const values = useSampleData().getMeasureValues(['openingHeadcount', 'startingHeadcount', 'endingHeadcount', 'unknown']);
 
         expect(values).toHaveLength(12);
-        for (const [opening, starting, ending, unknown] of values) {
-            expect(starting).toBeGreaterThanOrEqual(opening ?? 0);
+        for (const [opening = 0, starting, ending, unknown] of values) {
+            expect(starting).toBeGreaterThanOrEqual(opening);
             expect(ending).toBeGreaterThanOrEqual(0);
             expect(unknown).toBe(0);
         }

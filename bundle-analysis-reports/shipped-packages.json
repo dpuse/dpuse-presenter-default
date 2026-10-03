@@ -1,6 +1,6 @@
 {
     "packages": [
-        "@dpuse/dpuse-shared@0.3.869",
+        "@dpuse/dpuse-shared@1.0.2",
         "dompurify@3.4.16",
         "valibot@1.5.0"
     ],
