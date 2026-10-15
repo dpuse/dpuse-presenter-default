@@ -202,7 +202,7 @@ Describe opening/closing starting/ending comparison...
 
 ## Explanatory Notes
 
-![](./hc.svg)
+![Eleven employment spans drawn against the start and end of a period, each with a four-digit 0/1 code](./hc.svg)
 
 Changes in headcount during a period obviously imply that people are joining and leaving the workforce.
 

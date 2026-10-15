@@ -30,8 +30,13 @@ vi.mock('@dpuse/dpuse-shared', async (importOriginal) => ({
 
 const REFERENCE = { label: 'Average Headcount', path: 'hr/wrkForce/averageHeadcount' } as never;
 
+// The app passes its own DOMPurify sanitiser. This stand-in removes the one script the tests render.
+function sanitizeHTML(html: string): string {
+    return html.replace('<script>alert(1)</script>', '');
+}
+
 function createPresenter(): Presenter {
-    return new Presenter([], 'dark');
+    return new Presenter([], 'dark', sanitizeHTML);
 }
 
 // The markdown tool turns visual blocks into elements carrying their options, which the presenter then fills in.
