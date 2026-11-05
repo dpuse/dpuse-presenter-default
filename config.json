@@ -1,7 +1,7 @@
 {
     "id": "dpuse-presenter-default",
     "label": {
-        "en": "Dpuse Default Presenter"
+        "en": "DPUse Default Presenter"
     },
     "description": {
         "en": "...\n\nConsider ApexCharts and eCharts tools."
@@ -12,7 +12,7 @@
         "setColorMode"
     ],
     "firstCreatedAt": null,
-    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-presentation-icon lucide-presentation\"><g stroke=\"#3b82f6\"><path d=\"M2 3h20\"/><path d=\"M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3\"/></g><g stroke=\"#ca8a04\"><path d=\"m7 21 5-5 5 5\"/></g></svg>",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-layout-dashboard-icon lucide-layout-dashboard\"><g stroke=\"#3b82f6\"><rect width=\"7\" height=\"9\" x=\"3\" y=\"3\" rx=\"1\"/></g><g stroke=\"#ca8a04\"><rect width=\"7\" height=\"5\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\"/></g><g stroke=\"#0d9488\"><rect width=\"7\" height=\"9\" x=\"14\" y=\"12\" rx=\"1\"/></g></svg>",
     "iconDark": null,
     "lastUpdatedAt": null,
     "presentations": [
@@ -121,5 +121,5 @@
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "1.0.112"
+    "version": "1.0.113"
 }

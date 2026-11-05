@@ -90,12 +90,12 @@ _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not gen
 
 | Chunk/Module/File                                                     | Composition                                                                                   |
 | :-------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
-| **dist/dpuse-presenter-default.es.js**                                | 40.6&nbsp;kB&nbsp;·&nbsp;gzip&nbsp;9.7&nbsp;kB&nbsp;·&nbsp;100.0%&nbsp;of&nbsp;the&nbsp;build |
+| **dist/dpuse-presenter-default.es.js**                                | 40.8&nbsp;kB&nbsp;·&nbsp;gzip&nbsp;9.7&nbsp;kB&nbsp;·&nbsp;100.0%&nbsp;of&nbsp;the&nbsp;build |
 | &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `████░░░░░░░░░░░░░░░░`&nbsp;21.8%&nbsp;·&nbsp;8.9&nbsp;kB                                     |
-| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts + 1 more                       | `██░░░░░░░░░░░░░░░░░░`&nbsp;9.1%&nbsp;·&nbsp;3.7&nbsp;kB                                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts + 1 more                       | `██░░░░░░░░░░░░░░░░░░`&nbsp;9.0%&nbsp;·&nbsp;3.7&nbsp;kB                                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ index.ts            | `▒▒░░░░░░░░░░░░░░░░░░`&nbsp;8.2%&nbsp;·&nbsp;3.3&nbsp;kB                                      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ useSampleData.ts    | `░░░░░░░░░░░░░░░░░░░░`&nbsp;0.9%&nbsp;·&nbsp;354&nbsp;B                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `██████████████░░░░░░`&nbsp;69.1%&nbsp;·&nbsp;28.1&nbsp;kB                                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ useSampleData.ts    | `░░░░░░░░░░░░░░░░░░░░`&nbsp;0.8%&nbsp;·&nbsp;354&nbsp;B                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `██████████████░░░░░░`&nbsp;69.2%&nbsp;·&nbsp;28.2&nbsp;kB                                    |
 
 Bars show each row's share of its output file. ↳ rows are part of the row above.
 
