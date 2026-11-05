@@ -68,14 +68,14 @@ License data is updated each time `npm run document` is run, using [license-chec
 
 | Dependency                                                   | Version | License(s) | Document                                                              |
 | :----------------------------------------------------------- | :-----: | :--------- | :-------------------------------------------------------------------- |
-| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared) | 1.0.125 | MIT        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@1.0.125-LICENSE.txt) |
+| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared) | 1.0.183 | MIT        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@1.0.183-LICENSE.txt) |
 | [valibot](https://github.com/open-circle/valibot)            |  1.5.0  | MIT        | [LICENSE](licenses/downloads/valibot@1.5.0-LICENSE.txt)               |
 
 ### Dependency Tree
 
 The dependency tree below shows how each package in the table above is reached — direct and transitive — along with its installed version, release date, and update status. A package that does not ship itself, such as one whose parts are bundled separately, is left out and what ships beneath it is shown in its place. Packages flagged ❗ have a newer version available; ⚠️ indicates a package that hasn't been updated in the last 6 months or longer. Neither flag necessarily indicates a problem: we let new releases stabilise before upgrading, and some packages are mature and stable (have limited or no dependencies), so they require no active development.
 
-- **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 1.0.125 — this month: 2026-10-15
+- **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 1.0.183 — this month: 2026-11-04
     - **[valibot](https://github.com/open-circle/valibot)** 1.5.0 — 1 mth ago: 2026-09-09
 
 <!-- DEPENDENCY_LICENSES_END -->
@@ -90,12 +90,12 @@ _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not gen
 
 | Chunk/Module/File                                                     | Composition                                                                                   |
 | :-------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
-| **dist/dpuse-presenter-default.es.js**                                | 40.9&nbsp;kB&nbsp;·&nbsp;gzip&nbsp;9.8&nbsp;kB&nbsp;·&nbsp;100.0%&nbsp;of&nbsp;the&nbsp;build |
-| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `████░░░░░░░░░░░░░░░░`&nbsp;20.7%&nbsp;·&nbsp;8.5&nbsp;kB                                     |
-| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts + 1 more                       | `██░░░░░░░░░░░░░░░░░░`&nbsp;9.0%&nbsp;·&nbsp;3.7&nbsp;kB                                      |
+| **dist/dpuse-presenter-default.es.js**                                | 40.6&nbsp;kB&nbsp;·&nbsp;gzip&nbsp;9.7&nbsp;kB&nbsp;·&nbsp;100.0%&nbsp;of&nbsp;the&nbsp;build |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `████░░░░░░░░░░░░░░░░`&nbsp;21.8%&nbsp;·&nbsp;8.9&nbsp;kB                                     |
+| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts + 1 more                       | `██░░░░░░░░░░░░░░░░░░`&nbsp;9.1%&nbsp;·&nbsp;3.7&nbsp;kB                                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ index.ts            | `▒▒░░░░░░░░░░░░░░░░░░`&nbsp;8.2%&nbsp;·&nbsp;3.3&nbsp;kB                                      |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ useSampleData.ts    | `░░░░░░░░░░░░░░░░░░░░`&nbsp;0.8%&nbsp;·&nbsp;354&nbsp;B                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `██████████████░░░░░░`&nbsp;70.2%&nbsp;·&nbsp;28.7&nbsp;kB                                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ useSampleData.ts    | `░░░░░░░░░░░░░░░░░░░░`&nbsp;0.9%&nbsp;·&nbsp;354&nbsp;B                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `██████████████░░░░░░`&nbsp;69.1%&nbsp;·&nbsp;28.1&nbsp;kB                                    |
 
 Bars show each row's share of its output file. ↳ rows are part of the row above.
 
